@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import { useAppStore } from './stores/app'
+import { useAppStore } from './stores/app.js'
 const useStore = useAppStore()
 import logo from '@/assets/logo.jpg'
 </script>
