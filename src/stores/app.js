@@ -4,7 +4,16 @@ import { defineStore } from 'pinia'
 export const useAppStore = defineStore('useApp', {
   state: () => ({
     barra: [
-      { nombre: 'Bienvenidos' },
+      {
+        nombre: 'Bienvenidos',
+        hijos: [
+          { nombre: 'Inicio' },
+          { nombre: '¿Quienes Somos?' },
+          { nombre: 'Terminos y Condiciones' },
+          { nombre: 'Aviso de Privacidad' },
+          { nombre: 'Comunicados' }
+        ]
+      },
       {
         nombre: 'Sillas de Ruedas',
         hijos: [
@@ -14,9 +23,19 @@ export const useAppStore = defineStore('useApp', {
           { nombre: 'Sillas de Ruedas Perzonalizadas' }
         ]
       },
-      { nombre: 'Refacciones' },
+      {
+        nombre: 'Refacciones',
+        hijos: [
+          { nombre: 'Ruedas traseras y aros de avance' },
+          { nombre: 'Ruedas delanteras o casters' },
+          { nombre: 'Llantas' },
+          { nombre: 'Ejes y baleros' },
+          { nombre: 'Frenos' },
+          { nombre: 'Sujetadores o amarres' }
+        ]
+      },
       { nombre: 'Accesorios', hijos: [{ nombre: 'Cojines' }, { nombre: 'Respaldos' }] },
-      { nombre: 'More' }
+      { nombre: 'More', hijos: [{ nombre: 'Promociones' }, { nombre: 'Contacto' }] }
     ]
   })
 })
