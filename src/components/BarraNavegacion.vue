@@ -1,8 +1,11 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import { useAppStore } from '../stores/app.js'
 import logo from '@/assets/logo.jpg'
-
-const useStore = useAppStore()
+const datosBarra = ref([])
+onMounted(() => {
+  datosBarra.value = useAppStore()
+})
 // const drawer = ref(true)
 
 // function cerrar() {
@@ -23,7 +26,7 @@ const useStore = useAppStore()
       <img :src="logo" class="imagen" />
     </v-avatar>
     <v-spacer></v-spacer>
-    <template v-for="item in useStore.barra" :key="item.id">
+    <template v-for="item in datosBarra.barra" :key="item.id">
       <v-menu>
         <template v-slot:activator="{ props }">
           <div class="barra">
@@ -50,7 +53,7 @@ const useStore = useAppStore()
   </v-app-bar>
   <v-navigation-drawer v-model="drawer" temporary>
     <v-list
-      v-for="item in useStore.barra"
+      v-for="item in datosBarra.barra"
       :key="item.id"
       v-model:opened="open"
       open-strategy="single"
