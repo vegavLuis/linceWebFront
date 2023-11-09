@@ -1,6 +1,5 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import imagen from '../assets/prueb.webp'
 
 // export const useAppStore = defineStore('useApp', {
 //   state: () => ({
@@ -77,14 +76,8 @@ export const useAppStore = defineStore('useApp', () => {
     { nombre: 'Accesorios', hijos: [{ nombre: 'Cojines' }, { nombre: 'Respaldos' }] },
     { nombre: 'More', hijos: [{ nombre: 'Promociones' }, { nombre: 'Contacto' }] }
   ])
-  const datos = ref([
-    {
-      src: imagen,
-      text: 'primera'
-    }
-  ])
   return {
-    barra,
-    datos
+    barra
+    // datos
   }
 })

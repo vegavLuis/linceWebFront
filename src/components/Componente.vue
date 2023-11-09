@@ -1,18 +1,21 @@
 <script setup>
-import imagen1 from '../assets/imagenUsoCotidiano.webp'
-import imagen2 from '../assets/imagenDeportivas.webp'
+import { ref, onMounted } from 'vue'
+import { usePrimerApartadoHome } from '../stores/primerApartadoHome.js'
+
+const data = ref([])
+
+onMounted(() => {
+  data.value = usePrimerApartadoHome()
+  // console.log(data.value.datos)
+})
 </script>
+
 <template>
   <!-- <font-awesome-icon :icon="['fab', 'instagram']" size="2xl" /> -->
   <v-row class="ma-6">
-    <v-col cols="12" md="6">
+    <v-col cols="12" md="6" v-for="item in data.datos">
       <v-card class="rounded-8">
-        <v-img :src="imagen1" class="imagen"></v-img>
-      </v-card>
-    </v-col>
-    <v-col cols="12" md="6">
-      <v-card class="rounded-1">
-        <v-img :src="imagen2" class="imagen"></v-img>
+        <v-img :src="item.src" class="imagen"></v-img>
       </v-card>
     </v-col>
   </v-row>
