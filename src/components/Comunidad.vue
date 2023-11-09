@@ -1,9 +1,33 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useComunidad } from '../stores/comunidad'
+const data = ref([])
+onMounted(() => {
+  data.value = useComunidad()
+})
+</script>
 <template>
-  <Carousel :items-to-show="4.5" :wrap-around="true">
-    <Slide v-for="slide in 10" :key="slide">
-      <div class="carousel__item">{{ slide }}</div>
+  <h1 class="text-center pt-16 pb-8">Un vistazo a nuestra comunidad LINCE.</h1>
+  <Carousel :items-to-show="4" :wrap-around="true">
+    <Slide v-for="item in data.datos" :key="item.datos">
+      <div class="carousel__item d-flex flex-wrap">
+        <img :src="item.src" class="imagen flex-1-1-100 ma-2 pa-2" />
+        <div class="d-flex flex-column">
+          <h2>{{ item.nombre }}</h2>
+          <h3>{{ item.deporte }}</h3>
+          <v-btn variant="outlined" color="primary">
+            <font-awesome-icon :icon="['fab', 'instagram']" class="mr-2" />
+            Instagram
+          </v-btn>
+        </div>
+        <!-- <h2 class="text-bold">{{ item.nombre }}</h2>
+        <h3>{{ item.deporte }}</h3> -->
+      </div>
     </Slide>
-
+    <!-- <Slide v-for="item in data.datos" :key="item.id">
+      <div class="carousel__item">
+      </div>
+    </Slide> -->
     <template #addons>
       <Navigation />
     </template>
@@ -25,15 +49,20 @@ export default defineComponent({
   }
 })
 </script>
-<style>
+<style scoped>
+/* background-color: red; */
 .carousel__item {
-  min-height: 300px;
-  width: 300px;
-  background-color: red;
-  font-size: 20px;
+  height: auto;
+  width: auto;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 100%;
 }
 </style>
