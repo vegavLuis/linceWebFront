@@ -14,7 +14,7 @@ onMounted(() => {
 <template>
   <!-- <font-awesome-icon :icon="['fab', 'instagram']" size="2xl" /> -->
   <v-row class="ma-6">
-    <v-col cols="12" md="6" v-for="item in data.datos" :key="item.id">
+    <v-col cols="12" md="6" v-for="item in data.datos" :key="item.src">
       <v-card class="rounded-8">
         <v-img :src="item.src" class="imagen"></v-img>
       </v-card>
