@@ -7,17 +7,17 @@ onMounted(() => {
 })
 </script>
 <template>
-  <h1 class="text-center pt-16 pb-8">
+  <h1 class="text-center mt-16 pb-8">
     <v-icon size="x-large">mdi-instagram</v-icon>
     Un vistazo a nuestra comunidad LINCE.
   </h1>
-  <Carousel :items-to-show="4" :wrap-around="true" class="pb-16">
+  <Carousel :items-to-show="4" :wrap-around="true" class="pb-16" :breakpoints="breakpoints">
     <Slide v-for="item in data.datos" :key="item.datos">
-      <div class="carousel__item d-flex flex-wrap">
-        <img :src="item.src" class="imagen flex-1-1-100 ma-2 pa-2" />
+      <div class="carousel__item_comunidad d-flex flex-wrap">
+        <img :src="item.src" class="imagen_comunidad flex-1-1-100 ma-2 pa-2" />
         <div class="d-flex flex-column">
-          <h2>{{ item.nombre }}</h2>
-          <h3>{{ item.deporte }}</h3>
+          <h6>{{ item.nombre }}</h6>
+          <p class="item-deporte">{{ item.deporte }}</p>
           <v-btn variant="outlined" color="primary">
             <v-icon class="pr-2">mdi-instagram</v-icon>
             Instagram
@@ -49,22 +49,39 @@ export default defineComponent({
     Carousel,
     Slide,
     Navigation
-  }
+  },
+  data: () => ({
+    breakpoints: {
+      // 700px and up
+      0: {
+        itemsToShow: 1
+      },
+      600: {
+        itemsToShow: 2.5
+      },
+      960: {
+        itemsToShow: 4
+      }
+    }
+  })
 })
 </script>
 <style scoped>
 /* background-color: red; */
-.carousel__item {
+.carousel__item_comunidad {
   height: auto;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.imagen {
+.imagen_comunidad {
   width: 100%;
-  height: 350px;
+  height: 320px;
   object-fit: cover;
   border-radius: 100%;
+}
+.item-deporte {
+  font-weight: 400;
 }
 </style>

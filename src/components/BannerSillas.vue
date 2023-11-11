@@ -8,7 +8,7 @@ onMounted(() => {
 </script>
 <template>
   <Carousel :items-to-show="1" :wrap-around="true">
-    <Slide v-for="item in data.datos" :key="item.datos" class="">
+    <Slide v-for="item in data.datos" :key="item.datos">
       <div class="carousel__item d-flex flex-wrap imagenFondo">
         <img :src="item.fondo" class="imagenFondo filtro" />
         <v-img :src="item.src" class="flex-1-1-100 ma-2 pa-2 imagen" />
