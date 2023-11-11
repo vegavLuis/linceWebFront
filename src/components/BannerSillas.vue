@@ -10,6 +10,7 @@ onMounted(() => {
   <Carousel :items-to-show="1" :wrap-around="true">
     <Slide v-for="item in data.datos" :key="item.datos" class="">
       <div class="carousel__item d-flex flex-wrap imagenFondo">
+        <img :src="item.fondo" class="imagenFondo filtro" />
         <v-img :src="item.src" class="flex-1-1-100 ma-2 pa-2 imagen" />
       </div>
     </Slide>
@@ -36,22 +37,26 @@ export default defineComponent({
 </script>
 <style scoped>
 .imagen {
-  width: 80%;
-  height: 80%;
-  object-fit: fill;
-  object-position: bottom;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .imagenFondo {
-  background-image: url('../assets/bannerSillas/prueba.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
   width: 100%;
-  height: 430px;
-  background-size: cover;
+  height: 500px;
+  /* backdrop-filter: brightness(20%); */
+  /* background-size: cover; */
+  /* backdrop-filter: brightness(20%); */
+  /* backdrop-filter: brightness(20%); */
 }
-/* .difuminadio {
-  backdrop-filter: brightness(20%);
-  width: 100%;
-  height: 100%;
-} */
+.filtro {
+  /* filter: grayscale(80%); */
+  filter: brightness(30%);
+  /* backdrop-filter: blur(15px); */
+}
 </style>

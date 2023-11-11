@@ -1,44 +1,36 @@
+import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
-
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
-
-/* import font awesome icon component */
-import {
-  FontAwesomeIcon,
-  FontAwesomeLayers,
-  FontAwesomeLayersText
-} from '@fortawesome/vue-fontawesome'
-
-/* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
-
-/* import specific icons */
-import { fab } from '@fortawesome/free-brands-svg-icons'
-// import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-
-/* add icons to the library */
-library.add(fas, fab)
-
-const vuetify = createVuetify({
-  components,
-  directives
-})
+import './style.css'
 
 import App from './App.vue'
 import router from './router'
 
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import { md3 } from 'vuetify/blueprints'
+
+const vuetify = createVuetify({
+  blueprint: md3,
+  components,
+  directives,
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi
+    }
+  }
+})
+
 const app = createApp(App)
 
 app.use(createPinia())
-app
-  .use(router)
-  .component('font-awesome-icon', FontAwesomeIcon)
-  .component('font-awesome-layers', FontAwesomeLayers)
-  .component('font-awesome-layer-text', FontAwesomeLayersText)
+app.use(router)
 app.use(vuetify)
 app.mount('#app')
