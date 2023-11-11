@@ -45,10 +45,10 @@ onMounted(() => {
     <!-- BARRA PEQUEÑA -->
     <v-spacer></v-spacer>
     <v-btn class="mr-6 hidden-md-and-up" @click="abrir" v-if="!drawer">
-      <font-awesome-icon :icon="['fas', 'bars']" size="xl" />
+      <v-icon>mdi-menu</v-icon>
     </v-btn>
     <v-btn class="mr-6 hidden-md-and-up" @click="cerrar()" v-if="drawer">
-      <font-awesome-icon :icon="['fas', 'x']" size="xl" />
+      <v-icon>mdi-close</v-icon>
     </v-btn>
   </v-app-bar>
   <v-navigation-drawer v-model="drawer" temporary>

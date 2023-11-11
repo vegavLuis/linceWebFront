@@ -16,7 +16,7 @@ onMounted(() => {
           <h2>{{ item.nombre }}</h2>
           <h3>{{ item.deporte }}</h3>
           <v-btn variant="outlined" color="primary">
-            <font-awesome-icon :icon="['fab', 'instagram']" class="mr-2" />
+            <v-icon>mdi-instagram></v-icon>
             Instagram
           </v-btn>
         </div>
