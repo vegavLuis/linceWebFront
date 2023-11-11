@@ -7,7 +7,10 @@ onMounted(() => {
 })
 </script>
 <template>
-  <h1 class="text-center pt-16 pb-8">Un vistazo a nuestra comunidad LINCE.</h1>
+  <h1 class="text-center pt-16 pb-8">
+    <v-icon size="x-large">mdi-instagram</v-icon>
+    Un vistazo a nuestra comunidad LINCE.
+  </h1>
   <Carousel :items-to-show="4" :wrap-around="true">
     <Slide v-for="item in data.datos" :key="item.datos">
       <div class="carousel__item d-flex flex-wrap">
