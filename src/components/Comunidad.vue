@@ -11,7 +11,7 @@ onMounted(() => {
     <v-icon size="x-large">mdi-instagram</v-icon>
     Un vistazo a nuestra comunidad LINCE.
   </h1>
-  <Carousel :items-to-show="4" :wrap-around="true">
+  <Carousel :items-to-show="4" :wrap-around="true" class="pb-16">
     <Slide v-for="item in data.datos" :key="item.datos">
       <div class="carousel__item d-flex flex-wrap">
         <img :src="item.src" class="imagen flex-1-1-100 ma-2 pa-2" />
@@ -19,7 +19,7 @@ onMounted(() => {
           <h2>{{ item.nombre }}</h2>
           <h3>{{ item.deporte }}</h3>
           <v-btn variant="outlined" color="primary">
-            <v-icon>mdi-instagram></v-icon>
+            <v-icon class="pr-2">mdi-instagram</v-icon>
             Instagram
           </v-btn>
         </div>
@@ -57,15 +57,14 @@ export default defineComponent({
 .carousel__item {
   height: auto;
   width: auto;
-  border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .imagen {
   width: 100%;
-  height: 100%;
-  object-fit: fill;
+  height: 350px;
+  object-fit: cover;
   border-radius: 100%;
 }
 </style>
