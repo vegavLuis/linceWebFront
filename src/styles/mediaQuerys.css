@@ -20,6 +20,28 @@
   .small {
     font-size: 15px;
   }
+  .imagenFondo {
+    height: 500px !important;
+  }
+  .imagen-silla {
+    top: 30% !important;
+    left: 50% !important;
+  }
+  .nombre-silla {
+    top: 65% !important;
+    left: 50% !important;
+    font-size: 20px !important;
+  }
+  .subnombre-silla {
+    top: 75% !important;
+    left: 50% !important;
+    font-size: 33px !important;
+  }
+  .boton-silla {
+    position: absolute;
+    top: 85% !important;
+    left: 50% !important;
+  }
 }
 @media only screen and (min-width: 960px) and (max-width: 1280px) {
   h1 {
@@ -43,6 +65,30 @@
   .small {
     font-size: 14.22px;
   }
+  .imagenFondo {
+    height: 400px !important;
+  }
+  .imagen-silla {
+    top: 50% !important;
+    left: 30% !important;
+    width: 100% !important;
+    height: 80% !important;
+  }
+  .nombre-silla {
+    top: 30% !important;
+    left: 70% !important;
+    font-size: 40px !important;
+  }
+  .subnombre-silla {
+    top: 45% !important;
+    left: 70% !important;
+    font-size: 70px !important;
+  }
+  .boton-silla {
+    position: absolute;
+    top: 60% !important;
+    left: 70% !important;
+  }
 }
 @media only screen and (min-width: 1281px) and (max-width: 1920px) {
   h1 {
@@ -65,5 +111,29 @@
   }
   .small {
     font-size: 13.33px;
+  }
+  .imagenFondo {
+    height: 600px !important;
+  }
+  .imagen-silla {
+    top: 50% !important;
+    left: 30% !important;
+    width: 100% !important;
+    height: 80% !important;
+  }
+  .nombre-silla {
+    top: 30% !important;
+    left: 70% !important;
+    font-size: 40px !important;
+  }
+  .subnombre-silla {
+    top: 45% !important;
+    left: 70% !important;
+    font-size: 70px !important;
+  }
+  .boton-silla {
+    position: absolute;
+    top: 60% !important;
+    left: 70% !important;
   }
 }

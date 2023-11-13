@@ -11,7 +11,10 @@ onMounted(() => {
     <Slide v-for="item in data.datos" :key="item.datos">
       <div class="carousel__item d-flex flex-wrap imagenFondo">
         <img :src="item.fondo" class="imagenFondo filtro" />
-        <v-img :src="item.src" class="flex-1-1-100 ma-2 pa-2 imagen" />
+        <v-img :src="item.src" class="flex-1-1-100 ma-2 pa-2 imagen-silla" />
+        <h2 class="texto nombre-silla">{{ item.nombre }}</h2>
+        <h2 class="texto subnombre-silla">{{ item.subnombre }}</h2>
+        <v-btn color="primary" class="boton-silla">Ver mas de {{ item.subnombre }}</v-btn>
       </div>
     </Slide>
     <template #addons>
@@ -36,27 +39,50 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-.imagen {
+.imagen-silla {
   width: 70%;
   height: 70%;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+.texto {
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.nombre-silla {
+  font-weight: 400;
+  top: 20%;
+  left: 70%;
+  font-size: 70px;
+}
+.subnombre-silla {
+  top: 35%;
+  left: 71.4%;
+  font-size: 100px;
+}
+
+.boton-silla {
+  position: absolute;
+  top: 55%;
+  left: 70%;
   transform: translate(-50%, -50%);
 }
 .imagenFondo {
   /* background-repeat: no-repeat; */
-  /* background-position: center; */
   width: 100%;
-  height: 500px;
+  height: 600px;
+  object-fit: cover;
   /* backdrop-filter: brightness(20%); */
-  /* background-size: cover; */
+  /* background-size: contain; */
   /* backdrop-filter: brightness(20%); */
   /* backdrop-filter: brightness(20%); */
 }
 .filtro {
   /* filter: grayscale(80%); */
-  filter: brightness(30%);
+  filter: brightness(40%);
   /* backdrop-filter: blur(15px); */
 }
 </style>

@@ -22,3 +22,6 @@ p {
 .small {
   font-size: 12.8px;
 }
+.carousel__icon {
+  fill: white !important;
+}
