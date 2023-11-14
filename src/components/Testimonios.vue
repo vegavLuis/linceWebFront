@@ -13,7 +13,7 @@ onMounted(() => {
   <h3 class="text-center mt-4">Testimonios de Miriam y Daniel</h3>
   <v-row class="mt-4">
     <v-col cols="12" md="6" v-for="item in data.datos" :key="item.src">
-      <v-card class="pr-6 pl-6 fondo" elevation="0">
+      <v-card class="pr-6 pl-6 fondo" elevation="0" color="transparent">
         <video controls :src="item.src" class="video-testimonios"></video>
       </v-card>
     </v-col>

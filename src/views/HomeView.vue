@@ -6,10 +6,8 @@ import Testimonios from '../components/Testimonios.vue'
 </script>
 
 <template>
-  <v-card>
-    <Componente />
-    <Comunidad />
-    <BannerSillas />
-    <Testimonios />
-  </v-card>
+  <Componente />
+  <Comunidad />
+  <BannerSillas />
+  <Testimonios />
 </template>
