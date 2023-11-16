@@ -4,7 +4,7 @@ import
   <h2 class="text-center pb-12">Pagina no encontrada</h2>
   <div class="d-flex justify-center">
     <router-link to="/">
-      <v-btn>Regresar</v-btn>
+      <v-btn prepend-icon="mdi-home">Volver al inicio </v-btn>
     </router-link>
   </div>
 </template>
