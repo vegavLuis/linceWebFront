@@ -18,7 +18,7 @@ onMounted(() => {
         <div class="d-flex flex-column">
           <h6>{{ item.nombre }}</h6>
           <p class="item-deporte">{{ item.deporte }}</p>
-          <v-btn variant="outlined" color="primary">
+          <v-btn variant="outlined" color="primary" :href="item.redsocial" target="_blank">
             <v-icon class="pr-2">mdi-instagram</v-icon>
             Instagram
           </v-btn>
