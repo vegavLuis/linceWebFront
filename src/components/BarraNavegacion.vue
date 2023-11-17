@@ -37,7 +37,9 @@ onMounted(() => {
         </template>
         <v-list>
           <v-list-item v-for="itemHijos in item.hijos" :key="itemHijos.id">
-            <v-list-item-title>{{ itemHijos.nombre }}</v-list-item-title>
+            <router-link :to="itemHijos.link" style="text-decoration: none; color: inherit">
+              <v-list-item-title>{{ itemHijos.nombre }}</v-list-item-title>
+            </router-link>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -67,7 +69,9 @@ onMounted(() => {
         </template>
         <template v-for="itemHijos in item.hijos" :key="itemHijos.id">
           <v-list-item @click="cerrar()" active-color>
-            {{ itemHijos.nombre }}
+            <router-link :to="itemHijos.link" style="text-decoration: none; color: inherit">
+              {{ itemHijos.nombre }}
+            </router-link>
             <v-divider></v-divider>
           </v-list-item>
         </template>
