@@ -12,7 +12,13 @@ onMounted(() => {
     <h1 class="text-center titulo pt-6 pb-4">Industrias Lince por Roe-Mex SA de CV</h1>
     <v-divider :thickness="2" color="black" class="border-opacity-100"></v-divider>
 
-    <v-card v-for="item in datos.data" :key="item.titulo" elevation="0" class="pt-6 pb-6">
+    <v-card
+      v-for="item in datos.data"
+      :key="item.titulo"
+      elevation="0"
+      class="pt-6 pb-6"
+      color="transparent"
+    >
       <h2 class="titulo2 pt-4 pb-4">{{ item.titulo }}</h2>
       <v-divider :thickness="1" color="black" class="border-opacity-100"></v-divider>
       <p class="pt-4 parrafo">{{ item.texto }}</p>

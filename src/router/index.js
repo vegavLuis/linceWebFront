@@ -12,17 +12,23 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AboutView.vue')
+      component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
     },
     {
       path: '/quienes-somos',
       name: 'quienes-somos',
-      component: () => import('../views/QuienesSomos.vue')
+      component: () => import(/* webpackChunkName: "quienes-somos" */ '../views/QuienesSomos.vue')
+    },
+    {
+      path: '/terminos-condiciones',
+      name: 'terminos-condiciones',
+      component: () =>
+        import(/* webpackChunkName: "terminos-condiciones" */ '../views/TerminosCondiciones.vue')
     },
     {
       path: '/:pathMatch(.*)*',
       name: '*',
-      component: () => import(/* webpackChunkName: "tienda" */ '@/views/Error.vue')
+      component: () => import(/* webpackChunkName: "error" */ '@/views/Error.vue')
     }
   ]
 })

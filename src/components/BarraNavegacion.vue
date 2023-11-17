@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <v-app-bar elevation="0" scroll-behavior="hide">
+  <v-app-bar elevation="0" scroll-behavior="hide" color="white">
     <v-avatar rounded="0" size="80" class="hidden-md-and-up ml-6">
       <img :src="logo" class="imagen" />
     </v-avatar>
