@@ -37,6 +37,12 @@ const router = createRouter({
       component: () => import(/* webpackChunkName: "comunicados" */ '../views/Comunicados.vue')
     },
     {
+      path: '/sillas-de-uso-diario',
+      name: 'sillas-de-uso-diario',
+      component: () =>
+        import(/* webpackChunkName: "sillas-de-uso-diario" */ '../views/UsoDiario.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: '*',
       component: () => import(/* webpackChunkName: "error" */ '@/views/Error.vue')
