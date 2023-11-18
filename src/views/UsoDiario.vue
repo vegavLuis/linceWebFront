@@ -25,7 +25,6 @@ import imagen2 from '../assets/prueba3.png'
             </v-card-text>
 
             <v-card-actions>
-              <!-- <v-btn color="info" variant="">Compartir</v-btn> -->
               <v-btn color="primary" variant="flat"> Explorar </v-btn>
             </v-card-actions>
           </v-card>
@@ -47,8 +46,7 @@ import imagen2 from '../assets/prueba3.png'
               </div>
             </v-card-text>
 
-            <v-card-actions>
-              <!-- <v-btn color="info" variant="">Compartir</v-btn> -->
+            <v-card-actions class="d-flex align-end">
               <v-btn color="primary" variant="flat"> Explorar </v-btn>
             </v-card-actions>
           </v-card>
