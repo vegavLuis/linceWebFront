@@ -50,7 +50,7 @@ export const useAppStore = defineStore('useApp', () => {
         { nombre: '¿Quienes Somos?', link: '/quienes-somos' },
         { nombre: 'Terminos y Condiciones', link: '/terminos-condiciones' },
         { nombre: 'Aviso de Privacidad', link: '/aviso-de-privacidad' },
-        { nombre: 'Comunicados', link: '/' }
+        { nombre: 'Comunicados', link: '/comunicados' }
       ]
     },
     {

@@ -32,6 +32,11 @@ const router = createRouter({
         import(/* webpackChunkName: "aviso-de-privacidad" */ '../views/AvisoPrivacidad.vue')
     },
     {
+      path: '/comunicados',
+      name: 'comunicados',
+      component: () => import(/* webpackChunkName: "comunicados" */ '../views/Comunicados.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: '*',
       component: () => import(/* webpackChunkName: "error" */ '@/views/Error.vue')
