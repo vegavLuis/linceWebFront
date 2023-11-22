@@ -43,6 +43,15 @@ import ImagenDynamic9 from '../../assets/sillasUsoDiario/dynamic/img9.png'
 import ImagenDynamic10 from '../../assets/sillasUsoDiario/dynamic/img10.png'
 import ImagenDynamic11 from '../../assets/sillasUsoDiario/dynamic/img11.png'
 import ImagenDynamic12 from '../../assets/sillasUsoDiario/dynamic/img12.png'
+import ImagenExplorer1 from '../../assets/sillasUsoDiario/explorer/img1.png'
+import ImagenExplorer2 from '../../assets/sillasUsoDiario/explorer/img2.png'
+import ImagenExplorer3 from '../../assets/sillasUsoDiario/explorer/img3.png'
+import ImagenExplorer4 from '../../assets/sillasUsoDiario/explorer/img4.png'
+import ImagenExplorer5 from '../../assets/sillasUsoDiario/explorer/img5.png'
+import ImagenExplorer6 from '../../assets/sillasUsoDiario/explorer/img6.png'
+import ImagenExplorer7 from '../../assets/sillasUsoDiario/explorer/img7.png'
+import ImagenExplorer8 from '../../assets/sillasUsoDiario/explorer/img8.png'
+import ImagenExplorer9 from '../../assets/sillasUsoDiario/explorer/img9.png'
 
 export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
   const data = ref([
@@ -257,6 +266,31 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         { src: ImagenDynamic11 },
         { src: ImagenDynamic12 }
       ],
+      info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
+    },
+    {
+      id: 7,
+      nombre: 'Lince Explorer',
+      descripcionPrevia: `Forma parte de la linea  semi-personalizada, ofrece versatilidad para hacer frente a cualquier actividad y disfrutar de su vida diaria. Por su diseño ergonómico  es la opción para quien tiene lesiones medulares, desde torácica T9 lumbares o también para lesiones como Polio o Mielo.`,
+      especificaciones: [
+        { descripcion: `Construida con tubo de 1 pulg. de aluminio aeronáutico 6061-T6.` },
+        { descripcion: `Capacidad de carga 135 kg` },
+        { descripcion: `Respaldo fijo y ajustable en altura` },
+        { descripcion: `Protectores de ropa fijos atornillados a la estructura` },
+        { descripcion: `Reposapiés en “U” con ajuste de altura.` },
+        { descripcion: `Rodamientos traseros de 24" pulg. con llanta 24"X 1 3/8` },
+        { descripcion: `Centro de gravedad fijo` },
+        {
+          descripcion: `Vestidura acojinada repelente al agua, cojín de 2 pulgadas espuma de alta densidad`
+        },
+        { descripcion: `Rodamiento delantero de 4 o 5 pulg. rin de plástico.` },
+        { descripcion: `Fabricada en talla chica, mediana o grande, (semi personalizada).` },
+        {
+          descripcion: `Aplicación de pintura Powder Coating, colores a elección de la Gama de Colores Roe-Mex.`
+        },
+        { descripcion: `Peso de estructura desde 7 kg. sin rodamientos ni accesorios` }
+      ],
+      imagenes: [{ src: ImagenDynamic1 }],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     }
   ])
