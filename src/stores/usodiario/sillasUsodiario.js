@@ -18,6 +18,15 @@ import ImagenConfortZZ5 from '../../assets/sillasUsoDiario/confortZZ/img5.png'
 import ImagenConfortZZ6 from '../../assets/sillasUsoDiario/confortZZ/img6.png'
 import ImagenConfortZZ7 from '../../assets/sillasUsoDiario/confortZZ/img7.png'
 import ImagenConfortZZ8 from '../../assets/sillasUsoDiario/confortZZ/img8.png'
+import ImagenShockwave1 from '../../assets/sillasUsoDiario/shockwave/img1.png'
+import ImagenShockwave2 from '../../assets/sillasUsoDiario/shockwave/img2.png'
+import ImagenShockwave3 from '../../assets/sillasUsoDiario/shockwave/img3.png'
+import ImagenShockwave4 from '../../assets/sillasUsoDiario/shockwave/img4.png'
+import ImagenShockwave5 from '../../assets/sillasUsoDiario/shockwave/img5.png'
+import ImagenShockwave6 from '../../assets/sillasUsoDiario/shockwave/img6.png'
+import ImagenShockwave7 from '../../assets/sillasUsoDiario/shockwave/img7.png'
+import ImagenShockwave8 from '../../assets/sillasUsoDiario/shockwave/img8.png'
+import ImagenShockwave9 from '../../assets/sillasUsoDiario/shockwave/img9.png'
 
 export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
   const data = ref([
@@ -118,6 +127,44 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         { src: ImagenConfortZZ6 },
         { src: ImagenConfortZZ7 },
         { src: ImagenConfortZZ8 }
+      ],
+      info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
+    },
+    {
+      id: 4,
+      nombre: 'Lince Shockwave',
+      descripcionPrevia: `Combina elegancia y confort. En Industrias Lince hemos desarrollado la silla de ruedas más innovadora y ligera del mercado. Siguiendo el patrón en “L” dotada de suspensión trasera ofrece el confort necesario para cuidar la salud.`,
+      especificaciones: [
+        { descripcion: `Construida con tubo de 1 1/2 pulg. de aluminio aeronáutico 6061-T6.` },
+        { descripcion: `Capacidad de carga 120 kg` },
+        { descripcion: `Respaldo plegable y ajustable en altura e inclinación.` },
+        { descripcion: `Con amortiguador central.` },
+        { descripcion: `Protectores de ropa deslizables en aluminio.` },
+        { descripcion: `Reposapiés en “U” con ajuste de altura.` },
+        { descripcion: `Rodamientos traseros de 24" o 25" pulg. 3" de inclinación` },
+        { descripcion: `Centro de gravedad fijo` },
+        {
+          descripcion: `Vestidura acojinada repelente al agua, cojín de 2 pulgadas espuma de alta densidad`
+        },
+        { descripcion: `Rodamiento delantero de 4 o 5 pulg. rin de plástico.` },
+        {
+          descripcion: `Fabricada acorde a las características fisiometricas y tipo de lesión de la persona. (personalizada)`
+        },
+        {
+          descripcion: `Aplicación de pintura Powder Coating, colores a elección de la Gama de Colores Roe-Mex.`
+        },
+        { descripcion: `Peso de estructura desde 8 kg. sin rodamientos ni accesorios` }
+      ],
+      imagenes: [
+        { src: ImagenShockwave1 },
+        { src: ImagenShockwave2 },
+        { src: ImagenShockwave3 },
+        { src: ImagenShockwave4 },
+        { src: ImagenShockwave5 },
+        { src: ImagenShockwave6 },
+        { src: ImagenShockwave7 },
+        { src: ImagenShockwave8 },
+        { src: ImagenShockwave9 }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     }
