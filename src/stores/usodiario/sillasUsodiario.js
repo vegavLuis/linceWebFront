@@ -10,6 +10,14 @@ import ImagenX41 from '../../assets/sillasUsoDiario/x4/img1.png'
 import ImagenX42 from '../../assets/sillasUsoDiario/x4/img2.png'
 import ImagenX43 from '../../assets/sillasUsoDiario/x4/img3.png'
 import ImagenX44 from '../../assets/sillasUsoDiario/x4/img4.png'
+import ImagenConfortZZ1 from '../../assets/sillasUsoDiario/confortZZ/img1.png'
+import ImagenConfortZZ2 from '../../assets/sillasUsoDiario/confortZZ/img2.png'
+import ImagenConfortZZ3 from '../../assets/sillasUsoDiario/confortZZ/img3.png'
+import ImagenConfortZZ4 from '../../assets/sillasUsoDiario/confortZZ/img4.png'
+import ImagenConfortZZ5 from '../../assets/sillasUsoDiario/confortZZ/img5.png'
+import ImagenConfortZZ6 from '../../assets/sillasUsoDiario/confortZZ/img6.png'
+import ImagenConfortZZ7 from '../../assets/sillasUsoDiario/confortZZ/img7.png'
+import ImagenConfortZZ8 from '../../assets/sillasUsoDiario/confortZZ/img8.png'
 
 export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
   const data = ref([
@@ -72,6 +80,45 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         }
       ],
       imagenes: [{ src: ImagenX41 }, { src: ImagenX42 }, { src: ImagenX43 }, { src: ImagenX44 }],
+      info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
+    },
+    {
+      id: 3,
+      nombre: 'Confort ZZ',
+      descripcionPrevia: `Proporciona máxima comodidad por su amortiguador que evita sentir el golpeteo en zonas empedradas o al bajar desniveles. Óptima en espacios reducidos, su estructura en aluminio aeronáutico la hace resistente y ligera.`,
+      especificaciones: [
+        { descripcion: 'Construida con tubo de 1 pulg. de aluminio aeronáutico 6061-T6.' },
+        { descripcion: 'Capacidad de carga 135 kg' },
+        { descripcion: 'Respaldo plegable y ajustable en altura e inclinación.' },
+        { descripcion: 'Con amortiguador central.' },
+        { descripcion: 'Protectores de ropa deslizables en aluminio.' },
+        { descripcion: 'Reposapiés en “U” con ajuste de altura.' },
+        { descripcion: 'Rodamientos traseros de 24" o 25" pulg. 3 grados de inclinación.' },
+        { descripcion: 'Centro de gravedad fijo' },
+        {
+          descripcion: `Vestidura acojinada repelente al agua, cojín de 2 pulgadas. espuma de alta densidad`
+        },
+        { descripcion: 'Rodamiento delantero de 4 o 5 pulg. rin de plástico.' },
+        {
+          descripcion: `Fabricada acorde a las características fisiometricas y tipo de lesión de la persona. (personalizada)`
+        },
+        {
+          descripcion: `Aplicación de pintura Powder Coating, colores a elección de la Gama de Colores Roe-Mex.`
+        },
+        {
+          descripcion: `Peso de estructura desde 9 kg. sin rodamientos ni accesorios`
+        }
+      ],
+      imagenes: [
+        { src: ImagenConfortZZ1 },
+        { src: ImagenConfortZZ2 },
+        { src: ImagenConfortZZ3 },
+        { src: ImagenConfortZZ4 },
+        { src: ImagenConfortZZ5 },
+        { src: ImagenConfortZZ6 },
+        { src: ImagenConfortZZ7 },
+        { src: ImagenConfortZZ8 }
+      ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     }
   ])
