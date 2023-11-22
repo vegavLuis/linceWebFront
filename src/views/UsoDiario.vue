@@ -31,7 +31,7 @@ const regresarVista = () => {
       <v-row class="mt-6" v-if="!mostrar">
         <v-col cols="12" md="6" v-for="item in datos.data" :key="item.nombre">
           <v-card elevation="4" class="card">
-            <v-img class="align-end text-white" height="400" :src="item.imagenes[1]" fill>
+            <v-img class="align-end text-white" height="400" :src="item.imagenes[0]" fill>
               <v-card-title class="titulo-card">{{ item.nombre }}</v-card-title>
             </v-img>
             <v-card-subtitle class="pt-4">Uso cotidiano </v-card-subtitle>
