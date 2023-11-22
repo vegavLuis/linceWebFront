@@ -27,6 +27,10 @@ import ImagenShockwave6 from '../../assets/sillasUsoDiario/shockwave/img6.png'
 import ImagenShockwave7 from '../../assets/sillasUsoDiario/shockwave/img7.png'
 import ImagenShockwave8 from '../../assets/sillasUsoDiario/shockwave/img8.png'
 import ImagenShockwave9 from '../../assets/sillasUsoDiario/shockwave/img9.png'
+import ImagenSky1 from '../../assets/sillasUsoDiario/sky/img1.png'
+import ImagenSky2 from '../../assets/sillasUsoDiario/sky/img2.png'
+import ImagenSky3 from '../../assets/sillasUsoDiario/sky/img3.png'
+import ImagenSky4 from '../../assets/sillasUsoDiario/sky/img4.png'
 
 export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
   const data = ref([
@@ -165,6 +169,39 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         { src: ImagenShockwave7 },
         { src: ImagenShockwave8 },
         { src: ImagenShockwave9 }
+      ],
+      info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
+    },
+    {
+      id: 5,
+      nombre: 'Lince Sky',
+      descripcionPrevia: `Compañera ideal para todas las ocasiones. Simple, ligera, práctica y versátil condiseño minimalista pero muy resiente. La más ligera de las sillas de uso cotidiano.`,
+      especificaciones: [
+        { descripcion: `Construida con tubo de 1 1/8 pulg. de aluminio aeronáutico 6061-T6.` },
+        { descripcion: `Capacidad de carga 115 kg` },
+        { descripcion: `Respaldo plegable y ajustable en altura e inclinación` },
+        { descripcion: `Modelo vanguardista en “L”.` },
+        { descripcion: `Protectores de ropa deslizables en aluminio.` },
+        { descripcion: `Reposapiés en “U” con ajuste de altura.` },
+        { descripcion: `Rodamientos traseros de 24" o 25" pulg.` },
+        { descripcion: `Centro de gravedad ajustable o fijo.` },
+        {
+          descripcion: `Vestidura acojinada repelente al agua, cojín de 2 pulgadas. espuma de alta densidad`
+        },
+        { descripcion: `Rodamiento delantero de 4 o 5 pulg. rin de plástico.` },
+        {
+          descripcion: `Fabricada acorde a las características fisiometricas y tipo de lesión de la persona. (personalizada)`
+        },
+        {
+          descripcion: `Aplicación de pintura Powder Coating, colores a elección de la Gama de Colores Roe-Mex.`
+        },
+        { descripcion: `Peso de estructura desde 6.5 kg. sin rodamientos ni accesorios` }
+      ],
+      imagenes: [
+        { src: ImagenSky1 },
+        { src: ImagenSky2 },
+        { src: ImagenSky3 },
+        { src: ImagenSky4 }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     }
