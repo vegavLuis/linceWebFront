@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario'
 import Especificaciones from '../components/SillasUsoDiario/Especificaciones.vue'
+import BotonCotizar from '../components/BotonCotizar.vue'
 
 const datos = ref([])
 const dato = ref([])
@@ -13,8 +14,9 @@ onMounted(() => {
 
 const cambiarVista = (item) => {
   mostrar.value = true
+  // Object.assign(dato, item)
   dato.value.push(item)
-  // console.log(dato, 'primero')
+  // console.log(dato.value, 'primero')
 }
 
 const regresarVista = () => {
@@ -41,6 +43,8 @@ const regresarVista = () => {
               </div>
             </v-card-text>
             <v-card-actions>
+              <v-spacer></v-spacer>
+              <BotonCotizar />
               <v-btn color="primary" variant="flat" @click="cambiarVista(item)"> Explorar </v-btn>
             </v-card-actions>
           </v-card>

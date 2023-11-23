@@ -290,7 +290,17 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         },
         { descripcion: `Peso de estructura desde 7 kg. sin rodamientos ni accesorios` }
       ],
-      imagenes: [{ src: ImagenDynamic1 }],
+      imagenes: [
+        { id: 1, src: ImagenExplorer1 },
+        { id: 2, src: ImagenExplorer2 },
+        { id: 3, src: ImagenExplorer3 },
+        { id: 4, src: ImagenExplorer4 },
+        { id: 5, src: ImagenExplorer5 },
+        { id: 6, src: ImagenExplorer6 },
+        { id: 7, src: ImagenExplorer7 },
+        { id: 9, src: ImagenExplorer8 },
+        { id: 10, src: ImagenExplorer9 }
+      ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     }
   ])
