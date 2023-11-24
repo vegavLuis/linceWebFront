@@ -47,6 +47,7 @@ defineProps({
         <h2>{{ dato[0].nombre }}</h2>
         <h6 class="descripcion mt-2">{{ dato[0].descripcionPrevia }}</h6>
         <div class="mt-2">
+          <h3>CARACTERISTICAS</h3>
           <ul v-for="item in dato[0].especificaciones" :key="item.id">
             <li class="mt-4 ml-6">{{ item.descripcion }}</li>
           </ul>
