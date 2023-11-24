@@ -42,14 +42,12 @@ const router = createRouter({
       component: () =>
         import(/* webpackChunkName: "sillas-de-uso-diario" */ '../views/UsoDiario.vue')
     },
-    // {
-    //   path: '/sillas-de-uso-diario-name/:id',
-    //   name: 'especificaciones',
-    //   component: () =>
-    //     import(
-    //       /* webpackChunkName: "especificaciones" */ '../components/SillasUsoDiario/Especificaciones.vue'
-    //     )
-    // },
+    {
+      path: '/sillas-deportivas',
+      name: 'sillas-deportivas',
+      component: () =>
+        import(/* webpackChunkName: "sillas-de-uso-diario" */ '../views/SillasDeportivas.vue')
+    },
     {
       path: '/:pathMatch(.*)*',
       name: '*',
