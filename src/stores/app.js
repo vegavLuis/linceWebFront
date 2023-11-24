@@ -57,7 +57,7 @@ export const useAppStore = defineStore('useApp', () => {
       nombre: 'Sillas de Ruedas',
       hijos: [
         { nombre: 'Sillas de Uso Diario', link: '/sillas-de-uso-diario' },
-        { nombre: 'Sillas Infantiles', link: '/' },
+        { nombre: 'Sillas Infantiles', link: '/sillas-infantiles' },
         { nombre: 'Sillas de Ruedas Deportivas', link: '/sillas-deportivas' },
         { nombre: 'Sillas de Ruedas Perzonalizadas', link: '/' }
       ]
