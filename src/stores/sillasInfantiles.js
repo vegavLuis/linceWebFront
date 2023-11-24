@@ -43,7 +43,7 @@ export const useSillasInfantiles = defineStore('sillasInfantiles', () => {
     },
     {
       id: 2,
-      nombre: `Lince Nitro Infantil`,
+      nombre: `Lince PC Infantil`,
       descripcionPrevia: `Especial para niños diagnosticados con Parálisis Cerebral`,
       especificaciones: [
         { descripcion: `Respaldo acojinado.` },
