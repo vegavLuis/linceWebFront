@@ -6,7 +6,9 @@ import Testimonios from '../components/Testimonios.vue'
 </script>
 
 <template>
-  <Componente />
+  <v-container>
+    <Componente />
+  </v-container>
   <Comunidad />
   <BannerSillas />
   <Testimonios />
