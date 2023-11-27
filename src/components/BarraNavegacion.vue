@@ -18,13 +18,17 @@ onMounted(() => {
 
 <template>
   <v-app-bar elevation="0" scroll-behavior="hide" color="white">
-    <v-avatar rounded="0" size="80" class="hidden-md-and-up ml-6">
+    <div class="contenedor-logo hidden-md-and-up ml-6">
+      <!-- <v-avatar rounded="0" size="100" class="hidden-md-and-up ml-6">
+      </v-avatar>  -->
       <img :src="logo" class="imagen" />
-    </v-avatar>
+    </div>
     <v-spacer></v-spacer>
-    <v-avatar rounded="0" size="80" class="hidden-sm-and-down">
+    <div class="contenedor-logo hidden-sm-and-down">
+      <!-- <v-avatar rounded="0" class="hidden-sm-and-down">
+      </v-avatar>  -->
       <img :src="logo" class="imagen" />
-    </v-avatar>
+    </div>
     <v-spacer></v-spacer>
     <template v-for="item in datosBarra.barra" :key="item.id">
       <v-menu>
@@ -99,10 +103,14 @@ export default {
 }
 </script>
 <style>
+.contenedor-logo {
+  width: auto !important;
+  height: 100%;
+}
 .imagen {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .barra {
   border-top: solid 1px red;
