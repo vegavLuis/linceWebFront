@@ -6,10 +6,12 @@ import deportivas from '../assets/primerApartadoHome/imagenDeportivas.webp'
 export const usePrimerApartadoHome = defineStore('primerApartadoHome', () => {
   const datos = ref([
     {
-      src: cotidiano
+      src: cotidiano,
+      to: '/sillas-de-uso-diario'
     },
     {
-      src: deportivas
+      src: deportivas,
+      to: '/sillas-deportivas'
     }
   ])
   return {
