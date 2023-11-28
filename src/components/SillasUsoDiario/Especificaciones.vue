@@ -61,7 +61,7 @@ defineProps({
       </v-col>
     </v-row>
   </v-card>
-  <v-card color="warning" class="text-center d-flex align-center justify-center mt-6" height="35px">
+  <v-card color="warning" class="text-center d-flex align-center justify-center mt-6" height="auto">
     <p class="small">
       {{ dato[0].info }}
     </p>
