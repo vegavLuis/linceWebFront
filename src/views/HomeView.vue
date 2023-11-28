@@ -1,20 +1,40 @@
 <script setup>
+import { ref } from 'vue'
 import Componente from '../components/Componente.vue'
 import Comunidad from '../components/Comunidad.vue'
 import BannerSillas from '../components/BannerSillas.vue'
 import Testimonios from '../components/Testimonios.vue'
+import Especificaciones from '../components/SillasUsoDiario/Especificaciones.vue'
+
+let mostrar = ref()
+const dato = ref([])
+
+const cambiarVista = (item) => {
+  // console.log('listo', item)
+  dato.value.push(item)
+  mostrar.value = true
+}
+
+const regresarVista = () => {
+  mostrar.value = false
+  dato.value = []
+  // console.log(dato, 'segundo')
+}
 </script>
 
 <template>
-  <div class="contenedor">
-    <h2 class="titulo">Mas que una silla, un estilo de vida</h2>
+  <div v-if="!mostrar">
+    <div class="contenedor">
+      <h2 class="titulo">Mas que una silla, un estilo de vida</h2>
+    </div>
+    <v-container>
+      <Componente />
+    </v-container>
+    <Comunidad />
+    <BannerSillas @cambiar-vista="cambiarVista" />
+    <Testimonios />
   </div>
-  <v-container>
-    <Componente />
-  </v-container>
-  <Comunidad />
-  <BannerSillas />
-  <Testimonios />
+  <Especificaciones v-if="mostrar" :dato="dato" @regresar-vista="regresarVista" />
 </template>
 <style scoped>
 .contenedor {

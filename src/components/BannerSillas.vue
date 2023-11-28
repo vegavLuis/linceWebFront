@@ -1,11 +1,16 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useBannerSillas } from '../stores/bannerSillas'
+
+defineEmits(['cambiar-vista'])
+
 const data = ref([])
+
 onMounted(() => {
   data.value = useBannerSillas()
 })
 </script>
+
 <template>
   <Carousel :items-to-show="1" :wrap-around="true">
     <Slide v-for="item in data.datos" :key="item.datos">
@@ -14,7 +19,9 @@ onMounted(() => {
         <v-img :src="item.src" class="flex-1-1-100 ma-2 pa-2 imagen-silla" />
         <h2 class="texto nombre-silla">{{ item.nombre }}</h2>
         <h2 class="texto subnombre-silla">{{ item.subnombre }}</h2>
-        <v-btn color="primary" class="boton-silla">Ver mas de {{ item.subnombre }}</v-btn>
+        <v-btn color="primary" class="boton-silla" @click="$emit('cambiar-vista', item.info[0])"
+          >Ver mas de {{ item.subnombre }}</v-btn
+        >
       </div>
     </Slide>
     <template #addons>
@@ -71,18 +78,11 @@ export default defineComponent({
   transform: translate(-50%, -50%);
 }
 .imagenFondo {
-  /* background-repeat: no-repeat; */
   width: 100%;
   height: 600px;
   object-fit: cover;
-  /* backdrop-filter: brightness(20%); */
-  /* background-size: contain; */
-  /* backdrop-filter: brightness(20%); */
-  /* backdrop-filter: brightness(20%); */
 }
 .filtro {
-  /* filter: grayscale(80%); */
   filter: brightness(40%);
-  /* backdrop-filter: blur(15px); */
 }
 </style>
