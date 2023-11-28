@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref, onMounted } from 'vue'
 import { usePrimerApartadoHome } from '../stores/primerApartadoHome.js'
