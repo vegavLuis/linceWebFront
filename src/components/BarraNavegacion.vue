@@ -21,13 +21,17 @@ onMounted(() => {
     <div class="contenedor-logo hidden-md-and-up ml-6">
       <!-- <v-avatar rounded="0" size="100" class="hidden-md-and-up ml-6">
       </v-avatar>  -->
-      <img :src="logo" class="imagen" />
+      <router-link to="/">
+        <img :src="logo" class="imagen" />
+      </router-link>
     </div>
     <v-spacer></v-spacer>
     <div class="contenedor-logo hidden-sm-and-down">
       <!-- <v-avatar rounded="0" class="hidden-sm-and-down">
       </v-avatar>  -->
-      <img :src="logo" class="imagen" />
+      <router-link to="/">
+        <img :src="logo" class="imagen" />
+      </router-link>
     </div>
     <v-spacer></v-spacer>
     <template v-for="item in datosBarra.barra" :key="item.id">
