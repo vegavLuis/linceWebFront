@@ -16,7 +16,7 @@ defineProps({
           <Carousel id="gallery" :items-to-show="1" :wrap-around="false" v-model="currentSlide">
             <Slide v-for="slide in dato[0].imagenes" :key="slide">
               <div class="carousel__item">
-                <v-img :src="slide.src" width="500px"></v-img>
+                <v-img :src="slide.src" width="500px" class="imagen-principal"></v-img>
               </div>
             </Slide>
           </Carousel>
@@ -29,6 +29,7 @@ defineProps({
             v-model="currentSlide"
             ref="carousel"
             class="icon"
+            :breakpoints="breakpoints"
           >
             <Slide v-for="item in dato[0].imagenes" :key="item.id">
               <v-card width="120px" height="120px" color="transparent" elevation="0">
@@ -81,7 +82,19 @@ export default defineComponent({
     Pagination
   },
   data: () => ({
-    currentSlide: 0
+    currentSlide: 0,
+    breakpoints: {
+      // 700px and up
+      0: {
+        itemsToShow: 1.6
+      },
+      600: {
+        itemsToShow: 3
+      }
+      // 960: {
+      //   itemsToShow: 4
+      // }
+    }
   }),
   methods: {
     slideTo(val) {
@@ -91,6 +104,11 @@ export default defineComponent({
 })
 </script>
 <style scoped>
+@media only screen and (max-width: 600px) {
+  .imagen-principal {
+    width: 300px !important;
+  }
+}
 .imagen {
   width: 100%;
   height: 100%;
