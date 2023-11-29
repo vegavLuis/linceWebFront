@@ -10,7 +10,6 @@ onMounted(() => {
   data.value = useComunidad()
 })
 const mostratImagen = (item) => {
-  console.log(item)
   imagen.value = item
   overlay.value = true
 }
