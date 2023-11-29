@@ -1,10 +1,19 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useComunidad } from '../stores/comunidad'
+
 const data = ref([])
+const imagen = ref()
+const overlay = ref(false)
+
 onMounted(() => {
   data.value = useComunidad()
 })
+const mostratImagen = (item) => {
+  console.log(item)
+  imagen.value = item
+  overlay.value = true
+}
 </script>
 <template>
   <h1 class="text-center mt-16 pb-8">
@@ -14,7 +23,11 @@ onMounted(() => {
   <Carousel :items-to-show="4" :wrap-around="true" class="pb-16" :breakpoints="breakpoints">
     <Slide v-for="item in data.datos" :key="item.datos">
       <div class="carousel__item_comunidad d-flex flex-wrap">
-        <img :src="item.src" class="imagen_comunidad flex-1-1-100 ma-2 pa-2" />
+        <img
+          :src="item.src"
+          class="imagen_comunidad flex-1-1-100 ma-2 pa-2"
+          @click="mostratImagen(item.src)"
+        />
         <div class="d-flex flex-column">
           <h6>{{ item.nombre }}</h6>
           <p class="item-deporte">{{ item.deporte }}</p>
@@ -35,6 +48,18 @@ onMounted(() => {
       <Navigation />
     </template>
   </Carousel>
+  <v-overlay v-model="overlay" color="red">
+    <v-btn
+      icon="mdi-alpha-x-circle"
+      class="ma-8 boton"
+      location="right top"
+      position="absolute"
+      color="transparent"
+      elevation="0"
+      @click="overlay = false"
+    ></v-btn>
+    <v-img :src="imagen" width="100vw" height="100vh"></v-img>
+  </v-overlay>
 </template>
 
 <script>
@@ -68,6 +93,9 @@ export default defineComponent({
 </script>
 <style scoped>
 /* background-color: red; */
+.boton {
+  z-index: 1;
+}
 .carousel__item_comunidad {
   height: auto;
   width: auto;
