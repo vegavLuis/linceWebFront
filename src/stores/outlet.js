@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import outletApi from '@/api/outlet.js'
+import { socket } from '../socket.js'
 
 export const useOutletStore = defineStore('outlet', () => {
   const datos = ref([])
@@ -18,6 +19,9 @@ export const useOutletStore = defineStore('outlet', () => {
   }
   onMounted(() => {
     traerData()
+    socket.on('outlet', () => {
+      traerData()
+    })
   })
   const abrirProducto = async (item) => {
     router.push('/outlet/' + item)
