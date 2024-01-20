@@ -33,9 +33,7 @@ const iconoVertical = mdiArrowExpandVertical
               ></v-sheet>
             </v-sheet>
             <v-card-text class="pt-2 pb-1 texto">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo aperiam necessitatibus
-              numquam saepe eos ex voluptatum fugiat facilis quo sint itaque assumenda dicta amet
-              officia, omnis in minima? Illum, corporis.
+              {{ item.descripcion }}
             </v-card-text>
             <v-card-text class="pt-0 pb-1">
               <v-sheet class="d-flex" height="auto">
