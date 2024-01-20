@@ -55,6 +55,17 @@ const router = createRouter({
         import(/* webpackChunkName: "sillas-infantiles" */ '../views/SillasInfantiles.vue')
     },
     {
+      path: '/outlet',
+      name: 'outlet',
+      component: () => import(/* webpackChunkName: "sillas-infantiles" */ '../views/Outlet.vue')
+    },
+    {
+      path: '/outlet/:id',
+      name: 'outletId',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/OutletProducto.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: '*',
       component: () => import(/* webpackChunkName: "error" */ '@/views/Error.vue')

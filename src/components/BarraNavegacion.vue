@@ -19,16 +19,12 @@ onMounted(() => {
 <template>
   <v-app-bar elevation="0" scroll-behavior="hide" color="white">
     <div class="contenedor-logo hidden-md-and-up ml-6">
-      <!-- <v-avatar rounded="0" size="100" class="hidden-md-and-up ml-6">
-      </v-avatar>  -->
       <router-link to="/">
         <img :src="logo" class="imagen" />
       </router-link>
     </div>
     <v-spacer></v-spacer>
     <div class="contenedor-logo hidden-sm-and-down">
-      <!-- <v-avatar rounded="0" class="hidden-sm-and-down">
-      </v-avatar>  -->
       <router-link to="/">
         <img :src="logo" class="imagen" />
       </router-link>
@@ -52,6 +48,16 @@ onMounted(() => {
         </v-list>
       </v-menu>
     </template>
+    <v-list>
+      <v-list-item class="pl-0">
+        <div class="barra">
+          <router-link to="/outlet" style="text-decoration: none; color: inherit">
+            <v-btn variant="text" class="hidden-sm-and-down ml-0"> Outlet </v-btn>
+          </router-link>
+        </div>
+      </v-list-item>
+    </v-list>
+
     <!-- BARRA PEQUEÑA -->
     <v-spacer></v-spacer>
     <v-btn class="mr-6 hidden-md-and-up" @click="abrir" v-if="!drawer">
