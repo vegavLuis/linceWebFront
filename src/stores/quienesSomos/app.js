@@ -13,18 +13,17 @@ export const useAppQuienesSomos = defineStore('appQuienesSomos', () => {
       titulo: 'Misión',
       texto: `Nuestra misión es fabricar un producto que sea personalizado para cada individuo en su estilo de vida que necesite.
 
-      Nosotros pugnamos para proveer una ligera e individual silla, como si fuera un sastre, con el objetivo de que el producto permita el uso final a la vida que quieren, en vez de que la silla los limite.
+      Nosotros pugnamos para proveer una silla ligera e individual, como si fuera un sastre, con el objetivo de que el producto permita el uso final a la vida que quieren, en vez de que la silla los limite.
       
       Nosotros no somos sólo una fabrica de sillas, construimos sillas activas, para personas con discapacidad activa.
       
-      Ligeras y hechas a mano en México, ROE-MEX sillas de ruedas deportivas y activas es una de la elecciones por muchos de los mejores atletas de alto rendimiento del mundo!!! Ya sea esta en la cancha o de día a día.
+      Ligeras y hechas a mano en México, ROE-MEX ("sillas de ruedas deportivas y activas es una de la elecciones por muchos de los mejores atletas de alto rendimiento del mundo!!!") Ya sea esta en la cancha o de día a día.
       
-      Productos: Fabricamos de ultra ligera manuales como: La serie Lince, SKY, Akiva, y Shockwave (estructura en L). Las deportivas B-Ball como: Impacto, Challenger (ajustable), y 2EZ. Toda la serie de sillas LINCE es medida y fabricada por nuestros expertos conocedores en el campo.
           `
     },
     {
       titulo: 'Visión',
-      texto: `La visión fue crear una silla de ruedas que permita el desarrollo y que no se viera como ninguna otra silla en el mercado en ese tiempo. Después de 2 años la pasión y la ambición cobro vida y mas fuerza que nunca! Y se formo ROE-MEX
+      texto: `La visión fue crear una silla de ruedas que permita el desarrollo y que no se viera como ninguna otra silla en el mercado en ese tiempo. Después de 2 años la pasión y la ambición cobró vida y mas fuerza que nunca! Y se formo ROE-MEX
 
         ROE-MEX tiene el mismo y simple acercamiento que hizo por mas de 25 años atrás y continua innovando y creando un producto que sostiene el abuso de algunos de los mejores atletas y permitiendo que se exhiba un hermoso arte entre el control de la silla y la ruda habilidad atlética.
         
