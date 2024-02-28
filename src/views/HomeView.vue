@@ -29,8 +29,11 @@ const regresarVista = () => {
     <v-container>
       <Componente />
     </v-container>
+    <v-divider class="ma-4 border-opacity-100" color="#F44336"></v-divider>
     <Comunidad />
+    <v-divider class="ma-4 pb-4 border-opacity-100" color="#F44336"></v-divider>
     <BannerSillas @cambiar-vista="cambiarVista" />
+    <v-divider class="ma-4 pb-4 border-opacity-100" color="#F44336"></v-divider>
   </div>
   <Especificaciones v-if="mostrar" :dato="dato" @regresar-vista="regresarVista" />
 </template>

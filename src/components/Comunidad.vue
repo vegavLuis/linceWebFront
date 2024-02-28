@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import { useComunidad } from '../stores/comunidad'
+import insta from '../assets/insta.svg'
 
 const data = ref([])
 const imagen = ref()
@@ -15,10 +16,17 @@ const mostratImagen = (item) => {
 }
 </script>
 <template>
-  <h1 class="text-center mt-16 pb-8 charm-regular">
-    <v-icon size="x-large">mdi-instagram</v-icon>
-    Un vistazo a nuestra comunidad LINCE.
-  </h1>
+  <v-card
+    color="transparente"
+    elevation="0"
+    width="100%"
+    class="d-flex justify-center align-center"
+  >
+    <div class="icono-insta">
+      <v-img :src="insta"></v-img>
+    </div>
+    <h1 class="mt-16 pb-8 charm-regular titulo-rojo">Un vistazo a nuestra comunidad LINCE.</h1>
+  </v-card>
   <Carousel :items-to-show="4" :wrap-around="true" class="pb-16" :breakpoints="breakpoints">
     <Slide v-for="item in data.datos" :key="item.datos">
       <div class="carousel__item_comunidad d-flex flex-wrap">
@@ -92,8 +100,14 @@ export default defineComponent({
 </script>
 <style scoped>
 /* background-color: red; */
+.icono-insta {
+  width: 100px;
+}
 .texto-bold {
   font-weight: 700;
+}
+.titulo-rojo {
+  color: #b71c1c;
 }
 .boton {
   z-index: 1;

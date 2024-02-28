@@ -100,6 +100,20 @@ onMounted(() => {
         </template>
       </v-list-group>
     </v-list>
+    <v-list>
+      <v-list-item>
+        <router-link to="/outlet" style="text-decoration: none; color: inherit">
+          Outlet
+        </router-link>
+      </v-list-item>
+    </v-list>
+    <v-list>
+      <v-list-item>
+        <router-link to="/testimonios" style="text-decoration: none; color: inherit">
+          Testimonios
+        </router-link>
+      </v-list-item>
+    </v-list>
   </v-navigation-drawer>
 </template>
 
