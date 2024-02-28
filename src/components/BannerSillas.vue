@@ -25,7 +25,9 @@ onMounted(() => {
       </div>
     </Slide>
     <template #addons>
-      <Navigation />
+      <div class="ap">
+        <Navigation />
+      </div>
     </template>
   </Carousel>
 </template>
@@ -53,6 +55,7 @@ export default defineComponent({
   top: 50%;
   left: 40%;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 20px white);
 }
 .texto {
   color: white;

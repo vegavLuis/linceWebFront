@@ -9,7 +9,9 @@ onMounted(() => {
 })
 </script>
 <template>
-  <h2 class="text-center mt-16">¡Ventajas de utilizar la silla de ruedas correcta!</h2>
+  <h2 class="text-center mt-16 charm-regular">
+    ¡Ventajas de utilizar la silla de ruedas correcta!
+  </h2>
   <h3 class="text-center mt-4">Testimonios de Miriam y Daniel</h3>
   <v-row class="mt-4">
     <v-col cols="12" md="6" v-for="item in data.datos" :key="item.src">

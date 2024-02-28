@@ -23,5 +23,38 @@ p {
   font-size: 12.8px;
 }
 .carousel__icon {
-  fill: white !important;
+  /* display: none !important; */
+  color: white;
+  z-index: 1;
+}
+.ap > .carousel__next::before {
+  font-weight: 400;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid;
+  background-color: #43a047;
+  color: white;
+  font-size: 15px;
+  width: 100px;
+  position: absolute;
+  right: 5px;
+  padding: 3px;
+  padding-right: 18px;
+  content: 'Siguiente';
+}
+
+.ap > .carousel__prev::before {
+  font-weight: 400;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid;
+  background-color: #43a047;
+  color: white;
+  font-size: 15px;
+  width: 100px;
+  position: absolute;
+  left: 5px;
+  padding: 3px;
+  padding-left: 18px;
+  content: 'Anterior';
 }

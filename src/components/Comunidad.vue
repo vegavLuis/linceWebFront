@@ -15,7 +15,7 @@ const mostratImagen = (item) => {
 }
 </script>
 <template>
-  <h1 class="text-center mt-16 pb-8">
+  <h1 class="text-center mt-16 pb-8 charm-regular">
     <v-icon size="x-large">mdi-instagram</v-icon>
     Un vistazo a nuestra comunidad LINCE.
   </h1>
@@ -28,7 +28,7 @@ const mostratImagen = (item) => {
           @click="mostratImagen(item.src)"
         />
         <div class="d-flex flex-column">
-          <h6>{{ item.nombre }}</h6>
+          <h6 class="texto-bold">{{ item.nombre }}</h6>
           <p class="item-deporte">{{ item.deporte }}</p>
           <v-btn variant="outlined" color="primary" :href="item.redsocial" target="_blank">
             <v-icon class="pr-2">mdi-instagram</v-icon>
@@ -92,6 +92,9 @@ export default defineComponent({
 </script>
 <style scoped>
 /* background-color: red; */
+.texto-bold {
+  font-weight: 700;
+}
 .boton {
   z-index: 1;
 }
