@@ -11,7 +11,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <v-btn
+  <!-- <v-btn
     position="fixed"
     class="boton ma-4"
     location="bottom right"
@@ -40,7 +40,7 @@ onMounted(() => {
         </v-btn>
       </div>
     </v-card>
-  </v-expand-transition>
+  </v-expand-transition> -->
   <VLayout>
     <BarraNavegacion />
     <v-main>
