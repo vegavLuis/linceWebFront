@@ -11,7 +11,7 @@
       clientes es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos
       personales, tales como:
     </p>
-    <ol class="ml-6">
+    <ol class="ml-12">
       <li>Nombre Completo.</li>
       <li>Dirección.</li>
       <li>Registro Federal de Contribuyentes.</li>
@@ -19,30 +19,32 @@
       <li>Correo Electrónico.</li>
     </ol>
     <p>Estos serán utilizados única y exclusivamente para los siguientes fines:</p>
-    <ol class="ml-6">
+    <ol class="ml-12">
       <li>Información y Prestación de Servicios.</li>
       <li>Actualización de la Base de Datos.</li>
       <li>Cualquier finalidad análoga o compatible con las anteriores.</li>
     </ol>
     <p>En el caso de Datos sensibles, tales como:</p>
-    <ol class="ml-6">
+    <ol class="ml-12">
       <li>Información recabada para medidas</li>
       <li>Fotos referenciales para complemantar las medidas</li>
       <li>Información medica relevante</li>
       <li>Cualquier otra información relacionada con la toma de medidas</li>
     </ol>
     <p>Estos serán utilizados única y exclusivamente para los siguientes fines:</p>
-    <ol class="ml-6">
+    <ol class="ml-12">
       <li>Proveer los productos solicitados.</li>
       <li>Proveer los servicios solicitados y/o contratados.</li>
       <li>Responder a sus requerimientos de información, atención y servicio</li>
     </ol>
+    <br />
     <p>
       Para prevenir el acceso no autorizado a sus datos personales y con el fin de asegurar que la
       información sea utilizada para los fines establecidos en este aviso de privacidad, hemos
       establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no
       autorizados de sus datos, permitiéndonos tratarlos debidamente.
     </p>
+    <br />
     <p>
       Así mismo, le informamos que sus datos personales pueden ser Transmitidos para ser tratados
       por personas distintas a esta empresa. Todos sus datos personales son tratados de acuerdo a la
@@ -52,6 +54,7 @@
       encargada de la seguridad de datos personales en el Teléfono (55) 5441 2669 , o por medio de
       su correo electrónico: sillaslince@gmail.com
     </p>
+    <br />
     <p>
       A través de estos canales usted podrá actualizar sus datos y especificar el medio por el cual
       desea recibir información, ya que en caso de no contar con esta especificación de su
@@ -62,6 +65,7 @@
       previstas. Estas modificaciones estarán disponibles a los Titulares en la dirección web:
       www.roe-mex.com.mx
     </p>
+    <br />
     <p>
       Si después de haber ejercido sus Derechos de Protección de Datos ante Prodato Protección de
       Datos y Propiedad Intelectual S de R.L de C.V. por medio de los mecanismos establecidos en
