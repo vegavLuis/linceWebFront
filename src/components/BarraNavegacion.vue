@@ -66,6 +66,10 @@ onMounted(() => {
         </div>
       </v-list-item>
     </v-list>
+    <v-btn color="#4CAF50" to="/login">
+      <v-icon class="mr-2">mdi-login</v-icon>
+      Iniciar Sesion
+    </v-btn>
 
     <!-- BARRA PEQUEÑA -->
     <v-spacer></v-spacer>
