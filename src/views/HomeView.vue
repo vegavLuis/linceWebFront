@@ -40,16 +40,27 @@ const regresarVista = () => {
 <style scoped>
 .contenedor {
   width: 100vw;
-  height: 100px;
-  object-fit: none;
-  object-position: right;
-  background-repeat: repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/prueba2.jpg');
+  height: 120px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/ImagenSilla.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/ImagenSilla.jpg'); */
+  /* width: 100vw;
+  height: 100px;
+  object-fit: none;
+  background-position: end;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/ImagenSilla.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; */
 }
 .titulo {
   color: white;

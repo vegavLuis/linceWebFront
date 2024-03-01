@@ -56,7 +56,7 @@ const regresarVista = () => {
 </template>
 <style scoped>
 .titulo {
-  color: #490036;
+  color: #b71c1c;
 }
 .card {
   height: 100%;

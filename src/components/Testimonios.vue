@@ -23,7 +23,7 @@ onMounted(() => {
 </template>
 <style scoped>
 h2 {
-  color: #e84702;
+  color: #b71c1c;
   font-weight: 500;
 }
 h3 {

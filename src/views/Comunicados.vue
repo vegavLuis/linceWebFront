@@ -9,6 +9,6 @@ import imagen from '../assets/comunicados/comunicado.webp'
 </template>
 <style scoped>
 .titulo {
-  color: #8b0000;
+  color: #b71c1c;
 }
 </style>

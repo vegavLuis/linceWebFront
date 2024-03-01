@@ -77,7 +77,7 @@
 </template>
 <style scoped>
 .titulo {
-  color: #8b0000;
+  color: #b71c1c;
 }
 .parrafo {
   line-height: 2.2;

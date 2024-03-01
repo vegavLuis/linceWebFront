@@ -49,7 +49,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .titulo {
-  color: #490036;
+  color: #b71c1c;
 }
 .parrafo {
   line-height: 2.2;
