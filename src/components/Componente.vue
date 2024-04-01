@@ -20,14 +20,14 @@ onMounted(() => {
         <h1 class="text-uppercase">Nuestra linea de usu diario</h1>
       </v-col>
       <v-col cols="12" md="6">
-        <v-img :src="ima1" class="ima1"></v-img>
+        <v-img :src="ima1" class="ima1" aspect-ratio="16/9" :lazy-src="ima1" eager></v-img>
       </v-col>
     </v-row>
   </v-card>
   <v-card class="my-4 mx-4" elevation="0" color="transparent">
     <v-row>
       <v-col cols="12" md="6" order="1" order-md="0">
-        <v-img :src="ima2" class="ima2"></v-img>
+        <v-img :src="ima2" class="ima2" aspect-ratio="16/9" :lazy-src="ima1" eager></v-img>
       </v-col>
       <v-col cols="12" md="6" order="0" order-md="1" class="d-flex justify-center align-center">
         <h1 class="text-uppercase">Nuestra linea deportiva</h1>
