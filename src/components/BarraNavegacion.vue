@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useAppStore } from '../stores/app.js'
 import logo from '@/assets/logo.jpg'
+import BotonIniciarSesion from '@/components/BotonIniciarSesion.vue'
 const datosBarra = ref([])
 onMounted(() => {
   datosBarra.value = useAppStore()
@@ -66,10 +67,7 @@ onMounted(() => {
         </div>
       </v-list-item>
     </v-list>
-    <v-btn color="#4CAF50" to="/login">
-      <v-icon class="mr-2">mdi-login</v-icon>
-      Iniciar Sesion
-    </v-btn>
+    <BotonIniciarSesion class="hidden-sm-and-down" />
 
     <!-- BARRA PEQUEÑA -->
     <v-spacer></v-spacer>
@@ -118,6 +116,7 @@ onMounted(() => {
         </router-link>
       </v-list-item>
     </v-list>
+    <BotonIniciarSesion class="ma-4 d-flex justify-center" />
   </v-navigation-drawer>
 </template>
 
