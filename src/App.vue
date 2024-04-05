@@ -19,7 +19,7 @@ onMounted(() => {
     icon="mdi-plus"
     @click="expand = !expand"
   >
-  </v-btn>
+  </v-btn> -->
   <v-expand-transition position="fixed" location="bottom right" class="card-botones">
     <v-card
       v-show="expand"
@@ -40,7 +40,7 @@ onMounted(() => {
         </v-btn>
       </div>
     </v-card>
-  </v-expand-transition> -->
+  </v-expand-transition>
   <VLayout>
     <BarraNavegacion />
     <v-main>
