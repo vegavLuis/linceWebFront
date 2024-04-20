@@ -1,108 +1,83 @@
 <script setup>
-import BotonCotizar from '../BotonCotizar.vue'
-defineEmits(['regresar-vista'])
-defineProps({
-  dato: {
-    type: Array,
-    required: true
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useSillasUsoDiario } from '@/stores/usodiario/sillasUsodiario.js'
+const route = useRoute()
+const i = useSillasUsoDiario()
+const idRouter = ref(route.params.id)
+const data = ref([])
+function numero(n) {
+  return n.id == idRouter.value
+}
+const ima = data.value.imagenes
+const itemProps = (ima) => {
+  return {
+    title: ima.color
+    // subtitle: ima.color
   }
-})
+}
+const select = ref('')
+
+data.value = i.data.find(numero)
+onMounted(() => {})
 </script>
 <template>
-  <v-card color="transparent" elevation="0">
-    <v-row>
-      <v-col cols="12" md="6" class="d-flex align-center">
-        <v-card color="transparent" width="100%" elevation="0">
-          <Carousel id="gallery" :items-to-show="1" :wrap-around="false" v-model="currentSlide">
-            <Slide v-for="slide in dato[0].imagenes" :key="slide">
-              <div class="carousel__item">
-                <v-img :src="slide.src" width="500px" class="imagen-principal"></v-img>
-              </div>
-            </Slide>
-          </Carousel>
-
-          <Carousel
-            id="thumbnails"
-            :autoplay="2000"
-            :items-to-show="4"
-            :wrap-around="true"
-            v-model="currentSlide"
-            ref="carousel"
-            class="icon"
-            :breakpoints="breakpoints"
+  <v-container>
+    <v-card color="transparent" elevation="0">
+      <v-row>
+        <v-col cols="12" md="6" class="d-flex align-center">
+          <v-card
+            color="transparent"
+            height="100%"
+            width="100%"
+            elevation="0"
+            class="d-flex align-start"
           >
-            <Slide v-for="item in dato[0].imagenes" :key="item.id">
-              <v-card width="120px" height="120px" color="transparent" elevation="0">
-                <img :src="item.src" class="imagen" />
-              </v-card>
-            </Slide>
-
-            <template #addons>
-              <Navigation />
-              <Pagination />
+            <template v-if="!select.src">
+              <v-img :src="data.imagenes[0].src" width="100%" />
             </template>
-          </Carousel>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="6">
-        <h2>{{ dato[0].nombre }}</h2>
-        <h6 class="descripcion mt-2">{{ dato[0].descripcionPrevia }}</h6>
-        <div class="mt-2">
-          <h3>CARACTERISTICAS</h3>
-          <ul v-for="item in dato[0].especificaciones" :key="item.id">
-            <li class="mt-4 ml-6">{{ item.descripcion }}</li>
-          </ul>
-        </div>
-        <v-card-actions class="mt-4">
-          <v-spacer></v-spacer>
-          <v-btn @click="$emit('regresar-vista')">regresar</v-btn>
-          <BotonCotizar variant="flat" />
-        </v-card-actions>
-      </v-col>
-    </v-row>
-  </v-card>
-  <v-card color="warning" class="text-center d-flex align-center justify-center mt-6" height="auto">
-    <p class="small">
-      {{ dato[0].info }}
-    </p>
-  </v-card>
+            <template v-else>
+              <v-img :src="select.src" width="100%" />
+            </template>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="6">
+          <h3>Selecciona el color de la silla</h3>
+          <v-select
+            v-model="select"
+            :items="data.imagenes"
+            :item-props="itemProps"
+            return-object
+            single-line
+          ></v-select>
+          <h2>{{ data.nombre }}</h2>
+          <h6 class="descripcion mt-2">{{ data.descripcionPrevia }}</h6>
+
+          <div class="mt-2">
+            <h3>CARACTERISTICAS</h3>
+            <ul v-for="item in data.especificaciones" :key="item.id">
+              <li class="mt-4 ml-6">{{ item.descripcion }}</li>
+            </ul>
+          </div>
+          <v-card-actions class="mt-4">
+            <v-spacer></v-spacer>
+            <router-link to="/sillas-de-uso-diario"><v-btn>regresar</v-btn></router-link>
+            <BotonCotizar variant="flat" />
+          </v-card-actions>
+        </v-col>
+      </v-row>
+    </v-card>
+    <v-card
+      color="warning"
+      class="text-center d-flex align-center justify-center mt-6"
+      height="auto"
+    >
+      <p class="small">
+        {{ data.info }}
+      </p>
+    </v-card>
+  </v-container>
 </template>
-<script>
-import { defineComponent } from 'vue'
-import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
-
-import 'vue3-carousel/dist/carousel.css'
-
-export default defineComponent({
-  name: 'Gallery',
-  components: {
-    Carousel,
-    Slide,
-    Navigation,
-    Pagination
-  },
-  data: () => ({
-    currentSlide: 0,
-    breakpoints: {
-      // 700px and up
-      0: {
-        itemsToShow: 1.6
-      },
-      600: {
-        itemsToShow: 3
-      }
-      // 960: {
-      //   itemsToShow: 4
-      // }
-    }
-  }),
-  methods: {
-    slideTo(val) {
-      this.currentSlide = val
-    }
-  }
-})
-</script>
 <style scoped>
 @media only screen and (max-width: 600px) {
   .imagen-principal {

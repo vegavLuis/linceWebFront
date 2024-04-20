@@ -1,11 +1,17 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import ImagenAkiva1 from '../../assets/sillasUsoDiario/akiva/img1.png'
-import ImagenAkiva2 from '../../assets/sillasUsoDiario/akiva/img2.png'
-import ImagenAkiva3 from '../../assets/sillasUsoDiario/akiva/img3.png'
-import ImagenAkiva4 from '../../assets/sillasUsoDiario/akiva/img4.png'
-import ImagenAkiva5 from '../../assets/sillasUsoDiario/akiva/img5.png'
-import ImagenAkiva6 from '../../assets/sillasUsoDiario/akiva/img6.png'
+// AKIVA
+import AkivaDarkSienna from '@/assets/sillasUsoDiario/akiva/Akiva_dark_sienna.jpg'
+import AkivaMadder from '@/assets/sillasUsoDiario/akiva/Akiva_madder.jpg'
+import AkivaAmaranth from '@/assets/sillasUsoDiario/akiva/amaranth.jpg'
+import AkivaArsenico from '@/assets/sillasUsoDiario/akiva/Arsenico.jpg'
+import AkivaArtichoc from '@/assets/sillasUsoDiario/akiva/Artichoc.jpg'
+// import ImagenAkiva2 from '../../assets/sillasUsoDiario/akiva/img2.png'
+// import ImagenAkiva3 from '../../assets/sillasUsoDiario/akiva/img3.png'
+// import ImagenAkiva4 from '../../assets/sillasUsoDiario/akiva/img4.png'
+// import ImagenAkiva5 from '../../assets/sillasUsoDiario/akiva/img5.png'
+// import ImagenAkiva6 from '../../assets/sillasUsoDiario/akiva/img6.png'
+
 import ImagenX41 from '../../assets/sillasUsoDiario/x4/img1.png'
 import ImagenX42 from '../../assets/sillasUsoDiario/x4/img2.png'
 import ImagenX43 from '../../assets/sillasUsoDiario/x4/img3.png'
@@ -73,12 +79,11 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         }
       ],
       imagenes: [
-        { src: ImagenAkiva1 },
-        { src: ImagenAkiva2 },
-        { src: ImagenAkiva3 },
-        { src: ImagenAkiva4 },
-        { src: ImagenAkiva5 },
-        { src: ImagenAkiva6 }
+        { src: AkivaDarkSienna, color: 'Dark siena' },
+        { src: AkivaMadder, color: 'Madder' },
+        { src: AkivaAmaranth, color: 'Amaranth' },
+        { src: AkivaArsenico, color: 'Arsenico' },
+        { src: AkivaArtichoc, color: 'Artichoc' }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     },

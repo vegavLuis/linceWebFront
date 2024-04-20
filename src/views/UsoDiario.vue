@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario'
-import Especificaciones from '../components/SillasUsoDiario/Especificaciones.vue'
+// import Especificaciones from '../components/SillasUsoDiario/Especificaciones.vue'
 import BotonCotizar from '../components/BotonCotizar.vue'
 
 const datos = ref([])
@@ -34,7 +34,7 @@ const regresarVista = () => {
         <v-col cols="12" md="6" v-for="item in datos.data" :key="item.nombre">
           <v-card elevation="4" class="card">
             <v-img class="align-end text-white" height="400" :src="item.imagenes[0]" fill>
-              <v-card-title class="titulo-card">{{ item.nombre }}</v-card-title>
+              <!-- <v-card-title class="titulo-card">{{ item.nombre }}</v-card-title> -->
             </v-img>
             <v-card-subtitle class="pt-4">Uso cotidiano </v-card-subtitle>
             <v-card-text>
@@ -45,12 +45,16 @@ const regresarVista = () => {
             <v-card-actions>
               <v-spacer></v-spacer>
               <BotonCotizar />
-              <v-btn color="primary" variant="flat" @click="cambiarVista(item)"> Explorar </v-btn>
+              <!-- <v-btn color="primary" variant="flat" @click="cambiarVista(item)"> Explorar </v-btn> -->
+              <!-- <router-link :to="'/sillas-de-uso-diario-por-id/'{item.id}"> Explorar </router-link> -->
+              <router-link :to="{ name: 'sillas-de-uso-diario-id', params: { id: item.id } }">
+                Explorar
+              </router-link>
             </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
-      <Especificaciones v-if="mostrar" :dato="dato" @regresar-vista="regresarVista" />
+      <!-- <Especificaciones v-if="mostrar" :dato="dato" @regresar-vista="regresarVista" /> -->
     </div>
   </v-container>
 </template>
