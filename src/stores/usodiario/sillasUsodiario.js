@@ -6,6 +6,43 @@ import AkivaMadder from '@/assets/sillasUsoDiario/akiva/Akiva_madder.jpg'
 import AkivaAmaranth from '@/assets/sillasUsoDiario/akiva/amaranth.jpg'
 import AkivaArsenico from '@/assets/sillasUsoDiario/akiva/Arsenico.jpg'
 import AkivaArtichoc from '@/assets/sillasUsoDiario/akiva/Artichoc.jpg'
+import AkivaBlackCoffee from '@/assets/sillasUsoDiario/akiva/BlackCoffee.jpg'
+import AkivaBrownCoffe from '@/assets/sillasUsoDiario/akiva/BrownCoffe.jpg'
+import AkivaCarmine from '@/assets/sillasUsoDiario/akiva/Carmine.jpg'
+import AkivaCatawba from '@/assets/sillasUsoDiario/akiva/Catawba.jpg'
+import AkivaCultur from '@/assets/sillasUsoDiario/akiva/Cultur.jpg'
+import AkivaCyberYellow from '@/assets/sillasUsoDiario/akiva/CyberYellow.jpg'
+import AkivaDarkCharcoal from '@/assets/sillasUsoDiario/akiva/DarkCharcoal.jpg'
+import AkivaDarkJungle from '@/assets/sillasUsoDiario/akiva/DarkJungle.jpg'
+import AkivaDavys from '@/assets/sillasUsoDiario/akiva/Davys.jpg'
+import AkivaFaluRed from '@/assets/sillasUsoDiario/akiva/FaluRed.jpg'
+import AkivaForestGreen from '@/assets/sillasUsoDiario/akiva/ForestGreen.jpg'
+import AkivaGains from '@/assets/sillasUsoDiario/akiva/Gains.jpg'
+import AkivaGrayX11 from '@/assets/sillasUsoDiario/akiva/GrayX11.jpg'
+import AkivaGunmetal from '@/assets/sillasUsoDiario/akiva/Gunmetal.jpg'
+import AkivaIndigoR from '@/assets/sillasUsoDiario/akiva/IndigoR.jpg'
+import AkivaKeppel from '@/assets/sillasUsoDiario/akiva/Keppel.jpg'
+import AkivaLazuli from '@/assets/sillasUsoDiario/akiva/Lazuli.jpg'
+import AkivaMadderLake from '@/assets/sillasUsoDiario/akiva/MadderLake.jpg'
+import AkivaGrays from '@/assets/sillasUsoDiario/akiva/Grays.jpg'
+import AkivaMikado from '@/assets/sillasUsoDiario/akiva/Mikado.jpg'
+import AkivaNesse from '@/assets/sillasUsoDiario/akiva/Nesse.jpg'
+import AkivaOnyx from '@/assets/sillasUsoDiario/akiva/Onyx.jpg'
+import AkivaOtterSpace from '@/assets/sillasUsoDiario/akiva/OtterSpace.jpg'
+import AkivaPhili from '@/assets/sillasUsoDiario/akiva/Phili.jpg'
+import AkivaPlum from '@/assets/sillasUsoDiario/akiva/Plum.jpg'
+import AkivaPrussianBlue from '@/assets/sillasUsoDiario/akiva/PrussianBlue.jpg'
+import AkivaPurp from '@/assets/sillasUsoDiario/akiva/Purp.jpg'
+import AkivaRebecca from '@/assets/sillasUsoDiario/akiva/Rebecca.jpg'
+import AkivaSmoky from '@/assets/sillasUsoDiario/akiva/Smoky.jpg'
+import AkivaTangelo from '@/assets/sillasUsoDiario/akiva/Tangelo.jpg'
+import AkivaTemptress from '@/assets/sillasUsoDiario/akiva/Temptress.jpg'
+import AkivaThalo from '@/assets/sillasUsoDiario/akiva/Thalo.jpg'
+import AkivaVioleta from '@/assets/sillasUsoDiario/akiva/Violeta.jpg'
+import AkivaWagen from '@/assets/sillasUsoDiario/akiva/Wagen.jpg'
+import AkivaYankeesBlue from '@/assets/sillasUsoDiario/akiva/YankeesBlue.jpg'
+import AkivaYellowSun from '@/assets/sillasUsoDiario/akiva/YellowSun.jpg'
+
 // import ImagenAkiva2 from '../../assets/sillasUsoDiario/akiva/img2.png'
 // import ImagenAkiva3 from '../../assets/sillasUsoDiario/akiva/img3.png'
 // import ImagenAkiva4 from '../../assets/sillasUsoDiario/akiva/img4.png'
@@ -83,7 +120,43 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         { src: AkivaMadder, color: 'Madder' },
         { src: AkivaAmaranth, color: 'Amaranth' },
         { src: AkivaArsenico, color: 'Arsenico' },
-        { src: AkivaArtichoc, color: 'Artichoc' }
+        { src: AkivaArtichoc, color: 'Artichoc' },
+        { src: AkivaBlackCoffee, color: 'Black Coffe' },
+        { src: AkivaBrownCoffe, color: 'Brown Coffe' },
+        { src: AkivaCarmine, color: 'Carmine' },
+        { src: AkivaCatawba, color: 'Catawba' },
+        { src: AkivaCultur, color: 'Cultur' },
+        { src: AkivaCyberYellow, color: 'Cyber Yellow' },
+        { src: AkivaDarkCharcoal, color: 'Dark Charcoal' },
+        { src: AkivaDarkJungle, color: 'Dark Jungle' },
+        { src: AkivaDavys, color: 'Davys' },
+        { src: AkivaFaluRed, color: 'FaluRed' },
+        { src: AkivaForestGreen, color: 'Forest Green' },
+        { src: AkivaGains, color: 'Gains' },
+        { src: AkivaGrayX11, color: 'Gray x11' },
+        { src: AkivaGunmetal, color: 'Gunmetal' },
+        { src: AkivaIndigoR, color: 'Indigo R' },
+        { src: AkivaKeppel, color: 'Keppel' },
+        { src: AkivaLazuli, color: 'Lazuli' },
+        { src: AkivaMadderLake, color: 'Madder Lake' },
+        { src: AkivaGrays, color: 'Grays' },
+        { src: AkivaMikado, color: 'Mikado' },
+        { src: AkivaNesse, color: 'Nesse' },
+        { src: AkivaOnyx, color: 'Onyx' },
+        { src: AkivaOtterSpace, color: 'Otter Space' },
+        { src: AkivaPhili, color: 'Phili' },
+        { src: AkivaPlum, color: 'Plum' },
+        { src: AkivaPrussianBlue, color: 'Prussian Blue' },
+        { src: AkivaPurp, color: 'Purp' },
+        { src: AkivaRebecca, color: 'Rebecca' },
+        { src: AkivaSmoky, color: 'Smoky' },
+        { src: AkivaTangelo, color: 'Tangelo' },
+        { src: AkivaTemptress, color: 'Temptress' },
+        { src: AkivaThalo, color: 'Thalo' },
+        { src: AkivaVioleta, color: 'Violeta' },
+        { src: AkivaWagen, color: 'Wagen' },
+        { src: AkivaYankeesBlue, color: 'Yankees Blue' },
+        { src: AkivaYellowSun, color: 'Yellow Sun' }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     },
