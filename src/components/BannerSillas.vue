@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { RouterLink } from 'vue-router'
 import { useBannerSillas } from '../stores/bannerSillas'
 
 defineEmits(['cambiar-vista'])
@@ -19,9 +20,15 @@ onMounted(() => {
         <v-img :src="item.src" class="flex-1-1-100 ma-2 pa-2 imagen-silla" />
         <h2 class="texto nombre-silla">{{ item.nombre }}</h2>
         <h2 class="texto subnombre-silla">{{ item.subnombre }}</h2>
-        <v-btn color="primary" class="boton-silla" @click="$emit('cambiar-vista', item.info[0])"
-          >Ver mas de {{ item.subnombre }}</v-btn
+        <!-- <v-btn color="primary" class="boton-silla" @click="$emit('cambiar-vista', item.info[0])"
+          >Ver mas de {{ item.subnombre }}</v-btn -->
+        <router-link
+          color="primary"
+          class="boton-silla"
+          :to="{ name: item.to, params: { id: item.params } }"
         >
+          <v-btn color="primary"> Ver mas </v-btn>
+        </router-link>
       </div>
     </Slide>
     <template #addons>
@@ -55,7 +62,7 @@ export default defineComponent({
   top: 50%;
   left: 40%;
   transform: translate(-50%, -50%);
-  filter: drop-shadow(0 0 20px white);
+  /* filter: drop-shadow(0 0 20px white); */
 }
 .texto {
   color: white;

@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSillasUsoDiario } from '@/stores/usodiario/sillasUsodiario.js'
+import { useSillasDeportivas } from '@/stores/sillasDeportivas.js'
 import BotonCotizar from '../BotonCotizar.vue'
 const route = useRoute()
-const i = useSillasUsoDiario()
+const i = useSillasDeportivas()
 const idRouter = ref(route.params.id)
 const data = ref([])
 function numero(n) {
@@ -62,7 +62,7 @@ onMounted(() => {})
           </div>
           <v-card-actions class="mt-4">
             <v-spacer></v-spacer>
-            <router-link to="/sillas-de-uso-diario"><v-btn>regresar</v-btn></router-link>
+            <router-link to="/sillas-deportivas"><v-btn>regresar</v-btn></router-link>
             <BotonCotizar variant="flat" />
           </v-card-actions>
         </v-col>

@@ -85,7 +85,9 @@ export const useBannerSillas = defineStore('bannerSillas', () => {
           ],
           info: `Los rodamientos de fibra de carbón o accesorios tienen costo extra`
         }
-      ]
+      ],
+      to: 'sillas-deportivas-id',
+      params: '6'
     },
     {
       src: imagen2,

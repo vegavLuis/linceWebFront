@@ -48,7 +48,7 @@ const regresarVista = () => {
               <!-- <v-btn color="primary" variant="flat" @click="cambiarVista(item)"> Explorar </v-btn> -->
               <!-- <router-link :to="'/sillas-de-uso-diario-por-id/'{item.id}"> Explorar </router-link> -->
               <router-link :to="{ name: 'sillas-de-uso-diario-id', params: { id: item.id } }">
-                Explorar
+                <v-btn color="primary" variant="flat"> Explorar </v-btn>
               </router-link>
             </v-card-actions>
           </v-card>
