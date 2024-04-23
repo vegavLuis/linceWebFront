@@ -128,7 +128,9 @@ export const useBannerSillas = defineStore('bannerSillas', () => {
           ],
           info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
         }
-      ]
+      ],
+      to: 'sillas-de-uso-diario-id',
+      params: '5'
     },
     {
       src: imagen3,
@@ -174,7 +176,9 @@ export const useBannerSillas = defineStore('bannerSillas', () => {
           ],
           info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
         }
-      ]
+      ],
+      to: 'sillas-de-uso-diario-id',
+      params: '4'
     },
     {
       src: imagen4,
@@ -217,7 +221,9 @@ export const useBannerSillas = defineStore('bannerSillas', () => {
           ],
           info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
         }
-      ]
+      ],
+      to: 'sillas-de-uso-diario-id',
+      params: '7'
     },
     {
       src: imagen5,
@@ -263,7 +269,9 @@ export const useBannerSillas = defineStore('bannerSillas', () => {
           ],
           info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros así como amarres clip strap, protectores de estructura, etc., tienen costo extra por lo que deberán ser cotizadas. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
         }
-      ]
+      ],
+      to: 'sillas-deportivas-id',
+      params: '2'
     }
   ])
   return {
