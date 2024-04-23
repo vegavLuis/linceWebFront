@@ -49,10 +49,55 @@ import AkivaYellowSun from '@/assets/sillasUsoDiario/akiva/YellowSun.jpg'
 // import ImagenAkiva5 from '../../assets/sillasUsoDiario/akiva/img5.png'
 // import ImagenAkiva6 from '../../assets/sillasUsoDiario/akiva/img6.png'
 
-import ImagenX41 from '../../assets/sillasUsoDiario/x4/img1.png'
-import ImagenX42 from '../../assets/sillasUsoDiario/x4/img2.png'
-import ImagenX43 from '../../assets/sillasUsoDiario/x4/img3.png'
-import ImagenX44 from '../../assets/sillasUsoDiario/x4/img4.png'
+// LINCE X4
+import LinceX4Amaranth from '@/assets/sillasUsoDiario/x4/Amaranth.jpg'
+import LinceX4Arsenico from '@/assets/sillasUsoDiario/x4/Arsenico.jpg'
+import LinceX4Artichoc from '@/assets/sillasUsoDiario/x4/Artichoc.jpg'
+import LinceX4BlackCoffe from '@/assets/sillasUsoDiario/x4/BlackCoffe.jpg'
+import LinceX4BrownCoffe from '@/assets/sillasUsoDiario/x4/BrownCoffe.jpg'
+import LinceX4Carmine from '@/assets/sillasUsoDiario/x4/Carmine.jpg'
+import LinceX4Catawba from '@/assets/sillasUsoDiario/x4/Catawba.jpg'
+import LinceX4Cultur from '@/assets/sillasUsoDiario/x4/Cultur.jpg'
+import LinceX4CyberYellow from '@/assets/sillasUsoDiario/x4/CyberYellow.jpg'
+import LinceX4DarkCharcoal from '@/assets/sillasUsoDiario/x4/DarkCharcoal.jpg'
+import LinceX4DarkJungle from '@/assets/sillasUsoDiario/x4/DarkJungle.jpg'
+import LinceX4DarkSienna from '@/assets/sillasUsoDiario/x4/DarkSienna.jpg'
+import LinceX4Davys from '@/assets/sillasUsoDiario/x4/Davys.jpg'
+import LinceX4FaluRed from '@/assets/sillasUsoDiario/x4/FaluRed.jpg'
+import LinceX4ForestGreen from '@/assets/sillasUsoDiario/x4/ForestGreen.jpg'
+import LinceX4Gains from '@/assets/sillasUsoDiario/x4/Gains.jpg'
+import LinceX4GrayX11 from '@/assets/sillasUsoDiario/x4/GrayX11.jpg'
+import LinceX4Grays from '@/assets/sillasUsoDiario/x4/Grays.jpg'
+import LinceX4Gunmetal from '@/assets/sillasUsoDiario/x4/Gunmetal.jpg'
+import LinceX4IndigoR from '@/assets/sillasUsoDiario/x4/IndigoR.jpg'
+import LinceX4IndigoR2 from '@/assets/sillasUsoDiario/x4/IndigoR2.jpg'
+import LinceX4Kepel from '@/assets/sillasUsoDiario/x4/Kepel.jpg'
+import LinceX4Lazuli from '@/assets/sillasUsoDiario/x4/Lazuli.jpg'
+import LinceX4MadderLake from '@/assets/sillasUsoDiario/x4/MadderLake.jpg'
+import LinceX4Madder from '@/assets/sillasUsoDiario/x4/Madder.jpg'
+import LinceX4Mikado from '@/assets/sillasUsoDiario/x4/Mikado.jpg'
+import LinceX4Nesse from '@/assets/sillasUsoDiario/x4/Nesse.jpg'
+import LinceX4Onyx from '@/assets/sillasUsoDiario/x4/Onyx.jpg'
+import LinceX4OtterSpace from '@/assets/sillasUsoDiario/x4/OtterSpace.jpg'
+import LinceX4Phili from '@/assets/sillasUsoDiario/x4/Phili.jpg'
+import LinceX4Plum from '@/assets/sillasUsoDiario/x4/Plum.jpg'
+import LinceX4PrussianBlue from '@/assets/sillasUsoDiario/x4/PrussianBlue.jpg'
+import LinceX4Purp from '@/assets/sillasUsoDiario/x4/Purp.jpg'
+import LinceX4Rebecca from '@/assets/sillasUsoDiario/x4/Rebecca.jpg'
+import LinceX4Smoky from '@/assets/sillasUsoDiario/x4/Smoky.jpg'
+import LinceX4Tangelo from '@/assets/sillasUsoDiario/x4/Tangelo.jpg'
+import LinceX4Temptress from '@/assets/sillasUsoDiario/x4/Temptress.jpg'
+import LinceX4Thalo from '@/assets/sillasUsoDiario/x4/Thalo.jpg'
+import LinceX4Violeta from '@/assets/sillasUsoDiario/x4/Violeta.jpg'
+import LinceX4Wagen from '@/assets/sillasUsoDiario/x4/Wagen.jpg'
+import LinceX4YankeesBlue from '@/assets/sillasUsoDiario/x4/YankeesBlue.jpg'
+import LinceX4YellowSun from '@/assets/sillasUsoDiario/x4/YellowSun.jpg'
+
+// import ImagenX41 from '../../assets/sillasUsoDiario/x4/img1.png'
+// import ImagenX42 from '../../assets/sillasUsoDiario/x4/img2.png'
+// import ImagenX43 from '../../assets/sillasUsoDiario/x4/img3.png'
+// import ImagenX44 from '../../assets/sillasUsoDiario/x4/img4.png'
+
 import ImagenConfortZZ1 from '../../assets/sillasUsoDiario/confortZZ/img1.png'
 import ImagenConfortZZ2 from '../../assets/sillasUsoDiario/confortZZ/img2.png'
 import ImagenConfortZZ3 from '../../assets/sillasUsoDiario/confortZZ/img3.png'
@@ -191,7 +236,50 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
           descripcion: `Peso de estructura desde 7 kg. sin rodamientos ni accesorios`
         }
       ],
-      imagenes: [{ src: ImagenX41 }, { src: ImagenX42 }, { src: ImagenX43 }, { src: ImagenX44 }],
+      imagenes: [
+        { src: LinceX4Amaranth, color: 'Amaranth' },
+        { src: LinceX4Arsenico, color: 'Arsenico' },
+        { src: LinceX4Artichoc, color: 'Artichoc' },
+        { src: LinceX4BlackCoffe, color: 'Black Coffe' },
+        { src: LinceX4BrownCoffe, color: 'Brown Coffe' },
+        { src: LinceX4Carmine, color: 'Carmine' },
+        { src: LinceX4Catawba, color: 'Catawba' },
+        { src: LinceX4Cultur, color: 'Cultur' },
+        { src: LinceX4CyberYellow, color: 'Cyber Yellow' },
+        { src: LinceX4DarkCharcoal, color: 'Dark Charcoal' },
+        { src: LinceX4DarkJungle, color: 'Dark Jungle' },
+        { src: LinceX4DarkSienna, color: 'Dark Sienna' },
+        { src: LinceX4Davys, color: "Davy's" },
+        { src: LinceX4FaluRed, color: 'Falu Red' },
+        { src: LinceX4ForestGreen, color: 'Forest Green' },
+        { src: LinceX4Gains, color: 'Gains' },
+        { src: LinceX4GrayX11, color: 'Gray X11' },
+        { src: LinceX4Grays, color: 'Grays' },
+        { src: LinceX4Gunmetal, color: 'Gunmetal' },
+        { src: LinceX4IndigoR, color: 'Indigo R' },
+        { src: LinceX4IndigoR2, color: 'Indigo R2' },
+        { src: LinceX4Kepel, color: 'Kepel' },
+        { src: LinceX4Lazuli, color: 'Lazuli' },
+        { src: LinceX4MadderLake, color: 'Madder Lake' },
+        { src: LinceX4Madder, color: 'Madder' },
+        { src: LinceX4Mikado, color: 'Mikado' },
+        { src: LinceX4Nesse, color: 'Nesse' },
+        { src: LinceX4Onyx, color: 'Onyx' },
+        { src: LinceX4OtterSpace, color: 'Otter Space' },
+        { src: LinceX4Phili, color: 'Phili' },
+        { src: LinceX4Plum, color: 'Plum' },
+        { src: LinceX4PrussianBlue, color: 'Prussian Blue' },
+        { src: LinceX4Purp, color: 'Purp' },
+        { src: LinceX4Rebecca, color: 'Rebecca' },
+        { src: LinceX4Smoky, color: 'Smoky' },
+        { src: LinceX4Tangelo, color: 'Tangelo' },
+        { src: LinceX4Temptress, color: 'Temptress' },
+        { src: LinceX4Thalo, color: 'Thalo' },
+        { src: LinceX4Violeta, color: 'Violeta' },
+        { src: LinceX4Wagen, color: 'Wagen' },
+        { src: LinceX4YankeesBlue, color: 'Yankees Blue' },
+        { src: LinceX4YellowSun, color: 'Yellow Sun' }
+      ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     },
     {
