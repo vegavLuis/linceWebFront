@@ -40,6 +40,9 @@ const storeRedes = useRedesSociales()
       <p class="small mr-4 pt-2">Email: sillaslince@gmail.com</p>
       <p class="small mr-4 pt-2">Tel: + (55) 5441 9219 / (55) 5732 9348</p>
       <p class="small mr-4 pt-2">WhatsApp: 5581020704</p>
+      <a href="mailto:sillaslince@gmail.com" class="router">
+        <p class="small mr-4 pt-2">Quejas y sugerencias <v-icon class="mail">mdi-gmail</v-icon></p>
+      </a>
       <!-- <div class="d-flex flex-column">
       </div> -->
       <v-btn color="transparent">
@@ -75,5 +78,12 @@ const storeRedes = useRedesSociales()
   height: 100%;
   object-fit: contain;
   object-position: center;
+}
+.router {
+  text-decoration: none;
+  color: white;
+}
+.mail {
+  color: #ef5350;
 }
 </style>

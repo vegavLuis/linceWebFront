@@ -9,12 +9,12 @@ export const useRedesSociales = defineStore('redesSociales', () => {
       color: '#3b5998',
       texto: 'Conoce nuestras experiencias'
     },
-    {
-      icon: 'mdi-gmail',
-      to: 'mailto:sillaslince@gmail.com',
-      color: '#ef5350',
-      texto: 'Quejas y sugerencias'
-    },
+    // {
+    //   icon: 'mdi-gmail',
+    //   to: 'mailto:sillaslince@gmail.com',
+    //   color: '#ef5350',
+    //   texto: 'Quejas y sugerencias'
+    // },
     {
       icon: 'mdi-whatsapp',
       to: 'https://api.whatsapp.com/send?phone=5215581020704',

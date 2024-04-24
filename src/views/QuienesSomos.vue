@@ -25,7 +25,7 @@ onMounted(() => {
     </v-card>
     <div class="pt-8">
       <!-- <v-divider :thickness="1" color="black" class="border-opacity-100"></v-divider> -->
-      <p class="pt-4">
+      <p class="pt-4 font-weight-black">
         Productos: Fabricamos de ultra ligera manuales como: La serie Lince, SKY, Akiva, y Shockwave
         (estructura en L). Las deportivas B-Ball como: Impacto, Challenger (ajustable), y 2EZ. Toda
         la serie de sillas LINCE es medida y fabricada por nuestros expertos conocedores en el
