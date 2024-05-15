@@ -117,8 +117,48 @@ const storeRedes = useRedesSociales()
       <v-col cols="12" class="text-center mt-6">
         <p class="text-center">DISTRIBUIDORES AUTORIZADOS</p>
       </v-col>
-
-      <v-card
+      <v-card elevation="0" color="transparent" class="d-flex flex-wrap">
+        <!-- Primer container -->
+        <v-card color="transparent" class="d-flex flex-1-1-100 justify-center" elevation="0">
+          <v-card
+            width="100px"
+            height="100px"
+            color="transparent"
+            elevation="0"
+            class="mx-4 imagen"
+          >
+            <v-img :src="data.datos[0].src" width="100%" height="100%"></v-img>
+          </v-card>
+          <v-card
+            width="100px"
+            height="100px"
+            color="transparent"
+            elevation="0"
+            class="mx-4 imagen"
+          >
+            <v-img :src="data.datos[1].src" width="100%" height="100%"></v-img>
+          </v-card>
+          <v-card
+            width="100px"
+            height="100px"
+            color="transparent"
+            elevation="0"
+            class="mx-4 imagen"
+          >
+            <v-img :src="data.datos[2].src" width="100%" height="100%"></v-img>
+          </v-card>
+        </v-card>
+        <!-- Segundo container -->
+        <v-card color="transparent" class="d-flex flex-1-1-100 justify-center" elevation="0">
+          <v-card width="80px" height="80px" color="transparent" elevation="0" class="mx-4 imagen">
+            <v-img :src="data.datos[3].src" width="100%" height="100%"></v-img>
+          </v-card>
+          <v-card width="80px" height="80px" color="transparent" elevation="0" class="mx-4 imagen">
+            <v-img :src="data.datos[4].src" width="100%" height="100%"></v-img>
+          </v-card>
+        </v-card>
+      </v-card>
+      <!-- <v-card
         width="55px"
         height="55px"
         elevation="0"
@@ -128,7 +168,7 @@ const storeRedes = useRedesSociales()
         :key="itema.id"
       >
         <v-img :src="itema.src" class="imagen"></v-img>
-      </v-card>
+      </v-card> -->
     </v-row>
   </v-footer>
 </template>
@@ -148,5 +188,11 @@ const storeRedes = useRedesSociales()
 }
 .mail {
   color: #ef5350;
+}
+@media (width <= 400px) {
+  .imagen {
+    width: 60px !important;
+    height: 60px !important;
+  }
 }
 </style>

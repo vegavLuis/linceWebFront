@@ -48,9 +48,8 @@ export const useAppStore = defineStore('useApp', () => {
       hijos: [
         { nombre: 'Inicio', link: '/' },
         { nombre: '¿Quienes Somos?', link: '/quienes-somos' },
-        { nombre: 'Terminos y Condiciones', link: '/terminos-condiciones' },
-        { nombre: 'Aviso de Privacidad', link: '/aviso-de-privacidad' },
-        { nombre: 'Comunicados', link: '/comunicados' }
+        { nombre: 'Promociones', link: '/' },
+        { nombre: 'Contacto', link: '/' }
       ]
     },
     {
@@ -63,28 +62,28 @@ export const useAppStore = defineStore('useApp', () => {
       ]
     },
     {
-      nombre: 'Refacciones',
+      nombre: 'Refacciones y Accesorios',
       hijos: [
         { nombre: 'Ruedas traseras y aros de avance', link: '/' },
         { nombre: 'Ruedas delanteras o casters', link: '/' },
         { nombre: 'Llantas', link: '/' },
         { nombre: 'Ejes y baleros', link: '/' },
         { nombre: 'Frenos', link: '/' },
-        { nombre: 'Sujetadores o amarres', link: '/' }
-      ]
-    },
-    {
-      nombre: 'Accesorios',
-      hijos: [
+        { nombre: 'Sujetadores o amarres', link: '/' },
         { nombre: 'Cojines', link: '/' },
         { nombre: 'Respaldos', link: '/' }
       ]
     },
+    // {
+    //   nombre: 'Accesorios',
+    //   hijos: []
+    // },
     {
-      nombre: 'More',
+      nombre: 'Mas',
       hijos: [
-        { nombre: 'Promociones', link: '/' },
-        { nombre: 'Contacto', link: '/' }
+        { nombre: 'Terminos y Condiciones', link: '/terminos-condiciones' },
+        { nombre: 'Aviso de Privacidad', link: '/aviso-de-privacidad' },
+        { nombre: 'Comunicados', link: '/comunicados' }
       ]
     }
   ])

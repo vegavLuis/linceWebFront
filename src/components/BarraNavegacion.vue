@@ -49,7 +49,7 @@ onMounted(() => {
         </v-list>
       </v-menu>
     </template>
-    <v-list>
+    <!-- <v-list>
       <v-list-item class="pl-0 pr-0">
         <div class="barra">
           <router-link to="/outlet" style="text-decoration: none; color: inherit">
@@ -57,7 +57,7 @@ onMounted(() => {
           </router-link>
         </div>
       </v-list-item>
-    </v-list>
+    </v-list> -->
     <v-list>
       <v-list-item class="pl-0">
         <div class="barra">
