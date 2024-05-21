@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import Componente from '../components/Componente.vue'
-import Comunidad from '../components/Comunidad.vue'
+// import Comunidad from '../components/Comunidad.vue'
+import Mapa from '@/components/Mapa.vue'
 import BannerSillas from '../components/BannerSillas.vue'
 import Especificaciones from '../components/SillasUsoDiario/Especificaciones.vue'
 import ima from '../assets/ImagenSilla.jpg'
@@ -35,7 +36,8 @@ const regresarVista = () => {
       </div>
     </v-parallax>
     <v-divider class="ma-4 border-opacity-100" color="#F44336"></v-divider>
-    <Comunidad />
+    <!-- <Comunidad /> -->
+    <Mapa></Mapa>
     <v-divider class="ma-4 pb-4 border-opacity-100" color="#F44336"></v-divider>
     <BannerSillas @cambiar-vista="cambiarVista" />
     <v-divider class="ma-4 pb-4 border-opacity-100" color="#F44336"></v-divider>
