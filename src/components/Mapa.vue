@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import logo from '@/assets/logo.jpg'
 import sonora from '@/assets/mapa/sonora.jpeg'
 import bajaCalifornia from '@/assets/mapa/bajaCalifornia.jpeg'
 import chihuahua from '@/assets/mapa/Chihuahua.jpeg'
@@ -176,7 +177,7 @@ const cerrar = () => {
 }
 </script>
 <template>
-  <v-dialog v-model="dialog" max-width="400" persistent>
+  <v-dialog v-model="dialog" max-width="600" persistent height="100%">
     <v-card class="d-flex">
       <v-container>
         <div class="d-flex justify-end">
@@ -707,7 +708,7 @@ const cerrar = () => {
 .sec {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url('@/assets/logo.jpg');
   background-size: contain;
   background-repeat: no-repeat;
