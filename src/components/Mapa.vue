@@ -21,6 +21,7 @@ import mexico from '@/assets/mapa/mexico.jpeg'
 import puebla from '@/assets/mapa/puebla.jpeg'
 </script>
 <template>
+  <h2 class="text-center font-weight-bold">Comunidad Lince</h2>
   <div class="sec">
     <svg
       baseprofile="tiny"
@@ -600,6 +601,11 @@ import puebla from '@/assets/mapa/puebla.jpeg'
 .sec {
   width: 100%;
   height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url('@/assets/logo.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .sec > svg {
   width: 100%;
