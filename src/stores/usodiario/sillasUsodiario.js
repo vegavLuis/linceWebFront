@@ -195,10 +195,50 @@ import shockwavemadder from '@/assets/sillasUsoDiario/shockwave/madder.jpg'
 // import ImagenShockwave8 from '../../assets/sillasUsoDiario/shockwave/img8.png'
 // import ImagenShockwave9 from '../../assets/sillasUsoDiario/shockwave/img9.png'
 
-import ImagenSky1 from '../../assets/sillasUsoDiario/sky/img1.png'
-import ImagenSky2 from '../../assets/sillasUsoDiario/sky/img2.png'
-import ImagenSky3 from '../../assets/sillasUsoDiario/sky/img3.png'
-import ImagenSky4 from '../../assets/sillasUsoDiario/sky/img4.png'
+// sky
+import skytemptress from '@/assets/sillasUsoDiario/sky/temptress.jpg'
+import skybrownCoffe from '@/assets/sillasUsoDiario/sky/brownCoffe.jpg'
+import skyforestGreem from '@/assets/sillasUsoDiario/sky/forestGreem.jpg'
+import skywagen from '@/assets/sillasUsoDiario/sky/wagen.jpg'
+import skyartichoc from '@/assets/sillasUsoDiario/sky/artichoc.jpg'
+import skyyellowSun from '@/assets/sillasUsoDiario/sky/yellowSun.jpg'
+import skymikado from '@/assets/sillasUsoDiario/sky/mikado.jpg'
+import skytangelo from '@/assets/sillasUsoDiario/sky/tangelo.jpg'
+import skyrebecca from '@/assets/sillasUsoDiario/sky/rebecca.jpg'
+import skynesse from '@/assets/sillasUsoDiario/sky/nesse.jpg'
+import skyplum from '@/assets/sillasUsoDiario/sky/plum.jpg'
+import skyvioleta from '@/assets/sillasUsoDiario/sky/violeta.jpg'
+import skyamaranth from '@/assets/sillasUsoDiario/sky/amaranth.jpg'
+import skymadderLake from '@/assets/sillasUsoDiario/sky/madderLake.jpg'
+import skycarmine from '@/assets/sillasUsoDiario/sky/carmine.jpg'
+import skyfaluRed from '@/assets/sillasUsoDiario/sky/faluRed.jpg'
+import skyonyx from '@/assets/sillasUsoDiario/sky/onyx.jpg'
+import skydavys from '@/assets/sillasUsoDiario/sky/davys.jpg'
+import skygrayX11 from '@/assets/sillasUsoDiario/sky/grayX11.jpg'
+import skygrays from '@/assets/sillasUsoDiario/sky/grays.jpg'
+import skygains from '@/assets/sillasUsoDiario/sky/gains.jpg'
+import skykepel from '@/assets/sillasUsoDiario/sky/kepel.jpg'
+import skylazuli from '@/assets/sillasUsoDiario/sky/lazuli.jpg'
+import skyphili from '@/assets/sillasUsoDiario/sky/phili.jpg'
+import skyarsenico from '@/assets/sillasUsoDiario/sky/arsenico.jpg'
+import skyotterSpace from '@/assets/sillasUsoDiario/sky/otterSpace.jpg'
+import skygunmetal from '@/assets/sillasUsoDiario/sky/gunmetal.jpg'
+import skydarkCharcoal from '@/assets/sillasUsoDiario/sky/darkCharcoal.jpg'
+import skydarkJungle from '@/assets/sillasUsoDiario/sky/darkJungle.jpg'
+import skysmoky from '@/assets/sillasUsoDiario/sky/smoky.jpg'
+import skythalo from '@/assets/sillasUsoDiario/sky/thalo.jpg'
+import skyprussian from '@/assets/sillasUsoDiario/sky/prussian.jpg'
+import skyyankeesBlue from '@/assets/sillasUsoDiario/sky/yankeesBlue.jpg'
+import skyindigoR2 from '@/assets/sillasUsoDiario/sky/indigoR2.jpg'
+import skyindigoR from '@/assets/sillasUsoDiario/sky/indigoR.jpg'
+import skycultur from '@/assets/sillasUsoDiario/sky/cultur.jpg'
+import skycyberYellow from '@/assets/sillasUsoDiario/sky/cyberYellow.jpg'
+import skyblackCoffe from '@/assets/sillasUsoDiario/sky/blackCoffe.jpg'
+import skypurp from '@/assets/sillasUsoDiario/sky/purp.jpg'
+import skycatawba from '@/assets/sillasUsoDiario/sky/catawba.jpg'
+import skydarkSienna from '@/assets/sillasUsoDiario/sky/darkSienna.jpg'
+import skymadder from '@/assets/sillasUsoDiario/sky/madder.jpg'
+
 import ImagenDynamic1 from '../../assets/sillasUsoDiario/dynamic/img1.png'
 import ImagenDynamic2 from '../../assets/sillasUsoDiario/dynamic/img2.png'
 import ImagenDynamic3 from '../../assets/sillasUsoDiario/dynamic/img3.png'
@@ -532,10 +572,48 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         { descripcion: `Peso de estructura desde 6.5 kg. sin rodamientos ni accesorios` }
       ],
       imagenes: [
-        { src: ImagenSky1 },
-        { src: ImagenSky2 },
-        { src: ImagenSky3 },
-        { src: ImagenSky4 }
+        { src: skytemptress, color: 'Temptress' },
+        { src: skybrownCoffe, color: 'Brown Coffe' },
+        { src: skyforestGreem, color: 'Forest Greem' },
+        { src: skywagen, color: 'Wagen' },
+        { src: skyartichoc, color: 'Artichoc' },
+        { src: skyyellowSun, color: 'Yellow Sun' },
+        { src: skymikado, color: 'Mikado' },
+        { src: skytangelo, color: 'Tangelo' },
+        { src: skyrebecca, color: 'Rebecca' },
+        { src: skynesse, color: 'Nesse' },
+        { src: skyplum, color: 'Plum' },
+        { src: skyvioleta, color: 'Violeta' },
+        { src: skyamaranth, color: 'Amaranth' },
+        { src: skymadderLake, color: 'Madder Lake' },
+        { src: skycarmine, color: 'Carmine' },
+        { src: skyfaluRed, color: 'falu Red' },
+        { src: skyonyx, color: 'Onyx' },
+        { src: skydavys, color: `Davy's` },
+        { src: skygrayX11, color: 'Gray X11' },
+        { src: skygrays, color: 'Grays' },
+        { src: skygains, color: 'Gains' },
+        { src: skykepel, color: 'Kepel' },
+        { src: skylazuli, color: 'Lazuli' },
+        { src: skyphili, color: 'Phili' },
+        { src: skyarsenico, color: 'Arsenico' },
+        { src: skyotterSpace, color: 'Otter Space' },
+        { src: skygunmetal, color: 'Gunmetal' },
+        { src: skydarkCharcoal, color: 'Dark Charcoal' },
+        { src: skydarkJungle, color: 'Dark Jungle' },
+        { src: skysmoky, color: 'Smoky' },
+        { src: skythalo, color: 'Thalo' },
+        { src: skyprussian, color: 'Prussian' },
+        { src: skyyankeesBlue, color: 'Yankees Blue' },
+        { src: skyindigoR2, color: 'Indigo R2' },
+        { src: skyindigoR, color: 'Indigo R' },
+        { src: skycultur, color: 'Cultur' },
+        { src: skycyberYellow, color: 'Cyber Yellow' },
+        { src: skyblackCoffe, color: 'Black Coffe' },
+        { src: skypurp, color: 'Purp' },
+        { src: skycatawba, color: 'Catawba' },
+        { src: skydarkSienna, color: 'Dark Sienna' },
+        { src: skymadder, color: 'Madder' }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     },
