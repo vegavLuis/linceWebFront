@@ -1,14 +1,49 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import imagne4max1 from '../assets/sillasDeportivas/cuatroMax/img1.png'
-import imagne4max2 from '../assets/sillasDeportivas/cuatroMax/img2.png'
-import imagne4max3 from '../assets/sillasDeportivas/cuatroMax/img3.png'
-import imagne4max4 from '../assets/sillasDeportivas/cuatroMax/img4.png'
-import imagne4max5 from '../assets/sillasDeportivas/cuatroMax/img5.png'
-import imagne4max6 from '../assets/sillasDeportivas/cuatroMax/img6.png'
-import imagne4max7 from '../assets/sillasDeportivas/cuatroMax/img7.png'
-import imagne4max8 from '../assets/sillasDeportivas/cuatroMax/img8.png'
+// fourmax
+import fourmaxblackCoffe from '../assets/sillasDeportivas/cuatroMax/blackCoffe.jpg'
+import fourmaxtemptress from '../assets/sillasDeportivas/cuatroMax/temptress.jpg'
+import fourmaxbrownCoffe from '../assets/sillasDeportivas/cuatroMax/brownCoffe.jpg'
+import fourmaxforestGreen from '../assets/sillasDeportivas/cuatroMax/forestGreen.jpg'
+import fourmaxwagen from '../assets/sillasDeportivas/cuatroMax/wagen.jpg'
+import fourmaxartichoc from '../assets/sillasDeportivas/cuatroMax/artichoc.jpg'
+import fourmaxyellowSun from '../assets/sillasDeportivas/cuatroMax/yellowSun.jpg'
+import fourmaxmikado from '../assets/sillasDeportivas/cuatroMax/mikado.jpg'
+import fourmaxtangelo from '../assets/sillasDeportivas/cuatroMax/tangelo.jpg'
+import fourmaxrebecca from '../assets/sillasDeportivas/cuatroMax/rebecca.jpg'
+import fourmaxnesse from '../assets/sillasDeportivas/cuatroMax/nesse.jpg'
+import fourmaxplum from '../assets/sillasDeportivas/cuatroMax/plum.jpg'
+import fourmaxvioleta from '../assets/sillasDeportivas/cuatroMax/violeta.jpg'
+import fourmaxamaranth from '../assets/sillasDeportivas/cuatroMax/amaranth.jpg'
+import fourmaxmadderLake from '../assets/sillasDeportivas/cuatroMax/madderLake.jpg'
+import fourmaxcarmine from '../assets/sillasDeportivas/cuatroMax/carmine.jpg'
+import fourmaxfaluRed from '../assets/sillasDeportivas/cuatroMax/faluRed.jpg'
+import fourmaxonyx from '../assets/sillasDeportivas/cuatroMax/onyx.jpg'
+import fourmaxdavys from '../assets/sillasDeportivas/cuatroMax/davys.jpg'
+import fourmaxgraysX11 from '../assets/sillasDeportivas/cuatroMax/graysX11.jpg'
+import fourmaxgrays from '../assets/sillasDeportivas/cuatroMax/grays.jpg'
+import fourmaxgains from '../assets/sillasDeportivas/cuatroMax/gains.jpg'
+import fourmaxkepel from '../assets/sillasDeportivas/cuatroMax/kepel.jpg'
+import fourmaxlazuli from '../assets/sillasDeportivas/cuatroMax/lazuli.jpg'
+import fourmaxphili from '../assets/sillasDeportivas/cuatroMax/phili.jpg'
+import fourmaxarsenico from '../assets/sillasDeportivas/cuatroMax/arsenico.jpg'
+import fourmaxotterSpace from '../assets/sillasDeportivas/cuatroMax/otterSpace.jpg'
+import fourmaxgunmetal from '../assets/sillasDeportivas/cuatroMax/gunmetal.jpg'
+import fourmaxdarkCharcoal from '../assets/sillasDeportivas/cuatroMax/darkCharcoal.jpg'
+import fourmaxdarkJungle from '../assets/sillasDeportivas/cuatroMax/darkJungle.jpg'
+import fourmaxsmoky from '../assets/sillasDeportivas/cuatroMax/smoky.jpg'
+import fourmaxthalo from '../assets/sillasDeportivas/cuatroMax/thalo.jpg'
+import fourmaxprussianBlue from '../assets/sillasDeportivas/cuatroMax/prussianBlue.jpg'
+import fourmaxyankeesBlue from '../assets/sillasDeportivas/cuatroMax/yankeesBlue.jpg'
+import fourmaxindigoR2 from '../assets/sillasDeportivas/cuatroMax/indigoR2.jpg'
+import fourmaxindigoR from '../assets/sillasDeportivas/cuatroMax/indigoR.jpg'
+import fourmaxcultur from '../assets/sillasDeportivas/cuatroMax/cultur.jpg'
+import fourmaxcyberYellow from '../assets/sillasDeportivas/cuatroMax/cyberYellow.jpg'
+import fourmaxpurp from '../assets/sillasDeportivas/cuatroMax/purp.jpg'
+import fourmaxcatawba from '../assets/sillasDeportivas/cuatroMax/catawba.jpg'
+import fourmaxdarkSienna from '../assets/sillasDeportivas/cuatroMax/darkSienna.jpg'
+import fourmaxmadder from '../assets/sillasDeportivas/cuatroMax/madder.jpg'
 
 import imagen2EZ1 from '../assets/sillasDeportivas/dosEZ/img1.png'
 import imagen2EZ2 from '../assets/sillasDeportivas/dosEZ/img2.png'
@@ -116,14 +151,48 @@ export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
         { descripcion: 'Respaldo fijo.' }
       ],
       imagenes: [
-        { src: imagne4max1 },
-        { src: imagne4max2 },
-        { src: imagne4max3 },
-        { src: imagne4max4 },
-        { src: imagne4max5 },
-        { src: imagne4max6 },
-        { src: imagne4max7 },
-        { src: imagne4max8 }
+        { src: fourmaxblackCoffe, color: 'Black Coffe' },
+        { src: fourmaxtemptress, color: 'Temptress' },
+        { src: fourmaxbrownCoffe, color: 'Brown Coffe' },
+        { src: fourmaxforestGreen, color: 'Forest Green' },
+        { src: fourmaxwagen, color: 'Wagen' },
+        { src: fourmaxartichoc, color: 'Artichoc' },
+        { src: fourmaxyellowSun, color: 'Yellow Sun' },
+        { src: fourmaxmikado, color: 'Mikado' },
+        { src: fourmaxtangelo, color: 'Tangelo' },
+        { src: fourmaxrebecca, color: 'Rebecca' },
+        { src: fourmaxnesse, color: 'Nesse' },
+        { src: fourmaxplum, color: 'Plum' },
+        { src: fourmaxvioleta, color: 'Violeta' },
+        { src: fourmaxamaranth, color: 'Amaranth' },
+        { src: fourmaxmadderLake, color: 'Madder Lake' },
+        { src: fourmaxcarmine, color: 'Carmine' },
+        { src: fourmaxfaluRed, color: 'Falu Red' },
+        { src: fourmaxonyx, color: 'Onyx' },
+        { src: fourmaxdavys, color: `Dav's` },
+        { src: fourmaxgraysX11, color: 'Grays X11' },
+        { src: fourmaxgrays, color: 'Grays' },
+        { src: fourmaxgains, color: 'Gains' },
+        { src: fourmaxkepel, color: 'Kepel' },
+        { src: fourmaxlazuli, color: 'Lazuli' },
+        { src: fourmaxphili, color: 'Phili' },
+        { src: fourmaxarsenico, color: 'Arsenico' },
+        { src: fourmaxotterSpace, color: 'Otter Space' },
+        { src: fourmaxgunmetal, color: 'Gunmetal' },
+        { src: fourmaxdarkCharcoal, color: 'Dark Charcoal' },
+        { src: fourmaxdarkJungle, color: 'Dark Jungle' },
+        { src: fourmaxsmoky, color: 'Smoky' },
+        { src: fourmaxthalo, color: 'Thalo' },
+        { src: fourmaxprussianBlue, color: 'Prussian Blue' },
+        { src: fourmaxyankeesBlue, color: 'Yankees Blue' },
+        { src: fourmaxindigoR2, color: 'Indigo R2' },
+        { src: fourmaxindigoR, color: 'Indigo R' },
+        { src: fourmaxcultur, color: 'Cultur' },
+        { src: fourmaxcyberYellow, color: 'Cyber Yellow' },
+        { src: fourmaxpurp, color: 'Purp' },
+        { src: fourmaxcatawba, color: 'Catawba' },
+        { src: fourmaxdarkSienna, color: 'Dark Sienna' },
+        { src: fourmaxmadder, color: 'Madder' }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros así como amarres clip strap, protectores de estructura, etc., tienen costo extra por lo que deberán ser cotizadas. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
     },
