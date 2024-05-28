@@ -9,29 +9,77 @@ import imagne4max5 from '../assets/sillasDeportivas/cuatroMax/img5.png'
 import imagne4max6 from '../assets/sillasDeportivas/cuatroMax/img6.png'
 import imagne4max7 from '../assets/sillasDeportivas/cuatroMax/img7.png'
 import imagne4max8 from '../assets/sillasDeportivas/cuatroMax/img8.png'
+
 import imagen2EZ1 from '../assets/sillasDeportivas/dosEZ/img1.png'
 import imagen2EZ2 from '../assets/sillasDeportivas/dosEZ/img2.png'
 import imagen2EZ3 from '../assets/sillasDeportivas/dosEZ/img3.png'
 import imagen2EZ4 from '../assets/sillasDeportivas/dosEZ/img4.png'
 import imagen2EZ5 from '../assets/sillasDeportivas/dosEZ/img5.png'
+
 import imagenCurve1 from '../assets/sillasDeportivas/curve/img1.png'
 import imagenCurve2 from '../assets/sillasDeportivas/curve/img2.png'
 import imagenCurve3 from '../assets/sillasDeportivas/curve/img3.png'
 import imagenCurve4 from '../assets/sillasDeportivas/curve/img4.png'
 import imagenCurve5 from '../assets/sillasDeportivas/curve/img5.png'
+
 import imagencurveTenis1 from '../assets/sillasDeportivas/curveTenis/img1.png'
 import imagencurveTenis2 from '../assets/sillasDeportivas/curveTenis/img2.png'
 import imagencurveTenis3 from '../assets/sillasDeportivas/curveTenis/img3.png'
 import imagencurveTenis4 from '../assets/sillasDeportivas/curveTenis/img4.png'
 import imagencurveTenis5 from '../assets/sillasDeportivas/curveTenis/img5.png'
-import imagenDynamicDanza1 from '../assets/sillasDeportivas/dynamicDanza/img1.png'
-import imagenDynamicDanza2 from '../assets/sillasDeportivas/dynamicDanza/img2.png'
-import imagenDynamicDanza3 from '../assets/sillasDeportivas/dynamicDanza/img3.png'
-import imagenDynamicDanza4 from '../assets/sillasDeportivas/dynamicDanza/img4.png'
-import imagenDynamicDanza5 from '../assets/sillasDeportivas/dynamicDanza/img5.png'
-import imagenDynamicDanza6 from '../assets/sillasDeportivas/dynamicDanza/img6.png'
-import imagenDynamicDanza7 from '../assets/sillasDeportivas/dynamicDanza/img7.png'
-import imagenDynamicDanza8 from '../assets/sillasDeportivas/dynamicDanza/img8.png'
+
+// Dynamic Danza
+import dynamictemptress from '@/assets/sillasDeportivas/dynamicDanza/temptress.jpg'
+import dynamicbrownCoffe from '@/assets/sillasDeportivas/dynamicDanza/brownCoffe.jpg'
+import dynamicforestGreen from '@/assets/sillasDeportivas/dynamicDanza/forestGreen.jpg'
+import dynamicwagen from '@/assets/sillasDeportivas/dynamicDanza/wagen.jpg'
+import dynamicartichoc from '@/assets/sillasDeportivas/dynamicDanza/artichoc.jpg'
+import dynamicyellowSun from '@/assets/sillasDeportivas/dynamicDanza/yellowSun.jpg'
+import dynamicmikado from '@/assets/sillasDeportivas/dynamicDanza/mikado.jpg'
+import dynamictangelo from '@/assets/sillasDeportivas/dynamicDanza/tangelo.jpg'
+import dynamicrebecca from '@/assets/sillasDeportivas/dynamicDanza/rebecca.jpg'
+import dynamicnesse from '@/assets/sillasDeportivas/dynamicDanza/nesse.jpg'
+import dynamicplum from '@/assets/sillasDeportivas/dynamicDanza/plum.jpg'
+import dynamicvioleta from '@/assets/sillasDeportivas/dynamicDanza/violeta.jpg'
+import dynamicamaranth from '@/assets/sillasDeportivas/dynamicDanza/amaranth.jpg'
+import dynamicmadderLake from '@/assets/sillasDeportivas/dynamicDanza/madderLake.jpg'
+import dynamiccarmine from '@/assets/sillasDeportivas/dynamicDanza/carmine.jpg'
+import dynamicfaluRed from '@/assets/sillasDeportivas/dynamicDanza/faluRed.jpg'
+import dynamiconyx from '@/assets/sillasDeportivas/dynamicDanza/onyx.jpg'
+import dynamicdavys from '@/assets/sillasDeportivas/dynamicDanza/davys.jpg'
+import dynamicgrayX11 from '@/assets/sillasDeportivas/dynamicDanza/grayX11.jpg'
+import dynamicgrays from '@/assets/sillasDeportivas/dynamicDanza/grays.jpg'
+import dynamicgains from '@/assets/sillasDeportivas/dynamicDanza/gains.jpg'
+import dynamickepel from '@/assets/sillasDeportivas/dynamicDanza/kepel.jpg'
+import dynamiclazuli from '@/assets/sillasDeportivas/dynamicDanza/lazuli.jpg'
+import dynamicphili from '@/assets/sillasDeportivas/dynamicDanza/phili.jpg'
+import dynamicarsenico from '@/assets/sillasDeportivas/dynamicDanza/arsenico.jpg'
+import dynamicotterSpace from '@/assets/sillasDeportivas/dynamicDanza/otterSpace.jpg'
+import dynamicgunmetal from '@/assets/sillasDeportivas/dynamicDanza/gunmetal.jpg'
+import dynamicdarkCharcoal from '@/assets/sillasDeportivas/dynamicDanza/darkCharcoal.jpg'
+import dynamicdarkJungle from '@/assets/sillasDeportivas/dynamicDanza/darkJungle.jpg'
+import dynamicsmoky from '@/assets/sillasDeportivas/dynamicDanza/smoky.jpg'
+import dynamicthalo from '@/assets/sillasDeportivas/dynamicDanza/thalo.jpg'
+import dynamicprussianBlue from '@/assets/sillasDeportivas/dynamicDanza/prussianBlue.jpg'
+import dynamicyankeesBlue from '@/assets/sillasDeportivas/dynamicDanza/yankeesBlue.jpg'
+import dynamicindigoR2 from '@/assets/sillasDeportivas/dynamicDanza/indigoR2.jpg'
+import dynamicindigoR from '@/assets/sillasDeportivas/dynamicDanza/indigoR.jpg'
+import dynamiccultur from '@/assets/sillasDeportivas/dynamicDanza/cultur.jpg'
+import dynamiccyberYellow from '@/assets/sillasDeportivas/dynamicDanza/cyberYellow.jpg'
+import dynamicblackCoffe from '@/assets/sillasDeportivas/dynamicDanza/blackCoffe.jpg'
+import dynamicpurp from '@/assets/sillasDeportivas/dynamicDanza/purp.jpg'
+import dynamiccatawba from '@/assets/sillasDeportivas/dynamicDanza/catawba.jpg'
+import dynamicdarkSienna from '@/assets/sillasDeportivas/dynamicDanza/darkSienna.jpg'
+import dynamicmadder from '@/assets/sillasDeportivas/dynamicDanza/madder.jpg'
+// import imagenDynamicDanza1 from '../assets/sillasDeportivas/dynamicDanza/img1.png'
+// import imagenDynamicDanza2 from '../assets/sillasDeportivas/dynamicDanza/img2.png'
+// import imagenDynamicDanza3 from '../assets/sillasDeportivas/dynamicDanza/img3.png'
+// import imagenDynamicDanza4 from '../assets/sillasDeportivas/dynamicDanza/img4.png'
+// import imagenDynamicDanza5 from '../assets/sillasDeportivas/dynamicDanza/img5.png'
+// import imagenDynamicDanza6 from '../assets/sillasDeportivas/dynamicDanza/img6.png'
+// import imagenDynamicDanza7 from '../assets/sillasDeportivas/dynamicDanza/img7.png'
+// import imagenDynamicDanza8 from '../assets/sillasDeportivas/dynamicDanza/img8.png'
+
 import imagenMx3SillaPista1 from '../assets/sillasDeportivas/mx3SillaPista/img1.png'
 import imagenMx3SillaPista2 from '../assets/sillasDeportivas/mx3SillaPista/img2.png'
 import imagenMx3SillaPista3 from '../assets/sillasDeportivas/mx3SillaPista/img3.png'
@@ -40,6 +88,7 @@ import imagenMx3SillaPista5 from '../assets/sillasDeportivas/mx3SillaPista/img5.
 import imagenMx3SillaPista6 from '../assets/sillasDeportivas/mx3SillaPista/img6.png'
 import imagenMx3SillaPista7 from '../assets/sillasDeportivas/mx3SillaPista/img7.png'
 import imagenMx3SillaPista8 from '../assets/sillasDeportivas/mx3SillaPista/img8.png'
+
 import imagenThunder1 from '../assets/sillasDeportivas/thunder/img1.png'
 import imagenThunder2 from '../assets/sillasDeportivas/thunder/img2.png'
 import imagenThunder3 from '../assets/sillasDeportivas/thunder/img3.png'
@@ -187,14 +236,48 @@ export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
         }
       ],
       imagenes: [
-        { src: imagenDynamicDanza1 },
-        { src: imagenDynamicDanza2 },
-        { src: imagenDynamicDanza3 },
-        { src: imagenDynamicDanza4 },
-        { src: imagenDynamicDanza5 },
-        { src: imagenDynamicDanza6 },
-        { src: imagenDynamicDanza7 },
-        { src: imagenDynamicDanza8 }
+        { src: dynamictemptress, color: 'Temptress' },
+        { src: dynamicbrownCoffe, color: 'Brown Coffe' },
+        { src: dynamicforestGreen, color: 'Forest Green' },
+        { src: dynamicwagen, color: 'Wagen' },
+        { src: dynamicartichoc, color: 'Artichoc' },
+        { src: dynamicyellowSun, color: 'Yellow Sun' },
+        { src: dynamicmikado, color: 'Mikado' },
+        { src: dynamictangelo, color: 'Tangelo' },
+        { src: dynamicrebecca, color: 'Rebecca' },
+        { src: dynamicnesse, color: 'Nesse' },
+        { src: dynamicplum, color: 'Plum' },
+        { src: dynamicvioleta, color: 'Violeta' },
+        { src: dynamicamaranth, color: 'Amaranth' },
+        { src: dynamicmadderLake, color: 'Madder Lake' },
+        { src: dynamiccarmine, color: 'Carmine' },
+        { src: dynamicfaluRed, color: 'Falu Red' },
+        { src: dynamiconyx, color: 'Onyx' },
+        { src: dynamicdavys, color: `Davy's` },
+        { src: dynamicgrayX11, color: 'Gray X11' },
+        { src: dynamicgrays, color: 'Grays' },
+        { src: dynamicgains, color: 'Gains' },
+        { src: dynamickepel, color: 'Kepel' },
+        { src: dynamiclazuli, color: 'Lazuli' },
+        { src: dynamicphili, color: 'Phili' },
+        { src: dynamicarsenico, color: 'Arsenico' },
+        { src: dynamicotterSpace, color: 'Otter Space' },
+        { src: dynamicgunmetal, color: 'Gunmetal' },
+        { src: dynamicdarkCharcoal, color: 'Dark Charcoal' },
+        { src: dynamicdarkJungle, color: 'Dark Jungle' },
+        { src: dynamicsmoky, color: 'Smoky' },
+        { src: dynamicthalo, color: 'Thalo' },
+        { src: dynamicprussianBlue, color: 'Prussian Blue' },
+        { src: dynamicyankeesBlue, color: 'YankeesBlue' },
+        { src: dynamicindigoR2, color: 'Indigo R2' },
+        { src: dynamicindigoR, color: 'Indigo R' },
+        { src: dynamiccultur, color: 'cultur' },
+        { src: dynamiccyberYellow, color: 'Cyber Yellow' },
+        { src: dynamicblackCoffe, color: 'Black Coffe' },
+        { src: dynamicpurp, color: 'Purp' },
+        { src: dynamiccatawba, color: 'Catawba' },
+        { src: dynamicdarkSienna, color: 'Dark Sienna' },
+        { src: dynamicmadder, color: 'Madder' }
       ],
       info: `*Las imágenes son ilustrativas, el tipo de rodamientos traseros así como amarres clip strap, protectores de estructura, etc., tienen costo extra por lo que deberán ser cotizadas. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
     },
