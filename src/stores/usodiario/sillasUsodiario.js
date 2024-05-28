@@ -142,15 +142,58 @@ import confortZZcatawba from '@/assets/sillasUsoDiario/confortZZ/catawba.jpg'
 import confortZZpurp from '@/assets/sillasUsoDiario/confortZZ/purp.jpg'
 import confortZZmadder from '@/assets/sillasUsoDiario/confortZZ/madder.jpg'
 
-import ImagenShockwave1 from '../../assets/sillasUsoDiario/shockwave/img1.png'
-import ImagenShockwave2 from '../../assets/sillasUsoDiario/shockwave/img2.png'
-import ImagenShockwave3 from '../../assets/sillasUsoDiario/shockwave/img3.png'
-import ImagenShockwave4 from '../../assets/sillasUsoDiario/shockwave/img4.png'
-import ImagenShockwave5 from '../../assets/sillasUsoDiario/shockwave/img5.png'
-import ImagenShockwave6 from '../../assets/sillasUsoDiario/shockwave/img6.png'
-import ImagenShockwave7 from '../../assets/sillasUsoDiario/shockwave/img7.png'
-import ImagenShockwave8 from '../../assets/sillasUsoDiario/shockwave/img8.png'
-import ImagenShockwave9 from '../../assets/sillasUsoDiario/shockwave/img9.png'
+// Shockwave
+import temptress from '@/assets/sillasUsoDiario/shockwave/temptress.jpg'
+import brownCoffe from '@/assets/sillasUsoDiario/shockwave/brownCoffe.jpg'
+import artichoc from '@/assets/sillasUsoDiario/shockwave/artichoc.jpg'
+import forestGreen from '@/assets/sillasUsoDiario/shockwave/forestGreen.jpg'
+import wagen from '@/assets/sillasUsoDiario/shockwave/wagen.jpg'
+import yellowSun from '@/assets/sillasUsoDiario/shockwave/yellowSun.jpg'
+import mikado from '@/assets/sillasUsoDiario/shockwave/mikado.jpg'
+import tangelo from '@/assets/sillasUsoDiario/shockwave/tangelo.jpg'
+import rebbeca from '@/assets/sillasUsoDiario/shockwave/rebbeca.jpg'
+import nesse from '@/assets/sillasUsoDiario/shockwave/nesse.jpg'
+import madderLake from '@/assets/sillasUsoDiario/shockwave/madderLake.jpg'
+import plum from '@/assets/sillasUsoDiario/shockwave/plum.jpg'
+import violeta from '@/assets/sillasUsoDiario/shockwave/violeta.jpg'
+import amaranth from '@/assets/sillasUsoDiario/shockwave/amaranth.jpg'
+import carmine from '@/assets/sillasUsoDiario/shockwave/carmine.jpg'
+import faluRed from '@/assets/sillasUsoDiario/shockwave/faluRed.jpg'
+import onyx from '@/assets/sillasUsoDiario/shockwave/onyx.jpg'
+import davys from '@/assets/sillasUsoDiario/shockwave/davys.jpg'
+import grayX11 from '@/assets/sillasUsoDiario/shockwave/grayX11.jpg'
+import grays from '@/assets/sillasUsoDiario/shockwave/grays.jpg'
+import gains from '@/assets/sillasUsoDiario/shockwave/gains.jpg'
+import kepel from '@/assets/sillasUsoDiario/shockwave/kepel.jpg'
+import lazuli from '@/assets/sillasUsoDiario/shockwave/lazuli.jpg'
+import phili from '@/assets/sillasUsoDiario/shockwave/phili.jpg'
+import arsenico from '@/assets/sillasUsoDiario/shockwave/arsenico.jpg'
+import otterSpace from '@/assets/sillasUsoDiario/shockwave/otterSpace.jpg'
+import gunmetal from '@/assets/sillasUsoDiario/shockwave/gunmetal.jpg'
+import darkCharcoal from '@/assets/sillasUsoDiario/shockwave/darkCharcoal.jpg'
+import darkJungle from '@/assets/sillasUsoDiario/shockwave/darkJungle.jpg'
+import smoky from '@/assets/sillasUsoDiario/shockwave/smoky.jpg'
+import thalo from '@/assets/sillasUsoDiario/shockwave/thalo.jpg'
+import prussianBlue from '@/assets/sillasUsoDiario/shockwave/prussianBlue.jpg'
+import yankeesBlue from '@/assets/sillasUsoDiario/shockwave/yankeesBlue.jpg'
+import indigoR2 from '@/assets/sillasUsoDiario/shockwave/indigoR2.jpg'
+import indigoR from '@/assets/sillasUsoDiario/shockwave/indigoR.jpg'
+import cultur from '@/assets/sillasUsoDiario/shockwave/cultur.jpg'
+import cyberYellow from '@/assets/sillasUsoDiario/shockwave/cyberYellow.jpg'
+import blackCoffe from '@/assets/sillasUsoDiario/shockwave/blackCoffe.jpg'
+import catawba from '@/assets/sillasUsoDiario/shockwave/catawba.jpg'
+import purp from '@/assets/sillasUsoDiario/shockwave/purp.jpg'
+import darkSienna from '@/assets/sillasUsoDiario/shockwave/darkSienna.jpg'
+import madder from '@/assets/sillasUsoDiario/shockwave/madder.jpg'
+// import ImagenShockwave1 from '@/assets/sillasUsoDiario/shockwave/img1.png'
+// import ImagenShockwave2 from '../../assets/sillasUsoDiario/shockwave/img2.png'
+// import ImagenShockwave3 from '../../assets/sillasUsoDiario/shockwave/img3.png'
+// import ImagenShockwave4 from '../../assets/sillasUsoDiario/shockwave/img4.png'
+// import ImagenShockwave5 from '../../assets/sillasUsoDiario/shockwave/img5.png'
+// import ImagenShockwave6 from '../../assets/sillasUsoDiario/shockwave/img6.png'
+// import ImagenShockwave7 from '../../assets/sillasUsoDiario/shockwave/img7.png'
+// import ImagenShockwave8 from '../../assets/sillasUsoDiario/shockwave/img8.png'
+// import ImagenShockwave9 from '../../assets/sillasUsoDiario/shockwave/img9.png'
 
 import ImagenSky1 from '../../assets/sillasUsoDiario/sky/img1.png'
 import ImagenSky2 from '../../assets/sillasUsoDiario/sky/img2.png'
@@ -418,15 +461,48 @@ export const useSillasUsoDiario = defineStore('sillasUsoDiario', () => {
         { descripcion: `Peso de estructura desde 8 kg. sin rodamientos ni accesorios` }
       ],
       imagenes: [
-        { src: ImagenShockwave1 },
-        { src: ImagenShockwave2 },
-        { src: ImagenShockwave3 },
-        { src: ImagenShockwave4 },
-        { src: ImagenShockwave5 },
-        { src: ImagenShockwave6 },
-        { src: ImagenShockwave7 },
-        { src: ImagenShockwave8 },
-        { src: ImagenShockwave9 }
+        { src: temptress, color: 'Temptress' },
+        { src: brownCoffe, color: 'Brown Coffe' },
+        { src: artichoc, color: 'Artichoc' },
+        { src: forestGreen, color: 'Forest Green' },
+        { src: wagen, color: 'Wagen' },
+        { src: yellowSun, color: 'Yellow Sun' },
+        { src: mikado, color: 'Mikado' },
+        { src: tangelo, color: 'Tangelo' },
+        { src: rebbeca, color: 'Rebbeca' },
+        { src: nesse, color: 'Nesse' },
+        { src: madderLake, color: 'Madder Lake' },
+        { src: plum, color: 'Plum' },
+        { src: violeta, color: 'Violeta' },
+        { src: amaranth, color: 'Amaranth' },
+        { src: carmine, color: 'Carmine' },
+        { src: faluRed, color: 'Falu Red' },
+        { src: onyx, color: 'Onyx' },
+        { src: davys, color: 'Davys' },
+        { src: grayX11, color: 'Gray X11' },
+        { src: grays, color: 'Grays' },
+        { src: gains, color: 'Gains' },
+        { src: kepel, color: 'Kepel' },
+        { src: lazuli, color: 'Lazuli' },
+        { src: phili, color: 'Phili' },
+        { src: arsenico, color: 'Arsenico' },
+        { src: otterSpace, color: 'Otter Space' },
+        { src: gunmetal, color: 'Gunmetal' },
+        { src: darkCharcoal, color: 'Dark Charcoal' },
+        { src: darkJungle, color: 'Dark Jungle' },
+        { src: smoky, color: 'Smoky' },
+        { src: thalo, color: 'Thalo' },
+        { src: prussianBlue, color: 'Prussian Blue' },
+        { src: yankeesBlue, color: 'Yankees Blue' },
+        { src: indigoR2, color: 'Indigo R2' },
+        { src: indigoR, color: 'Indigo R' },
+        { src: cultur, color: 'Cultur' },
+        { src: cyberYellow, color: 'Cyber Yellow' },
+        { src: blackCoffe, color: 'Black Coffe' },
+        { src: catawba, color: 'Catawba' },
+        { src: purp, color: 'Purp' },
+        { src: darkSienna, color: 'Dark Sienna' },
+        { src: madder, color: 'Madder' }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros, frenos, impulsores, coderas, etc., tienen costo extra por lo que deberán ser cotizadas.`
     },
