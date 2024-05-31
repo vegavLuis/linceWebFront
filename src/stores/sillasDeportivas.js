@@ -230,12 +230,48 @@ import imagenMx3SillaPista6 from '../assets/sillasDeportivas/mx3SillaPista/img6.
 import imagenMx3SillaPista7 from '../assets/sillasDeportivas/mx3SillaPista/img7.png'
 import imagenMx3SillaPista8 from '../assets/sillasDeportivas/mx3SillaPista/img8.png'
 
-import imagenThunder1 from '../assets/sillasDeportivas/thunder/img1.png'
-import imagenThunder2 from '../assets/sillasDeportivas/thunder/img2.png'
-import imagenThunder3 from '../assets/sillasDeportivas/thunder/img3.png'
-import imagenThunder4 from '../assets/sillasDeportivas/thunder/img4.png'
-import imagenThunder5 from '../assets/sillasDeportivas/thunder/img5.png'
-import imagenThunder6 from '../assets/sillasDeportivas/thunder/img6.png'
+// thunder
+import thundertemptress from '@/assets/sillasDeportivas/thunder/temptress.jpg'
+import thunderbrownCoffe from '@/assets/sillasDeportivas/thunder/brownCoffe.jpg'
+import thunderforestgreen from '@/assets/sillasDeportivas/thunder/forestgreen.jpg'
+import thunderwagen from '@/assets/sillasDeportivas/thunder/wagen.jpg'
+import thunderartichoc from '@/assets/sillasDeportivas/thunder/artichoc.jpg'
+import thunderyellowSun from '@/assets/sillasDeportivas/thunder/yellowSun.jpg'
+import thundermikado from '@/assets/sillasDeportivas/thunder/mikado.jpg'
+import thundertangelo from '@/assets/sillasDeportivas/thunder/tangelo.jpg'
+import thunderrebecca from '@/assets/sillasDeportivas/thunder/rebecca.jpg'
+import thundernesse from '@/assets/sillasDeportivas/thunder/nesse.jpg'
+import thunderplum from '@/assets/sillasDeportivas/thunder/plum.jpg'
+import thundervioleta from '@/assets/sillasDeportivas/thunder/violeta.jpg'
+import thunderamaranth from '@/assets/sillasDeportivas/thunder/amaranth.jpg'
+import thundermadderLake from '@/assets/sillasDeportivas/thunder/madderLake.jpg'
+import thundercarmine from '@/assets/sillasDeportivas/thunder/carmine.jpg'
+import thunderfaluRed from '@/assets/sillasDeportivas/thunder/faluRed.jpg'
+import thunderonyx from '@/assets/sillasDeportivas/thunder/onyx.jpg'
+import thunderdavys from '@/assets/sillasDeportivas/thunder/davys.jpg'
+import thundergrayX11 from '@/assets/sillasDeportivas/thunder/grayX11.jpg'
+import thundergrays from '@/assets/sillasDeportivas/thunder/grays.jpg'
+import thundergains from '@/assets/sillasDeportivas/thunder/gains.jpg'
+import thunderkepel from '@/assets/sillasDeportivas/thunder/kepel.jpg'
+import thunderlazuli from '@/assets/sillasDeportivas/thunder/lazuli.jpg'
+import thunderphili from '@/assets/sillasDeportivas/thunder/phili.jpg'
+import thunderarsenico from '@/assets/sillasDeportivas/thunder/arsenico.jpg'
+import thunderotterSpace from '@/assets/sillasDeportivas/thunder/otterSpace.jpg'
+import thundergunmetal from '@/assets/sillasDeportivas/thunder/gunmetal.jpg'
+import thunderdarkCharcoal from '@/assets/sillasDeportivas/thunder/darkCharcoal.jpg'
+import thunderdarkJungle from '@/assets/sillasDeportivas/thunder/darkJungle.jpg'
+import thunderthalo from '@/assets/sillasDeportivas/thunder/thalo.jpg'
+import thunderprussianBlue from '@/assets/sillasDeportivas/thunder/prussianBlue.jpg'
+import thunderyankeesBlue from '@/assets/sillasDeportivas/thunder/yankeesBlue.jpg'
+import thunderculture from '@/assets/sillasDeportivas/thunder/culture.jpg'
+import thundercyberYellow from '@/assets/sillasDeportivas/thunder/cyberYellow.jpg'
+import thunderindigoR2 from '@/assets/sillasDeportivas/thunder/indigoR2.jpg'
+import thunderindigoR from '@/assets/sillasDeportivas/thunder/indigoR.jpg'
+import thunderblackCoffe from '@/assets/sillasDeportivas/thunder/blackCoffe.jpg'
+import thunderpurp from '@/assets/sillasDeportivas/thunder/purp.jpg'
+import thundercatawba from '@/assets/sillasDeportivas/thunder/catawba.jpg'
+import thunderdarkSienna from '@/assets/sillasDeportivas/thunder/darkSienna.jpg'
+import thundermadder from '@/assets/sillasDeportivas/thunder/madder.jpg'
 
 export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
   const data = ref([
@@ -620,12 +656,47 @@ export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
         { descripcion: `Respaldo ajustable de 70 a 90 grados.` }
       ],
       imagenes: [
-        { src: imagenThunder1 },
-        { src: imagenThunder2 },
-        { src: imagenThunder3 },
-        { src: imagenThunder4 },
-        { src: imagenThunder5 },
-        { src: imagenThunder6 }
+        { src: thundertemptress, color: 'Temptress' },
+        { src: thunderbrownCoffe, color: 'Brown Coffe' },
+        { src: thunderforestgreen, color: 'Forest green' },
+        { src: thunderwagen, color: 'Wagen' },
+        { src: thunderartichoc, color: 'Artichoc' },
+        { src: thunderyellowSun, color: 'yellow Sun' },
+        { src: thundermikado, color: 'Mikado' },
+        { src: thundertangelo, color: 'Tangelo' },
+        { src: thunderrebecca, color: 'Rebecca' },
+        { src: thundernesse, color: 'Nesse' },
+        { src: thunderplum, color: 'Plum' },
+        { src: thundervioleta, color: 'Violeta' },
+        { src: thunderamaranth, color: 'Amaranth' },
+        { src: thundermadderLake, color: 'Madder Lake' },
+        { src: thundercarmine, color: 'Carmine' },
+        { src: thunderfaluRed, color: 'falu Red' },
+        { src: thunderonyx, color: 'Onyx' },
+        { src: thunderdavys, color: 'Davys' },
+        { src: thundergrayX11, color: 'Gray X11' },
+        { src: thundergrays, color: 'grays' },
+        { src: thundergains, color: 'Gains' },
+        { src: thunderkepel, color: 'Kepel' },
+        { src: thunderlazuli, color: 'Lazuli' },
+        { src: thunderphili, color: 'Phili' },
+        { src: thunderarsenico, color: 'Arsenico' },
+        { src: thunderotterSpace, color: 'Otter Space' },
+        { src: thundergunmetal, color: 'Gunmetal' },
+        { src: thunderdarkCharcoal, color: 'Dark Charcoal' },
+        { src: thunderdarkJungle, color: 'Dark Jungle' },
+        { src: thunderthalo, color: 'Thalo' },
+        { src: thunderprussianBlue, color: 'Prussian Blue' },
+        { src: thunderyankeesBlue, color: 'Yankees Blue' },
+        { src: thunderculture, color: 'Culture' },
+        { src: thundercyberYellow, color: 'Cyber Yellow' },
+        { src: thunderindigoR2, color: 'Indigo R2' },
+        { src: thunderindigoR, color: 'Indigo R' },
+        { src: thunderblackCoffe, color: 'Black Coffe' },
+        { src: thunderpurp, color: 'Purp' },
+        { src: thundercatawba, color: 'Catawba' },
+        { src: thunderdarkSienna, color: 'Dark Sienna' },
+        { src: thundermadder, color: 'Madder' }
       ],
       info: `Las imágenes son ilustrativas, el tipo de rodamientos traseros así como el estilo de la Hand Bike (L) o (V) tiene costo adicional por lo que deberá ser cotizado. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
     }
