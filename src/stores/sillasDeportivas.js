@@ -133,11 +133,49 @@ import curveBadmintoncatawba from '@/assets/sillasDeportivas/curve/catawba.jpg'
 import curveBadmintondarkSienna from '@/assets/sillasDeportivas/curve/darkSienna.jpg'
 import curveBadmintonmadder from '@/assets/sillasDeportivas/curve/madder.jpg'
 
-import imagencurveTenis1 from '../assets/sillasDeportivas/curveTenis/img1.png'
-import imagencurveTenis2 from '../assets/sillasDeportivas/curveTenis/img2.png'
-import imagencurveTenis3 from '../assets/sillasDeportivas/curveTenis/img3.png'
-import imagencurveTenis4 from '../assets/sillasDeportivas/curveTenis/img4.png'
-import imagencurveTenis5 from '../assets/sillasDeportivas/curveTenis/img5.png'
+// curveTennis
+import curveTennisbrownCoffe from '@/assets/sillasDeportivas/curveTenis/brownCoffe.jpg'
+import curveTennistemptress from '@/assets/sillasDeportivas/curveTenis/temptress.jpg'
+import curveTennisforestGreen from '@/assets/sillasDeportivas/curveTenis/forestGreen.jpg'
+import curveTenniswagen from '@/assets/sillasDeportivas/curveTenis/wagen.jpg'
+import curveTennisartichoc from '@/assets/sillasDeportivas/curveTenis/artichoc.jpg'
+import curveTennisyellowSun from '@/assets/sillasDeportivas/curveTenis/yellowSun.jpg'
+import curveTennismikado from '@/assets/sillasDeportivas/curveTenis/mikado.jpg'
+import curveTennistangelo from '@/assets/sillasDeportivas/curveTenis/tangelo.jpg'
+import curveTennisrebecca from '@/assets/sillasDeportivas/curveTenis/rebecca.jpg'
+import curveTennisnesse from '@/assets/sillasDeportivas/curveTenis/nesse.jpg'
+import curveTennisplum from '@/assets/sillasDeportivas/curveTenis/plum.jpg'
+import curveTennisvioleta from '@/assets/sillasDeportivas/curveTenis/violeta.jpg'
+import curveTennisamaranth from '@/assets/sillasDeportivas/curveTenis/amaranth.jpg'
+import curveTennismadderLake from '@/assets/sillasDeportivas/curveTenis/madderLake.jpg'
+import curveTenniscarmine from '@/assets/sillasDeportivas/curveTenis/carmine.jpg'
+import curveTennisfaluRed from '@/assets/sillasDeportivas/curveTenis/faluRed.jpg'
+import curveTennisonyx from '@/assets/sillasDeportivas/curveTenis/onyx.jpg'
+import curveTennisdavys from '@/assets/sillasDeportivas/curveTenis/davys.jpg'
+import curveTennisgrayX11 from '@/assets/sillasDeportivas/curveTenis/grayX11.jpg'
+import curveTennisgrays from '@/assets/sillasDeportivas/curveTenis/grays.jpg'
+import curveTennisgains from '@/assets/sillasDeportivas/curveTenis/gains.jpg'
+import curveTenniskepel from '@/assets/sillasDeportivas/curveTenis/kepel.jpg'
+import curveTennisotterSpace from '@/assets/sillasDeportivas/curveTenis/otterSpace.jpg'
+import curveTennisarsenico from '@/assets/sillasDeportivas/curveTenis/arsenico.jpg'
+import curveTennislazuli from '@/assets/sillasDeportivas/curveTenis/lazuli.jpg'
+import curveTennisphili from '@/assets/sillasDeportivas/curveTenis/phili.jpg'
+import curveTennisgunmetal from '@/assets/sillasDeportivas/curveTenis/gunmetal.jpg'
+import curveTennisdarkCharcoal from '@/assets/sillasDeportivas/curveTenis/darkCharcoal.jpg'
+import curveTennisdarkJungle from '@/assets/sillasDeportivas/curveTenis/darkJungle.jpg'
+import curveTennissmoky from '@/assets/sillasDeportivas/curveTenis/smoky.jpg'
+import curveTennisthalo from '@/assets/sillasDeportivas/curveTenis/thalo.jpg'
+import curveTennisprussianBlue from '@/assets/sillasDeportivas/curveTenis/prussianBlue.jpg'
+import curveTennisyankeesBlue from '@/assets/sillasDeportivas/curveTenis/yankeesBlue.jpg'
+import curveTennisindigoR2 from '@/assets/sillasDeportivas/curveTenis/indigoR2.jpg'
+import curveTennisindigoR from '@/assets/sillasDeportivas/curveTenis/indigoR.jpg'
+import curveTenniscultur from '@/assets/sillasDeportivas/curveTenis/cultur.jpg'
+import curveTenniscyberYellow from '@/assets/sillasDeportivas/curveTenis/cyberYellow.jpg'
+import curveTennisblackCoffe from '@/assets/sillasDeportivas/curveTenis/blackCoffe.jpg'
+import curveTennispurp from '@/assets/sillasDeportivas/curveTenis/purp.jpg'
+import curveTenniscatawba from '@/assets/sillasDeportivas/curveTenis/catawba.jpg'
+import curveTennisdarkSienna from '@/assets/sillasDeportivas/curveTenis/darkSienna.jpg'
+import curveTennismadder from '@/assets/sillasDeportivas/curveTenis/madder.jpg'
 
 // Dynamic Danza
 import dynamictemptress from '@/assets/sillasDeportivas/dynamicDanza/temptress.jpg'
@@ -420,11 +458,48 @@ export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
         }
       ],
       imagenes: [
-        { src: imagencurveTenis1 },
-        { src: imagencurveTenis2 },
-        { src: imagencurveTenis3 },
-        { src: imagencurveTenis4 },
-        { src: imagencurveTenis5 }
+        { src: curveTennisbrownCoffe, color: 'Brown Coffe' },
+        { src: curveTennistemptress, color: 'Temptress' },
+        { src: curveTennisforestGreen, color: 'Forest Green' },
+        { src: curveTenniswagen, color: 'Wagen' },
+        { src: curveTennisartichoc, color: 'Artichoc' },
+        { src: curveTennisyellowSun, color: 'YellowSun' },
+        { src: curveTennismikado, color: 'Mikado' },
+        { src: curveTennistangelo, color: 'Tangelo' },
+        { src: curveTennisrebecca, color: 'Rebecca' },
+        { src: curveTennisnesse, color: 'Nesse' },
+        { src: curveTennisplum, color: 'Plum' },
+        { src: curveTennisvioleta, color: 'Violeta' },
+        { src: curveTennisamaranth, color: 'Amaranth' },
+        { src: curveTennismadderLake, color: 'Madder Lake' },
+        { src: curveTenniscarmine, color: 'carmine' },
+        { src: curveTennisfaluRed, color: 'Falu Red' },
+        { src: curveTennisonyx, color: 'Onyx' },
+        { src: curveTennisdavys, color: 'Davys' },
+        { src: curveTennisgrayX11, color: 'Gray X11' },
+        { src: curveTennisgrays, color: 'Grays' },
+        { src: curveTennisgains, color: 'Gains' },
+        { src: curveTenniskepel, color: 'Kepel' },
+        { src: curveTennisotterSpace, color: 'Otter Space' },
+        { src: curveTennisarsenico, color: 'Arsenico' },
+        { src: curveTennislazuli, color: 'lazuli' },
+        { src: curveTennisphili, color: 'Phili' },
+        { src: curveTennisgunmetal, color: 'Gunmetal' },
+        { src: curveTennisdarkCharcoal, color: 'Dark Charcoal' },
+        { src: curveTennisdarkJungle, color: 'Dark Jungle' },
+        { src: curveTennissmoky, color: 'Smoky' },
+        { src: curveTennisthalo, color: 'Thalo' },
+        { src: curveTennisprussianBlue, color: 'Prussian Blue' },
+        { src: curveTennisyankeesBlue, color: 'Yankees Blue' },
+        { src: curveTennisindigoR2, color: 'Indigo R2' },
+        { src: curveTennisindigoR, color: 'Indigo R' },
+        { src: curveTenniscultur, color: 'Cultur' },
+        { src: curveTenniscyberYellow, color: 'Cyber Yellow' },
+        { src: curveTennisblackCoffe, color: 'Black Coffe' },
+        { src: curveTennispurp, color: 'Purp' },
+        { src: curveTenniscatawba, color: 'Catawba' },
+        { src: curveTennisdarkSienna, color: 'Dark Sienna' },
+        { src: curveTennismadder, color: 'Madder' }
       ],
       info: `*Las imágenes son ilustrativas, el tipo de rodamientos traseros así como amarres clip strap, protectores de estructura, etc., tienen costo extra por lo que deberán ser cotizadas. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
     },
