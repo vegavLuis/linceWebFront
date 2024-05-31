@@ -89,11 +89,49 @@ import ezBkbcatawba from '@/assets/sillasDeportivas/dosEZ/catawba.jpg'
 import ezBkbdarkSienna from '@/assets/sillasDeportivas/dosEZ/darkSienna.jpg'
 import ezBkbmadder from '@/assets/sillasDeportivas/dosEZ/madder.jpg'
 
-import imagenCurve1 from '../assets/sillasDeportivas/curve/img1.png'
-import imagenCurve2 from '../assets/sillasDeportivas/curve/img2.png'
-import imagenCurve3 from '../assets/sillasDeportivas/curve/img3.png'
-import imagenCurve4 from '../assets/sillasDeportivas/curve/img4.png'
-import imagenCurve5 from '../assets/sillasDeportivas/curve/img5.png'
+// curveBadminton
+import curveBadmintontemptress from '@/assets/sillasDeportivas/curve/temptress.jpg'
+import curveBadmintonbrownCoffe from '@/assets/sillasDeportivas/curve/brownCoffe.jpg'
+import curveBadmintonforestGreen from '@/assets/sillasDeportivas/curve/forestGreen.jpg'
+import curveBadmintonwagen from '@/assets/sillasDeportivas/curve/wagen.jpg'
+import curveBadmintonartichoc from '@/assets/sillasDeportivas/curve/artichoc.jpg'
+import curveBadmintonyellowSun from '@/assets/sillasDeportivas/curve/yellowSun.jpg'
+import curveBadmintonmikado from '@/assets/sillasDeportivas/curve/mikado.jpg'
+import curveBadmintontangelo from '@/assets/sillasDeportivas/curve/tangelo.jpg'
+import curveBadmintonrebecca from '@/assets/sillasDeportivas/curve/rebecca.jpg'
+import curveBadmintonnesse from '@/assets/sillasDeportivas/curve/nesse.jpg'
+import curveBadmintonplum from '@/assets/sillasDeportivas/curve/plum.jpg'
+import curveBadmintonvioleta from '@/assets/sillasDeportivas/curve/violeta.jpg'
+import curveBadmintonamaranth from '@/assets/sillasDeportivas/curve/amaranth.jpg'
+import curveBadmintonmadderLake from '@/assets/sillasDeportivas/curve/madderLake.jpg'
+import curveBadmintoncarmine from '@/assets/sillasDeportivas/curve/carmine.jpg'
+import curveBadmintonfaluRed from '@/assets/sillasDeportivas/curve/faluRed.jpg'
+import curveBadmintononyx from '@/assets/sillasDeportivas/curve/onyx.jpg'
+import curveBadmintondavys from '@/assets/sillasDeportivas/curve/davys.jpg'
+import curveBadmintongrayX11 from '@/assets/sillasDeportivas/curve/grayX11.jpg'
+import curveBadmintongrays from '@/assets/sillasDeportivas/curve/grays.jpg'
+import curveBadmintongains from '@/assets/sillasDeportivas/curve/gains.jpg'
+import curveBadmintonkepel from '@/assets/sillasDeportivas/curve/kepel.jpg'
+import curveBadmintonlazuli from '@/assets/sillasDeportivas/curve/lazuli.jpg'
+import curveBadmintonphili from '@/assets/sillasDeportivas/curve/phili.jpg'
+import curveBadmintonarsenico from '@/assets/sillasDeportivas/curve/arsenico.jpg'
+import curveBadmintonotterSpace from '@/assets/sillasDeportivas/curve/otterSpace.jpg'
+import curveBadmintongunmetal from '@/assets/sillasDeportivas/curve/gunmetal.jpg'
+import curveBadmintondarkCharcoal from '@/assets/sillasDeportivas/curve/darkCharcoal.jpg'
+import curveBadmintondarkJungle from '@/assets/sillasDeportivas/curve/darkJungle.jpg'
+import curveBadmintonsmoky from '@/assets/sillasDeportivas/curve/smoky.jpg'
+import curveBadmintonthalo from '@/assets/sillasDeportivas/curve/thalo.jpg'
+import curveBadmintonprussianBlue from '@/assets/sillasDeportivas/curve/prussianBlue.jpg'
+import curveBadmintonyankeesBlue from '@/assets/sillasDeportivas/curve/yankeesBlue.jpg'
+import curveBadmintonindigoR2 from '@/assets/sillasDeportivas/curve/indigoR2.jpg'
+import curveBadmintonindigoR from '@/assets/sillasDeportivas/curve/indigoR.jpg'
+import curveBadmintoncultur from '@/assets/sillasDeportivas/curve/cultur.jpg'
+import curveBadmintoncyberYellow from '@/assets/sillasDeportivas/curve/cyberYellow.jpg'
+import curveBadmintonblackCoffe from '@/assets/sillasDeportivas/curve/blackCoffe.jpg'
+import curveBadmintonpurp from '@/assets/sillasDeportivas/curve/purp.jpg'
+import curveBadmintoncatawba from '@/assets/sillasDeportivas/curve/catawba.jpg'
+import curveBadmintondarkSienna from '@/assets/sillasDeportivas/curve/darkSienna.jpg'
+import curveBadmintonmadder from '@/assets/sillasDeportivas/curve/madder.jpg'
 
 import imagencurveTenis1 from '../assets/sillasDeportivas/curveTenis/img1.png'
 import imagencurveTenis2 from '../assets/sillasDeportivas/curveTenis/img2.png'
@@ -323,11 +361,48 @@ export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
         }
       ],
       imagenes: [
-        { src: imagenCurve1 },
-        { src: imagenCurve2 },
-        { src: imagenCurve3 },
-        { src: imagenCurve4 },
-        { src: imagenCurve5 }
+        { src: curveBadmintontemptress, color: 'Temptress' },
+        { src: curveBadmintonbrownCoffe, color: 'Brown Coffe' },
+        { src: curveBadmintonforestGreen, color: 'forest Green' },
+        { src: curveBadmintonwagen, color: 'Wagen' },
+        { src: curveBadmintonartichoc, color: 'Artichoc' },
+        { src: curveBadmintonyellowSun, color: 'Yellow Sun' },
+        { src: curveBadmintonmikado, color: 'Mikado' },
+        { src: curveBadmintontangelo, color: 'Tangelo' },
+        { src: curveBadmintonrebecca, color: 'Rebecca' },
+        { src: curveBadmintonnesse, color: 'Nesse' },
+        { src: curveBadmintonplum, color: 'Plum' },
+        { src: curveBadmintonvioleta, color: 'Violeta' },
+        { src: curveBadmintonamaranth, color: 'Amaranth' },
+        { src: curveBadmintonmadderLake, color: 'Madder Lake' },
+        { src: curveBadmintoncarmine, color: 'Carmine' },
+        { src: curveBadmintonfaluRed, color: 'Falu Red' },
+        { src: curveBadmintononyx, color: 'Onyx' },
+        { src: curveBadmintondavys, color: 'Davys' },
+        { src: curveBadmintongrayX11, color: 'Gray X11' },
+        { src: curveBadmintongrays, color: 'Grays' },
+        { src: curveBadmintongains, color: 'Gains' },
+        { src: curveBadmintonkepel, color: 'Kepel' },
+        { src: curveBadmintonlazuli, color: 'Lazuli' },
+        { src: curveBadmintonphili, color: 'Phili' },
+        { src: curveBadmintonarsenico, color: 'Arsenico' },
+        { src: curveBadmintonotterSpace, color: 'Otter Space' },
+        { src: curveBadmintongunmetal, color: 'Gunmetal' },
+        { src: curveBadmintondarkCharcoal, color: 'Dark Charcoal' },
+        { src: curveBadmintondarkJungle, color: 'Dark Jungle' },
+        { src: curveBadmintonsmoky, color: 'Smoky' },
+        { src: curveBadmintonthalo, color: 'Thalo' },
+        { src: curveBadmintonprussianBlue, color: 'Prussian Blue' },
+        { src: curveBadmintonyankeesBlue, color: 'Yankees Blue' },
+        { src: curveBadmintonindigoR2, color: 'Indigo R2' },
+        { src: curveBadmintonindigoR, color: 'Indigo R' },
+        { src: curveBadmintoncultur, color: 'Cultur' },
+        { src: curveBadmintoncyberYellow, color: 'Cyber Yellow' },
+        { src: curveBadmintonblackCoffe, color: 'Black Coffe' },
+        { src: curveBadmintonpurp, color: 'Purp' },
+        { src: curveBadmintoncatawba, color: 'Catawba' },
+        { src: curveBadmintondarkSienna, color: 'Dark Sienna' },
+        { src: curveBadmintonmadder, color: 'Madder' }
       ],
       info: `*Las imágenes son ilustrativas, el tipo de rodamientos traseros así como amarres clip strap, protectores de estructura, etc., tienen costo extra por lo que deberán ser cotizadas. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
     },
