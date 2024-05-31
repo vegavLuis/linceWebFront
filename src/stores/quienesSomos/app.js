@@ -4,31 +4,25 @@ import { defineStore } from 'pinia'
 export const useAppQuienesSomos = defineStore('appQuienesSomos', () => {
   const data = ref([
     {
-      titulo: 'Historia',
-      texto: `Sillas Lince nace hace más de 30 años a partir de la necesidad de un joven deportista de alto rendimiento, en busca de una silla de ruedas funcional y ligera que le ayude a desarrollar sus habilidades deportivas y mejore su movilidad en su vida diaria, al no poder encontrar una opción se dio a la tarea de desarrollar el mismo sus propias sillas, con el tiempo y buscando siempre la mejor forma de innovar, los modelos fueron cambiando,  así como los materiales que al día de hoy destacan a sillas lince como la única empresa en Latino América en fabricar sillas de ruedas personalizadas deportivas y de uso cotidiano en aluminio aeronáutico.
-        Diseñadas por personas con discapacidad para personas con discapacidad 
-        `
+      titulo: '¿QUIÉNES SOMOS?',
+      texto: `Somos una empresa mexicana dedicada a la fabricación de sillas de ruedas de uso diario y deportivas desde 1987.
+      Sillas LINCE inició como una necesidad personal, el fundador y creador de la empresa, y los modelos de sillas es una atleta paralímpico, el señor Raúl Ortega.
+      Las circunstancias fueron las que impulsaron a nuestro fundador a crear algo más, a innovar y crear una silla de ruedas óptima para él y para su desempeño en basquetbol. Y así fue como una necesidad personal se convirtió en una oportunidad de negocio.
+      Cada persona tiene distintas necesidades, por lo tanto cada silla es diferente, todas las sillas son elaboradas para llevar su día a día o su disciplina al máximo.`
     },
     {
-      titulo: 'Misión',
-      texto: `Nuestra misión es fabricar un producto que sea personalizado para cada individuo en su estilo de vida que necesite.
-
-      Nosotros pugnamos para proveer una silla ligera e individual, como si fuera un sastre, con el objetivo de que el producto permita el uso final a la vida que quieren, en vez de que la silla los limite.
-      
-      Nosotros no somos sólo una fabrica de sillas, construimos sillas activas, para personas con discapacidad activa.
-      
-      Ligeras y hechas a mano en México, ROE-MEX ("sillas de ruedas deportivas y activas es una de la elecciones por muchos de los mejores atletas de alto rendimiento del mundo!!!") Ya sea esta en la cancha o de día a día.
-      
-          `
+      titulo: 'NOSOTROS',
+      texto: `Elaboramos sillas de ruedas personalizadas en medidas y necesidades, especializadas en el estilo de vida de cada persona, creadas de manera única. La estructura está elaborada en una aleación aeronáutica de aluminio, que permite un peso mínimo y una estructura fuerte, segura, resistente y de calidad.
+      El diseño de las sillas es planificado y creado cuidadosamente por ingenieros mexicanos, quienes también someten al prototipo a varias pruebas de calidad y resistencia para verificar que sea óptimo para la disciplina que ha sido creada, por lo cual es que estamos comprometidos a dotar de calidad cada uno de nuestros modelos.
+      Tenemos más de 32 años en el mercado, los cuales respaldan nuestra marca y la calidad que nuestras sillas tienen. Nos encargamos de crear un producto funcional, seguro y lleno de calidad, el cual debe de cubrir las necesidades que nuestros clientes tienen, no siempre, ni todas las personas tienen las mismas necesidades o capacidades, cada persona tiene un estilo de vida diferente por lo cual cada persona necesita una silla hecha a su medida.`
     },
     {
-      titulo: 'Visión',
-      texto: `La visión fue crear una silla de ruedas que permita el desarrollo y que no se viera como ninguna otra silla en el mercado en ese tiempo. Después de 2 años la pasión y la ambición cobró vida y mas fuerza que nunca! Y se formo ROE-MEX
-
-        ROE-MEX tiene el mismo y simple acercamiento que hizo por mas de 25 años atrás y continua innovando y creando un producto que sostiene el abuso de algunos de los mejores atletas y permitiendo que se exhiba un hermoso arte entre el control de la silla y la ruda habilidad atlética.
-        
-        Nosotros continuaremos empujado e innovando productos que permitan que cualquiera que presente una discapacidad y la correcta actitud haga que sus metas se lleven acabo. 
-            `
+      titulo: 'MISIÓN',
+      texto: `Elaborar sillas de ruedas personalizadas, conocer a los usuarios de las sillas para así poderlas realizar de acuerdo a las necesidades, medidas antropométricas, lesión y estilo de vida que cada individuo, hechas en México con diseños innovadores y de la más alta calidad.`
+    },
+    {
+      titulo: 'VISIÓN',
+      texto: `Seguir innovando, creando y perfeccionando las sillas de ruedas hasta lograr que tengan la más alta calidad, dotandolas de atributos para lo que han sido creadas.`
     }
   ])
   return {
