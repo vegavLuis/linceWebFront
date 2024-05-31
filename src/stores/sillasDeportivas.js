@@ -45,11 +45,49 @@ import fourmaxcatawba from '../assets/sillasDeportivas/cuatroMax/catawba.jpg'
 import fourmaxdarkSienna from '../assets/sillasDeportivas/cuatroMax/darkSienna.jpg'
 import fourmaxmadder from '../assets/sillasDeportivas/cuatroMax/madder.jpg'
 
-import imagen2EZ1 from '../assets/sillasDeportivas/dosEZ/img1.png'
-import imagen2EZ2 from '../assets/sillasDeportivas/dosEZ/img2.png'
-import imagen2EZ3 from '../assets/sillasDeportivas/dosEZ/img3.png'
-import imagen2EZ4 from '../assets/sillasDeportivas/dosEZ/img4.png'
-import imagen2EZ5 from '../assets/sillasDeportivas/dosEZ/img5.png'
+// ezBkb
+import ezBkbtemptress from '@/assets/sillasDeportivas/dosEZ/temptress.jpg'
+import ezBkbbrownCoffe from '@/assets/sillasDeportivas/dosEZ/brownCoffe.jpg'
+import ezBkbforestGreen from '@/assets/sillasDeportivas/dosEZ/forestGreen.jpg'
+import ezBkbwagen from '@/assets/sillasDeportivas/dosEZ/wagen.jpg'
+import ezBkbartichoc from '@/assets/sillasDeportivas/dosEZ/artichoc.jpg'
+import ezBkbyellowSun from '@/assets/sillasDeportivas/dosEZ/yellowSun.jpg'
+import ezBkbmikado from '@/assets/sillasDeportivas/dosEZ/mikado.jpg'
+import ezBkbtangelo from '@/assets/sillasDeportivas/dosEZ/tangelo.jpg'
+import ezBkbrebecca from '@/assets/sillasDeportivas/dosEZ/rebecca.jpg'
+import ezBkbnesse from '@/assets/sillasDeportivas/dosEZ/nesse.jpg'
+import ezBkbplum from '@/assets/sillasDeportivas/dosEZ/plum.jpg'
+import ezBkbvioleta from '@/assets/sillasDeportivas/dosEZ/violeta.jpg'
+import ezBkbamaranth from '@/assets/sillasDeportivas/dosEZ/amaranth.jpg'
+import ezBkbmadderLake from '@/assets/sillasDeportivas/dosEZ/madderLake.jpg'
+import ezBkbcarmine from '@/assets/sillasDeportivas/dosEZ/carmine.jpg'
+import ezBkbfaluRed from '@/assets/sillasDeportivas/dosEZ/faluRed.jpg'
+import ezBkbonyx from '@/assets/sillasDeportivas/dosEZ/onyx.jpg'
+import ezBkbdavys from '@/assets/sillasDeportivas/dosEZ/davys.jpg'
+import ezBkbgrayX11 from '@/assets/sillasDeportivas/dosEZ/grayX11.jpg'
+import ezBkbgrays from '@/assets/sillasDeportivas/dosEZ/grays.jpg'
+import ezBkbgains from '@/assets/sillasDeportivas/dosEZ/gains.jpg'
+import ezBkbkepel from '@/assets/sillasDeportivas/dosEZ/kepel.jpg'
+import ezBkblazuli from '@/assets/sillasDeportivas/dosEZ/lazuli.jpg'
+import ezBkbphili from '@/assets/sillasDeportivas/dosEZ/phili.jpg'
+import ezBkbarsenico from '@/assets/sillasDeportivas/dosEZ/arsenico.jpg'
+import ezBkbotterSpace from '@/assets/sillasDeportivas/dosEZ/otterSpace.jpg'
+import ezBkbgunmetal from '@/assets/sillasDeportivas/dosEZ/gunmetal.jpg'
+import ezBkbdarkCharcoal from '@/assets/sillasDeportivas/dosEZ/darkCharcoal.jpg'
+import ezBkbdarkJungle from '@/assets/sillasDeportivas/dosEZ/darkJungle.jpg'
+import ezBkbsmoky from '@/assets/sillasDeportivas/dosEZ/smoky.jpg'
+import ezBkbthalo from '@/assets/sillasDeportivas/dosEZ/thalo.jpg'
+import ezBkbprussianBlue from '@/assets/sillasDeportivas/dosEZ/prussianBlue.jpg'
+import ezBkbyankeesBlue from '@/assets/sillasDeportivas/dosEZ/yankeesBlue.jpg'
+import ezBkbindigoR2 from '@/assets/sillasDeportivas/dosEZ/indigoR2.jpg'
+import ezBkbindigoR from '@/assets/sillasDeportivas/dosEZ/indigoR.jpg'
+import ezBkbculture from '@/assets/sillasDeportivas/dosEZ/culture.jpg'
+import ezBkbcyberYellow from '@/assets/sillasDeportivas/dosEZ/cyberYellow.jpg'
+import ezBkbblackCoffe from '@/assets/sillasDeportivas/dosEZ/blackCoffe.jpg'
+import ezBkbpurp from '@/assets/sillasDeportivas/dosEZ/purp.jpg'
+import ezBkbcatawba from '@/assets/sillasDeportivas/dosEZ/catawba.jpg'
+import ezBkbdarkSienna from '@/assets/sillasDeportivas/dosEZ/darkSienna.jpg'
+import ezBkbmadder from '@/assets/sillasDeportivas/dosEZ/madder.jpg'
 
 import imagenCurve1 from '../assets/sillasDeportivas/curve/img1.png'
 import imagenCurve2 from '../assets/sillasDeportivas/curve/img2.png'
@@ -226,11 +264,48 @@ export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
         { descripcion: `Banda para pantorrillas.` }
       ],
       imagenes: [
-        { src: imagen2EZ1 },
-        { src: imagen2EZ2 },
-        { src: imagen2EZ3 },
-        { src: imagen2EZ4 },
-        { src: imagen2EZ5 }
+        { src: ezBkbtemptress, color: 'Temptress' },
+        { src: ezBkbbrownCoffe, color: 'Brown Coffe' },
+        { src: ezBkbforestGreen, color: 'Forest Green' },
+        { src: ezBkbwagen, color: 'Wagen' },
+        { src: ezBkbartichoc, color: 'Artichoc' },
+        { src: ezBkbyellowSun, color: 'Yellow Sun' },
+        { src: ezBkbmikado, color: 'Mikado' },
+        { src: ezBkbtangelo, color: 'Tangelo' },
+        { src: ezBkbrebecca, color: 'Rebecca' },
+        { src: ezBkbnesse, color: 'Nesse' },
+        { src: ezBkbplum, color: 'Plum' },
+        { src: ezBkbvioleta, color: 'Violeta' },
+        { src: ezBkbamaranth, color: 'Amaranth' },
+        { src: ezBkbmadderLake, color: 'Madder Lake' },
+        { src: ezBkbcarmine, color: 'Carmine' },
+        { src: ezBkbfaluRed, color: 'Falu Red' },
+        { src: ezBkbonyx, color: 'Onyx' },
+        { src: ezBkbdavys, color: 'Davys' },
+        { src: ezBkbgrayX11, color: 'Gray X11' },
+        { src: ezBkbgrays, color: 'Grays' },
+        { src: ezBkbgains, color: 'Gains' },
+        { src: ezBkbkepel, color: 'Kepel' },
+        { src: ezBkblazuli, color: 'Lazuli' },
+        { src: ezBkbphili, color: 'Phili' },
+        { src: ezBkbarsenico, color: 'Arsenico' },
+        { src: ezBkbotterSpace, color: 'Otter Space' },
+        { src: ezBkbgunmetal, color: 'Gunmetal' },
+        { src: ezBkbdarkCharcoal, color: 'Dark Charcoal' },
+        { src: ezBkbdarkJungle, color: 'Dark Jungle' },
+        { src: ezBkbsmoky, color: 'Smoky' },
+        { src: ezBkbthalo, color: 'Thalo' },
+        { src: ezBkbprussianBlue, color: 'Prussian Blue' },
+        { src: ezBkbyankeesBlue, color: 'Yankees Blue' },
+        { src: ezBkbindigoR2, color: 'Indigo R2' },
+        { src: ezBkbindigoR, color: 'Indigo R' },
+        { src: ezBkbculture, color: 'Culture' },
+        { src: ezBkbcyberYellow, color: 'Cyber Yellow' },
+        { src: ezBkbblackCoffe, color: 'Black Coffe' },
+        { src: ezBkbpurp, color: 'Purp' },
+        { src: ezBkbcatawba, color: 'Catawba' },
+        { src: ezBkbdarkSienna, color: 'Dark Sienna' },
+        { src: ezBkbmadder, color: 'Madder' }
       ],
       info: `* Las imágenes son ilustrativas, el tipo de rodamientos traseros así como amarres clip strap, protectores de estructura, etc., tienen costo extra por lo que deberán ser cotizadas. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
     },
