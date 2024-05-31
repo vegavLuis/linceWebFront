@@ -7,8 +7,8 @@ export const useAppQuienesSomos = defineStore('appQuienesSomos', () => {
       titulo: '¿QUIÉNES SOMOS?',
       texto: `Somos una empresa mexicana dedicada a la fabricación de sillas de ruedas de uso diario y deportivas desde 1987.
       Sillas LINCE inició como una necesidad personal, el fundador y creador de la empresa, y los modelos de sillas es una atleta paralímpico, el señor Raúl Ortega.
-      Las circunstancias fueron las que impulsaron a nuestro fundador a crear algo más, a innovar y crear una silla de ruedas óptima para él y para su desempeño en basquetbol. Y así fue como una necesidad personal se convirtió en una oportunidad de negocio.
-      Cada persona tiene distintas necesidades, por lo tanto cada silla es diferente, todas las sillas son elaboradas para llevar su día a día o su disciplina al máximo.`
+      Las circunstancias fueron las que impulsaron a nuestro fundador a crear algo más, a innovar y crear una silla de ruedas óptima para él y para su desempeño en basquetbol. Y así fue como una necesidad personal se convirtió en una oportunidad.
+      Cada persona tiene distintas necesidades y el señor Raúl lo sabe, por lo tanto, cada silla es personalizada, cada una de las sillas es elaborada para llevar su día a día o su disciplina al máximo.`
     },
     {
       titulo: 'NOSOTROS',
