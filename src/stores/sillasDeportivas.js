@@ -273,6 +273,50 @@ import thundercatawba from '@/assets/sillasDeportivas/thunder/catawba.jpg'
 import thunderdarkSienna from '@/assets/sillasDeportivas/thunder/darkSienna.jpg'
 import thundermadder from '@/assets/sillasDeportivas/thunder/madder.jpg'
 
+// bancoDeLanzamineto
+import bancoDeLanzaminetoVioleta from '@/assets/sillasDeportivas/bancoDeLanzamiento/Violeta.jpg'
+import bancoDeLanzaminetoPhili from '@/assets/sillasDeportivas/bancoDeLanzamiento/Phili.jpg'
+import bancoDeLanzaminetoCulture from '@/assets/sillasDeportivas/bancoDeLanzamiento/Culture.jpg'
+import bancoDeLanzaminetoTemptress from '@/assets/sillasDeportivas/bancoDeLanzamiento/Temptress.jpg'
+import bancoDeLanzaminetoBrownCoffe from '@/assets/sillasDeportivas/bancoDeLanzamiento/BrownCoffe.jpg'
+import bancoDeLanzaminetoForestGreen from '@/assets/sillasDeportivas/bancoDeLanzamiento/ForestGreen.jpg'
+import bancoDeLanzaminetoWagen from '@/assets/sillasDeportivas/bancoDeLanzamiento/Wagen.jpg'
+import bancoDeLanzaminetoArtichoc from '@/assets/sillasDeportivas/bancoDeLanzamiento/Artichoc.jpg'
+import bancoDeLanzaminetoYellowSun from '@/assets/sillasDeportivas/bancoDeLanzamiento/YellowSun.jpg'
+import bancoDeLanzaminetoMikado from '@/assets/sillasDeportivas/bancoDeLanzamiento/Mikado.jpg'
+import bancoDeLanzaminetoTangelo from '@/assets/sillasDeportivas/bancoDeLanzamiento/Tangelo.jpg'
+import bancoDeLanzaminetoRebecca from '@/assets/sillasDeportivas/bancoDeLanzamiento/Rebecca.jpg'
+import bancoDeLanzaminetoNesse from '@/assets/sillasDeportivas/bancoDeLanzamiento/Nesse.jpg'
+import bancoDeLanzaminetoPlum from '@/assets/sillasDeportivas/bancoDeLanzamiento/Plum.jpg'
+import bancoDeLanzaminetoAmaranth from '@/assets/sillasDeportivas/bancoDeLanzamiento/Amaranth.jpg'
+import bancoDeLanzaminetoMadderLake from '@/assets/sillasDeportivas/bancoDeLanzamiento/MadderLake.jpg'
+import bancoDeLanzaminetoCarmine from '@/assets/sillasDeportivas/bancoDeLanzamiento/Carmine.jpg'
+import bancoDeLanzaminetoFaluRed from '@/assets/sillasDeportivas/bancoDeLanzamiento/FaluRed.jpg'
+import bancoDeLanzaminetoOnyx from '@/assets/sillasDeportivas/bancoDeLanzamiento/Onyx.jpg'
+import bancoDeLanzaminetoDavys from '@/assets/sillasDeportivas/bancoDeLanzamiento/Davys.jpg'
+import bancoDeLanzaminetoGrayX11 from '@/assets/sillasDeportivas/bancoDeLanzamiento/GrayX11.jpg'
+import bancoDeLanzaminetoGrays from '@/assets/sillasDeportivas/bancoDeLanzamiento/Grays.jpg'
+import bancoDeLanzaminetoGains from '@/assets/sillasDeportivas/bancoDeLanzamiento/Gains.jpg'
+import bancoDeLanzaminetoKepel from '@/assets/sillasDeportivas/bancoDeLanzamiento/Kepel.jpg'
+import bancoDeLanzaminetoLazuli from '@/assets/sillasDeportivas/bancoDeLanzamiento/Lazuli.jpg'
+import bancoDeLanzaminetoArsenico from '@/assets/sillasDeportivas/bancoDeLanzamiento/Arsenico.jpg'
+import bancoDeLanzaminetoOtterSpace from '@/assets/sillasDeportivas/bancoDeLanzamiento/OtterSpace.jpg'
+import bancoDeLanzaminetoGunmetal from '@/assets/sillasDeportivas/bancoDeLanzamiento/Gunmetal.jpg'
+import bancoDeLanzaminetoDarkCharcoal from '@/assets/sillasDeportivas/bancoDeLanzamiento/DarkCharcoal.jpg'
+import bancoDeLanzaminetoDarkJungle from '@/assets/sillasDeportivas/bancoDeLanzamiento/DarkJungle.jpg'
+import bancoDeLanzaminetoSmoky from '@/assets/sillasDeportivas/bancoDeLanzamiento/Smoky.jpg'
+import bancoDeLanzaminetoThalo from '@/assets/sillasDeportivas/bancoDeLanzamiento/Thalo.jpg'
+import bancoDeLanzaminetoPrussianBlue from '@/assets/sillasDeportivas/bancoDeLanzamiento/PrussianBlue.jpg'
+import bancoDeLanzaminetoYankeesBlue from '@/assets/sillasDeportivas/bancoDeLanzamiento/YankeesBlue.jpg'
+import bancoDeLanzaminetoIndigoR2 from '@/assets/sillasDeportivas/bancoDeLanzamiento/IndigoR2.jpg'
+import bancoDeLanzaminetoIndigoR from '@/assets/sillasDeportivas/bancoDeLanzamiento/IndigoR.jpg'
+import bancoDeLanzaminetoCyberYellow from '@/assets/sillasDeportivas/bancoDeLanzamiento/CyberYellow.jpg'
+import bancoDeLanzaminetoBlackCoffe from '@/assets/sillasDeportivas/bancoDeLanzamiento/BlackCoffe.jpg'
+import bancoDeLanzaminetoPurp from '@/assets/sillasDeportivas/bancoDeLanzamiento/Purp.jpg'
+import bancoDeLanzaminetoCatawba from '@/assets/sillasDeportivas/bancoDeLanzamiento/Catawba.jpg'
+import bancoDeLanzaminetoDarkSienna from '@/assets/sillasDeportivas/bancoDeLanzamiento/DarkSienna.jpg'
+import bancoDeLanzaminetoBancoDeLanzamiento from '@/assets/sillasDeportivas/bancoDeLanzamiento/BancoDeLanzamiento.jpg'
+
 export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
   const data = ref([
     {
@@ -699,6 +743,64 @@ export const useSillasDeportivas = defineStore('sillasDeportivas', () => {
         { src: thundermadder, color: 'Madder' }
       ],
       info: `Las imágenes son ilustrativas, el tipo de rodamientos traseros así como el estilo de la Hand Bike (L) o (V) tiene costo adicional por lo que deberá ser cotizado. Los rodamientos de fibra de carbón o accesorios tienen costo extra`
+    },
+    {
+      id: 8,
+      nombre: 'Banco de lanzamineto',
+      descripcionPrevia: `Para un mejor desarrollo dentro del campo de lanzamiento, se distingue por su marco rígido y robusto, que la hace ligera y muy resistente. 
+      Adeacaudo para el lanzamiento de Bbala, disco y/o clava.`,
+      especificaciones: [
+        { descripcion: 'Cuatro argollas para anclaje' },
+        { descripcion: 'Con ajustadores para amarres' },
+        { descripcion: 'Estribo telescópico' },
+        { descripcion: `Con dos ruedas de 3" para traslado` },
+        { descripcion: 'Elaboracion de una aleación específica de aluminio aeronáutico' },
+        { descripcion: 'Peso total de 5 a 6 kilos' }
+      ],
+      imagenes: [
+        { src: bancoDeLanzaminetoVioleta, color: 'Violeta' },
+        { src: bancoDeLanzaminetoPhili, color: 'Phili' },
+        { src: bancoDeLanzaminetoCulture, color: 'Culture' },
+        { src: bancoDeLanzaminetoTemptress, color: 'Temptress' },
+        { src: bancoDeLanzaminetoBrownCoffe, color: 'Brown Coffe' },
+        { src: bancoDeLanzaminetoForestGreen, color: 'Forest Green' },
+        { src: bancoDeLanzaminetoWagen, color: 'Wagen' },
+        { src: bancoDeLanzaminetoArtichoc, color: 'Artichoc' },
+        { src: bancoDeLanzaminetoYellowSun, color: 'Yellow Sun' },
+        { src: bancoDeLanzaminetoMikado, color: 'Mikado' },
+        { src: bancoDeLanzaminetoTangelo, color: 'Tangelo' },
+        { src: bancoDeLanzaminetoRebecca, color: 'Rebecca' },
+        { src: bancoDeLanzaminetoNesse, color: 'Nesse' },
+        { src: bancoDeLanzaminetoPlum, color: 'Plum' },
+        { src: bancoDeLanzaminetoAmaranth, color: 'Amaranth' },
+        { src: bancoDeLanzaminetoMadderLake, color: 'Madder Lake' },
+        { src: bancoDeLanzaminetoCarmine, color: 'Carmine' },
+        { src: bancoDeLanzaminetoFaluRed, color: 'Falu Red' },
+        { src: bancoDeLanzaminetoOnyx, color: 'Onyx' },
+        { src: bancoDeLanzaminetoDavys, color: 'Davys' },
+        { src: bancoDeLanzaminetoGrayX11, color: 'Gray X11' },
+        { src: bancoDeLanzaminetoGrays, color: 'Grays' },
+        { src: bancoDeLanzaminetoGains, color: 'Gains' },
+        { src: bancoDeLanzaminetoKepel, color: 'Kepel' },
+        { src: bancoDeLanzaminetoLazuli, color: 'Lazuli' },
+        { src: bancoDeLanzaminetoArsenico, color: 'Arsenico' },
+        { src: bancoDeLanzaminetoOtterSpace, color: 'Otter Space' },
+        { src: bancoDeLanzaminetoGunmetal, color: 'Gunmetal' },
+        { src: bancoDeLanzaminetoDarkCharcoal, color: 'Dark Charcoal' },
+        { src: bancoDeLanzaminetoDarkJungle, color: 'Dark Jungle' },
+        { src: bancoDeLanzaminetoSmoky, color: 'Smoky' },
+        { src: bancoDeLanzaminetoThalo, color: 'Thalo' },
+        { src: bancoDeLanzaminetoPrussianBlue, color: 'Prussian Blue' },
+        { src: bancoDeLanzaminetoYankeesBlue, color: 'Yankees Blue' },
+        { src: bancoDeLanzaminetoIndigoR2, color: 'Indigo R2' },
+        { src: bancoDeLanzaminetoIndigoR, color: 'Indigo R' },
+        { src: bancoDeLanzaminetoCyberYellow, color: 'Cyber Yellow' },
+        { src: bancoDeLanzaminetoBlackCoffe, color: 'Black Coffe' },
+        { src: bancoDeLanzaminetoPurp, color: 'Purp' },
+        { src: bancoDeLanzaminetoCatawba, color: 'Catawba' },
+        { src: bancoDeLanzaminetoDarkSienna, color: 'Dark Sienna' },
+        { src: bancoDeLanzaminetoBancoDeLanzamiento, color: 'Banco De Lanzamiento' }
+      ]
     }
   ])
   return {
