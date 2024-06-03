@@ -96,6 +96,12 @@ const router = createRouter({
         import(/* webpackChunkName: "sillas-infantiles" */ '../views/Testimonios.vue')
     },
     {
+      path: '/promociones',
+      name: 'promociones',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/Promociones.vue')
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "sillas-infantiles" */ '../views/Login.vue')
