@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSillasUsoDiario } from '@/stores/usoDiario/sillasUsodiario.js'
-import { useSillasInfantiles } from '@/stores/sillasInfantiles.js'
-import { useSillasDeportivas } from '@/stores/sillasDeportivas.js'
+import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
+import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
+import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
 import primeraIma from '@/assets/imagenesCotizacion/primera.jpeg'
 import segundaIma from '@/assets/imagenesCotizacion/segunda.jpeg'
 const dataSillasUsoDiario = useSillasUsoDiario()
