@@ -48,7 +48,7 @@ export const useAppStore = defineStore('useApp', () => {
       hijos: [
         { nombre: 'Inicio', link: '/' },
         { nombre: '¿Quienes Somos?', link: '/quienes-somos' },
-        { nombre: 'Promociones', link: '/promociones' },
+        // { nombre: 'Promociones', link: '/promociones' },
         { nombre: 'Contacto', link: '/' }
       ]
     },
