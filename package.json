@@ -13,14 +13,12 @@
     "@jamescoyle/vue-icon": "^0.1.2",
     "@mdi/js": "^7.4.47",
     "axios": "^1.6.5",
-    "pdf-vue3-vite": "^1.0.13",
     "pinia": "^2.1.7",
     "socket.io-client": "^4.7.4",
     "vue": "^3.4.27",
     "vue-router": "^4.2.5",
     "vue3-carousel": "^0.3.1",
-    "vue3-pdf-app": "^1.0.3",
-    "vuetify": "^3.3.23"
+    "vuetify": "^3.6.8"
   },
   "devDependencies": {
     "@mdi/font": "^7.3.67",
