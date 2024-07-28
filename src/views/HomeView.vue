@@ -1,11 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 // import Componente from '../components/Componente.vue'
+// import Comunidad from '../components/Comunidad.vue'
+// import ima from '../assets/ImagenSilla.jpg'
 import CarouselPrincipal from '../components/CarouselPrincipal.vue'
-import Comunidad from '../components/Comunidad.vue'
 import BannerSillas from '../components/BannerSillas.vue'
 import Especificaciones from '../components/SillasUsoDiario/Especificaciones.vue'
-// import ima from '../assets/ImagenSilla.jpg'
+import Mapa from '@/components/Mapa.vue'
 import ima from '../assets/imagenParallax.jpeg'
 let mostrar = ref()
 const dato = ref([])
@@ -29,7 +30,7 @@ const regresarVista = () => {
       <h2 class="titulo charm-regular">Mas que una silla, un estilo de vida</h2>
     </div> -->
     <CarouselPrincipal />
-    <!-- <Componente /> -->
+    <Componente />
     <!-- <v-container>
     </v-container> -->
     <v-parallax :src="ima" height="300" scale="1" class="my-8">
