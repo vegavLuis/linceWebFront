@@ -45,7 +45,7 @@ const regresarVista = () => {
             <v-card-actions>
               <v-spacer></v-spacer>
               <router-link :to="{ name: 'cotizacion', params: { id: item.nombre } }" class="mr-2">
-                Cotizar
+                <v-btn class="text-none" color="#212121" variant="text">Cotizar</v-btn>
               </router-link>
               <!-- <BotonCotizar :datos="item.id" /> -->
               <!-- <v-btn color="primary" variant="flat" @click="cambiarVista(item)"> Explorar </v-btn> -->
