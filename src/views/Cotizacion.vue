@@ -110,9 +110,9 @@ const en = () => {
     <v-row>
       <v-col cols="12" md="6" class="hidden-sm-and-down">
         <v-card height="auto">
-          <img :src="ima1.src" v-if="e1 == 1" cover />
-          <img :src="ima2.src" v-if="e1 == 2" cover />
-          <img :src="ima3.src" v-if="e1 == 3" cover />
+          <img :src="ima1.src" v-if="e1 == 1" class="imag" />
+          <img :src="ima2.src" v-if="e1 == 2" class="imag" />
+          <img :src="ima3.src" v-if="e1 == 3" class="imag" />
         </v-card>
       </v-col>
 
