@@ -8,7 +8,7 @@ import BannerSillas from '../components/BannerSillas.vue'
 import Especificaciones from '../components/SillasUsoDiario/Especificaciones.vue'
 import Mapa from '@/components/Mapa.vue'
 import ima from '../assets/imagenParallax.jpeg'
-let mostrar = ref()
+const mostrar = ref()
 const dato = ref([])
 
 const cambiarVista = (item) => {
