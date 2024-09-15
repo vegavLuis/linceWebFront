@@ -50,9 +50,11 @@ const dat = ref({
   tipoRespaldo: '',
   anguloRespaldo: '',
   isImpulsoresManuales: '',
+  tipoImpulsoresManuales: '',
   isExtenciones: '',
   anchoEstribo: '',
   tipoAnchoEstribo: '',
+  tipoEstribo: '',
   largoTibiaPeroneIzq: '',
   largoTibiaPeroneDer: '',
   contraEstribo: '',
@@ -80,7 +82,36 @@ const dat = ref({
   isFrenos: '',
   tipoFrenos: '',
   isCoderas: '',
-  tipoCoderas: ''
+  tipoCoderas: '',
+  tipoCangureraFD: '',
+  isPortaVasosFD: '',
+  isTermoPlasticoFD: '',
+  istermoAlumnioFD: '',
+  tipoProtectorFrontalFD: '',
+  numPiezasProtectorFrontalFD: '',
+  isKitParcehsFD: '',
+  isKitLlavesFD: '',
+  isBombaAirePedalFD: '',
+  isBombaParaCarroFD: '',
+  isBolsaTransportadoraRuedasFD: '',
+  tipoLlantasFD: '',
+  colorLlantaFD: '',
+  isLlanteasExtrasFD: [
+    {
+      medidia: '',
+      numeroPares: ''
+    }
+  ],
+  isCamarasExtrasFD: [
+    {
+      medidia: '',
+      numeroPares: ''
+    }
+  ],
+  parachoqueAntivuelcoFrontalFD: '',
+  argollasBandaFD: '',
+  botonConCuerdaFD: '',
+  numeroPiezasBotonCuedaFD: ''
 })
 // const item = ref([
 //   {
@@ -296,11 +327,20 @@ const en = (dat) => {
                           v-model="dat.alturaRespaldo"
                         ></v-text-field>
                         <v-radio-group v-model="dat.tipoRespaldo" inline>
-                          <v-radio label="Fijo N/C" value="Fijo N/C"></v-radio>
+                          <!-- <v-radio label="Fijo N/C" value="Fijo N/C"></v-radio>
                           <v-radio label="Plegable" value="Plegable"></v-radio>
                           <v-radio label="Estandar" value="Estandar"></v-radio>
                           <v-radio label="Bandas" value="Bandas"></v-radio>
+                          <v-radio label="Ergonomico" value="Ergonomico"></v-radio> -->
+                          <v-radio label="Estandar $ N/C" value="Estandar $ N/C"></v-radio>
+                          <v-radio label="Bandas $ 250.00" value="250"></v-radio>
                           <v-radio label="Ergonomico" value="Ergonomico"></v-radio>
+                          <v-radio label="ROHO $ 12,000.00" value="12000"></v-radio>
+                          <v-radio label="Corto" value="Corto"></v-radio>
+                          <v-radio label="Alto" value="Alto"></v-radio>
+                          <v-radio label="Contorno STD" value="Contorno STD"></v-radio>
+                          <v-radio label="Mediano" value="Mediano"></v-radio>
+                          <v-radio label="Largo" value="Largo"></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -322,6 +362,13 @@ const en = (dat) => {
                           <v-radio label="Si" value="Si"></v-radio>
                           <v-radio label="No" value="No"></v-radio>
                         </v-radio-group>
+                        <v-radio-group v-model="dat.tipoImpulsoresManuales" inline>
+                          <v-radio label="Corto atornillado" value="Corto atornillado"></v-radio>
+                          <v-radio label="Largo Atornillado" value="Largo Atornillado"></v-radio>
+                          <v-radio label="Modelo en “L”" value="Modelo en “L”"></v-radio>
+                          <v-radio label="Modelo en “T”" value="Modelo en “T”"></v-radio>
+                          <v-radio label="Retractil $ 4,500.00" value="4500"></v-radio>
+                        </v-radio-group>
                         <p class="text-medium-emphasis">
                           <strong>Extenciones</strong>
                         </p>
@@ -339,6 +386,12 @@ const en = (dat) => {
                         <v-radio-group v-model="dat.tipoAnchoEstribo" inline>
                           <v-radio label="Ajustable (std)" value="Ajustable (std)"></v-radio>
                           <v-radio label="Especial" value="Especial"></v-radio>
+                        </v-radio-group>
+                        <v-radio-group v-model="dat.tipoEstribo" inline>
+                          <v-radio label="Aluminio N/C" value="Aluminio"></v-radio>
+                          <v-radio label="Titanio $ 1,050.00" value="1050"></v-radio>
+                          <v-radio label="C/Placa Alum. $ 150.00" value="150"></v-radio>
+                          <v-radio label="Carbono $ 500.00" value=""></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -489,7 +542,16 @@ const en = (dat) => {
                           <v-radio label="Fijos" value="Fijos"></v-radio>
                           <v-radio label="Atornillados" value="Atornillados"></v-radio>
                           <v-radio label="Aluminio" value="Aluminio"></v-radio>
-                          <v-radio label="Fibra de carbono" value="Fibra de carbono"></v-radio>
+                          <v-radio
+                            label="F. de Carbono $ 1,500.00"
+                            value="F. de Carbono $ 1,500.00"
+                          ></v-radio>
+                          <v-radio label="Solo lamina" value="Solo lamina"></v-radio>
+                          <v-radio label="Deslisable" value="Deslisable"></v-radio>
+                          <v-radio
+                            label="Fijo C/filo tubo $ 245.00"
+                            value="Fijo C/filo tubo $ 245.00"
+                          ></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -504,6 +566,11 @@ const en = (dat) => {
                           <v-radio label="25”" value="25"></v-radio>
                           <v-radio label="26”" value="26"></v-radio>
                           <v-radio label="27” (700c 23x622)" value="27"></v-radio>
+                          <v-radio label="Ejes de ½” N/C" value="Ejes de ½"></v-radio>
+                          <v-radio
+                            label="Ejes de 5/8” (Set baleros y recibidores) $ 1,200.00"
+                            value="Ejes de 5/8"
+                          ></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -596,6 +663,226 @@ const en = (dat) => {
                           <v-radio label="C/Grip $ N/C" value="C/Grip"></v-radio>
                           <v-radio label="Desmontables" value="Desmontables"></v-radio>
                         </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p class="text-medium-emphasis">
+                          <strong>Cangureras: </strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoCangureraFD" inline>
+                          <v-radio
+                            label="Chica $ 300.00 (Un cierre)"
+                            value="Chica $ 300.00 (Un cierre)"
+                          ></v-radio>
+                          <v-radio
+                            label="Medidana $ 350.00 (Dos cierres)"
+                            value="Medidana $ 350.00 (Dos cierres)"
+                          ></v-radio>
+                          <v-radio
+                            label="Grande $ 400.00 (Tres cierres)"
+                            value="Grande $ 400.00 (Tres cierres)"
+                          ></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="6" v-if="n.a === 3">
+                        <v-radio-group v-model="dat.isPortaVasosFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Porta vasos $ 200.00</strong>
+                          </p>
+                          <v-radio value="Porta vasos $ 200.00"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="6" v-if="n.a === 3">
+                        <v-radio-group v-model="dat.isTermoPlasticoFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Porta vasos $ 200.00</strong>
+                          </p>
+                          <v-radio value="Termo plastico $ 200.00."></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <v-radio-group v-model="dat.istermoAlumnioFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Termo Alum. $ 000.00</strong>
+                          </p>
+                          <v-radio value="Termo Alum. $ 000.00"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p class="text-medium-emphasis">
+                          <strong>Protectores frontales </strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoProtectorFrontalFD" inline>
+                          <v-radio label="Tela $ 140.00" value="Tela $ 140.00"></v-radio>
+                          <v-radio label="Piel $ 210.00" value="Piel $ 210.00"></v-radio>
+                          <v-radio
+                            label="Proccion defensa Aulada $ 190.00"
+                            value="Proccion defensa Aulada $ 190.00"
+                          ></v-radio>
+                          <v-radio
+                            label="Protecion P/Clip Strap $ 25.00 pza."
+                            value="Protecion P/Clip Strap $ 25.00 pza."
+                          ></v-radio>
+                        </v-radio-group>
+                        <label
+                          class="text-medium-emphasis"
+                          v-if="
+                            dat.tipoProtectorFrontalFD === 'Protecion P/Clip Strap $ 25.00 pza.'
+                          "
+                        >
+                          <strong>Numero de piezas </strong>
+                        </label>
+                        <v-text-field
+                          v-if="
+                            dat.tipoProtectorFrontalFD === 'Protecion P/Clip Strap $ 25.00 pza.'
+                          "
+                          variant="outlined"
+                          v-model="dat.numPiezasProtectorFrontalFD"
+                        ></v-text-field>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <v-radio-group v-model="dat.isKitParcehsFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Kit de parches $ 000.00</strong>
+                          </p>
+                          <v-radio value="Kit de parches $ 000.00"></v-radio>
+                        </v-radio-group>
+                        <v-radio-group v-model="dat.isKitLlavesFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Kit de llaves $ 000.00</strong>
+                          </p>
+                          <v-radio value="Kit de llaves $ 000.00"></v-radio>
+                        </v-radio-group>
+                        <v-radio-group v-model="dat.isBombaAirePedalFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Bomba de aire de pedal $ 490.00</strong>
+                          </p>
+                          <v-radio value="Bomba de aire de pedal $ 490.00"></v-radio>
+                        </v-radio-group>
+                        <v-radio-group v-model="dat.isBombaParaCarroFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Bomba para carro $ 000.00</strong>
+                          </p>
+                          <v-radio value="Bomba para carro $ 000.00"></v-radio>
+                        </v-radio-group>
+                        <v-radio-group v-model="dat.isBolsaTransportadoraRuedasFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Bolsa transportadora ruedas $ 1,650.00</strong>
+                          </p>
+                          <v-radio value="Bolsa transportadora ruedas $ 1,650.00"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p class="text-medium-emphasis">
+                          <strong>Llantas: </strong>
+                          <v-radio-group v-model="dat.tipoLlantasFD" inline>
+                            <v-radio label="Primo" value="Primo"></v-radio>
+                            <v-radio label="Kenda" value="Kenda"></v-radio>
+                            <v-radio label="IRC" value="IRC"></v-radio>
+                            <v-radio label="Shwalbe" value="Shwalbe"></v-radio>
+                            <v-radio label="Shwalbe" value="Shwalbe"></v-radio>
+                          </v-radio-group>
+                          <v-radio-group v-model="dat.colorLlantaFD" inline>
+                            <v-radio label="Gris" value="Gris"></v-radio>
+                            <v-radio label="Roja" value="Roja"></v-radio>
+                            <v-radio label="Azul" value="Azul"></v-radio>
+                            <v-radio label="Amarilla" value="Amarilla"></v-radio>
+                          </v-radio-group>
+                        </p>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p class="text-medium-emphasis">
+                          <strong>Llantas Extras</strong>
+                        </p>
+                        <v-radio-group v-model="dat.isLlanteasExtrasFD" inline>
+                          <v-radio label="Si" value="Si"></v-radio>
+                          <v-radio label="No" value="No"></v-radio>
+                        </v-radio-group>
+                        <div v-if="dat.isLlanteasExtrasFD === 'Si'">
+                          <p class="text-medium-emphasis">
+                            <strong>Numero Llantas ”</strong>
+                          </p>
+                          <v-text-field
+                            variant="outlined"
+                            v-model="dat.isLlanteasExtrasFD.medidia"
+                          ></v-text-field>
+                          <p class="text-medium-emphasis">
+                            <strong>Numero Pares</strong>
+                          </p>
+                          <v-text-field
+                            variant="outlined"
+                            v-model="dat.isLlanteasExtrasFD.numeroPares"
+                          ></v-text-field>
+                        </div>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p class="text-medium-emphasis">
+                          <strong>Camaras Extras</strong>
+                        </p>
+                        <v-radio-group v-model="dat.isCamarasExtrasFD" inline>
+                          <v-radio label="Si" value="Si"></v-radio>
+                          <v-radio label="No" value="No"></v-radio>
+                        </v-radio-group>
+                        <div v-if="dat.isCamarasExtrasFD === 'Si'">
+                          <p class="text-medium-emphasis">
+                            <strong>Numero Camara ”</strong>
+                          </p>
+                          <v-text-field
+                            variant="outlined"
+                            v-model="dat.isCamarasExtrasFD.medidia"
+                          ></v-text-field>
+                          <p class="text-medium-emphasis">
+                            <strong>Numero Pares</strong>
+                          </p>
+                          <v-text-field
+                            variant="outlined"
+                            v-model="dat.isCamarasExtrasFD.numeroPares"
+                          ></v-text-field>
+                        </div>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p class="text-medium-emphasis">
+                          <strong>Extras Soldables </strong>
+                        </p>
+                        <v-radio-group v-model="dat.parachoqueAntivuelcoFrontalFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Kit de parches $ 000.00</strong>
+                          </p>
+                          <v-radio value="Parachoque (antivuelco frontal) $ 250.00"></v-radio>
+                        </v-radio-group>
+                        <v-radio-group v-model="dat.argollasBandaFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Argollas Banda $ 200.00 (Pzas 2)</strong>
+                          </p>
+                          <v-radio value="Parachoque (antivuelco frontal) $ 250.00"></v-radio>
+                        </v-radio-group>
+                        <p class="text-medium-emphasis">
+                          <strong>Boton C/cuerda $ 100.00 Pza </strong>
+                        </p>
+                        <v-radio-group v-model="dat.botonConCuerdaFD" inline>
+                          <v-radio label="Si" value="Si"></v-radio>
+                          <v-radio label="No" value="No"></v-radio>
+                        </v-radio-group>
+                        <div v-if="dat.botonConCuerdaFD == 'Si'">
+                          <label
+                            ><p class="text-medium-emphasis d-flex align-center">
+                              <strong>Numero de Piezas</strong>
+                            </p></label
+                          >
+                          <v-text-field
+                            variant="outlined"
+                            v-model="dat.numeroPiezasBotonCuedaFD"
+                          ></v-text-field>
+                        </div>
                       </v-col>
                     </v-row>
                   </v-card>
