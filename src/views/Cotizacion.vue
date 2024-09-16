@@ -60,15 +60,14 @@ const dat = ref({
   contraEstribo: '',
   disRespaldoACentroGravedad: '',
   disCentroGravedadABujeDelantero: '',
-  disBujeDelanteroEstrino: '',
+  disBujeDelanteroEstribo: '',
   disBujesDelanteros: '',
   tipoRuedasDelanteras: '',
   tijeras: '',
   medidaTijeras: '',
   separacionRespaldoRueda: '',
   inclinacionRodTraseras: '',
-  antivuelcoUnaRueda: '',
-  antivuelcoDosRuedas: '',
+  antiVuelco: '',
   tipoEstiloAntiVuelco: '',
   alturaLaterar: '',
   tipoAlturaLateral: '',
@@ -446,7 +445,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
-                          v-model="dat.disBujeDelanteroEstrino"
+                          v-model="dat.disBujeDelanteroEstribo"
                         ></v-text-field>
                       </v-col>
 
@@ -513,20 +512,24 @@ const en = (dat) => {
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 2">
-                        <p class="text-medium-emphasis">
+                        <v-radio-group v-model="dat.antiVuelco" inline>
+                          <v-radio
+                            label="Anti-vuelco una rueda $ 1,500.00"
+                            value="Anti-vuelco una rueda $ 1,500.00"
+                          ></v-radio>
+                          <v-radio label="Doble. $ 2150.00" value="Doble. $ 2150.00"></v-radio>
+                        </v-radio-group>
+                        <!-- <p class="text-medium-emphasis">
                           <strong>Anti-vuelco una rueda $ 1,500.00 (movible)</strong>
                         </p>
-                        <v-text-field
-                          variant="outlined"
-                          v-model="dat.antivuelcoUnaRueda"
-                        ></v-text-field>
+                        <v-text-field variant="outlined" v-model="dat.antiVuelco"></v-text-field>
                         <p class="text-medium-emphasis">
                           <strong>Anti-vuelco doble $ 2,150.00 (movible)</strong>
-                        </p>
-                        <v-text-field
+                        </p> -->
+                        <!-- <v-text-field
                           variant="outlined"
                           v-model="dat.antivuelcoDosRuedas"
-                        ></v-text-field>
+                        ></v-text-field> -->
                         <v-radio-group v-model="dat.tipoEstiloAntiVuelco" inline>
                           <v-radio label="Estilo en “V”" value="Estilo en V"></v-radio>
                           <v-radio label="Recta" value="Recta"></v-radio>
