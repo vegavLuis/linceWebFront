@@ -1,13 +1,26 @@
-<script setup></script>
+<script setup>
+import { useAuthStore } from '@/stores/auth.js'
+const store = useAuthStore()
+const item = {
+  email: '',
+  password: ''
+}
+</script>
 <template>
   <div class="form">
     <v-card width="55%">
-      <v-form>
+      <v-form @submit.prevent="store.handleSubmit(item)">
         <v-container>
           <h1 class="text-center mb-6 mt-6">Login</h1>
           <v-row>
             <v-col cols="12">
-              <v-text-field variant="outlined" label="Correo" required class="mb-6"></v-text-field>
+              <v-text-field
+                variant="outlined"
+                label="Correo"
+                required
+                class="mb-6"
+                v-model="item.email"
+              ></v-text-field>
             </v-col>
             <v-col cols="12">
               <v-text-field
@@ -15,6 +28,7 @@
                 label="Contraseña"
                 required
                 class="mb-6"
+                v-model="item.password"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -22,7 +36,7 @@
             No tienes cuenta?
             <span> <router-link to=""> Contacta con el administrador</router-link></span>
           </p>
-          <v-btn block class="mt-6">Ingresar</v-btn>
+          <v-btn block class="mt-6" type="submit">Ingresar</v-btn>
         </v-container>
       </v-form>
     </v-card>

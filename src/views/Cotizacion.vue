@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
 import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
 import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
@@ -17,6 +17,7 @@ const dataSillasUsoDiario = useSillasUsoDiario()
 const dataSillasInfantiles = useSillasInfantiles()
 const dataSillasDeportivas = useSillasDeportivas()
 const route = useRoute()
+const router = useRouter()
 
 const id = route.params.id
 const dataSilla = ref([])
@@ -208,7 +209,16 @@ const buscarSilla = async () => {
 buscarSilla()
 
 const en = (dat) => {
-  console.log('estos', dat)
+  const l = localStorage.getItem('cotizacion')
+  if (l == undefined) {
+    console.log('esta vacio')
+    router.push('/login')
+  } else {
+  }
+  // localStorage.setItem('cotizacion', dat.anchoDeAsiento)
+  // let l = localStorage.getItem('cotizacion')
+  // console.log(l)
+  // console.log('estos', dat)
 }
 </script>
 <template>
