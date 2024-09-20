@@ -1,40 +1,31 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
-import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
-import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
-// import {
-//   VStepper,
-//   VStepperItem,
-//   VStepperHeader,
-//   VStepperWindow,
-//   VStepperWindowItem,
-//   VStepperActions
-// } from 'vuetify/labs/VStepper'
+import { ref } from 'vue'
+// import { useRoute } from 'vue-router'
+// import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
+// import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
+// import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
+// import { useAuthUserStore } from '../stores/authUser.js'
+import { useCotizacionStore } from '../stores/cotizacion.js'
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiCheckCircle } from '@mdi/js'
 
-const dataSillasUsoDiario = useSillasUsoDiario()
-const dataSillasInfantiles = useSillasInfantiles()
-const dataSillasDeportivas = useSillasDeportivas()
-const route = useRoute()
-const router = useRouter()
+const storeCotizacion = useCotizacionStore()
+// const storeUser = useAuthUserStore()
+// const dataSillasUsoDiario = useSillasUsoDiario()
+// const dataSillasInfantiles = useSillasInfantiles()
+// const dataSillasDeportivas = useSillasDeportivas()
+// const route = useRoute()
 
-const id = route.params.id
-const dataSilla = ref([])
-const ima1 = ref('')
-const ima2 = ref('')
-const ima3 = ref('')
-const e1 = ref(1)
-const textNext = ref('Siguiente')
-const tipoBoton = ref('button')
-const tipo = ref(false)
-// const d = ref([
-//   {
-//     a: 1,
-//     b: 2,
-//     c: 3
-//   }
-// ])
+// const id = route.params.id
+// const dataSilla = ref([])
+// const ima1 = ref('')
+// const ima2 = ref('')
+// const ima3 = ref('')
+// const e1 = ref(1)
+// const textNext = ref('Siguiente')
+// const tipoBoton = ref('button')
+// const tipo = ref(false)
+
 const dat = ref({
   tipoModelo: '',
   isTipo: '',
@@ -113,139 +104,93 @@ const dat = ref({
   botonConCuerdaFD: '',
   numeroPiezasBotonCuedaFD: ''
 })
+
 // const item = ref([
 //   {
-//     a: 1,
-//     datos: [
-//       {
-//         tipoModelo: '',
-//         isTipo: '',
-//         anchoDeAsiento: ''
-//       }
-//     ]
+//     a: 1
 //   },
 //   {
-//     a: 2,
-//     datos: [
-//       {
-//         a: '',
-//         v: '',
-//         b: ''
-//       }
-//     ]
+//     a: 2
 //   },
 //   {
-//     a: 3,
-//     datos: [
-//       {
-//         q: '',
-//         w: '',
-//         e: ''
-//       }
-//     ]
+//     a: 3
 //   },
 //   {
-//     a: 4,
-//     descripcion: 'En breve nos ponemos en contacto'
+//     a: 4
 //   }
 // ])
-const item = ref([
-  {
-    a: 1
-  },
-  {
-    a: 2
-  },
-  {
-    a: 3
-  },
-  {
-    a: 4
-  }
-])
 
-const disabled = (n) => {
-  e1.value === 1
-    ? 'prev'
-    : e1.value === item.value
-      ? 'next'
-      : e1.value === 3 || e1.value === 4
-        ? (textNext.value = 'Enviar')
-        : (textNext.value = 'Siguiente')
-}
-const ant = () => {
-  e1.value--
-  if (e1.value === 1) {
-    textNext.value = 'Sigueinte'
-  } else if (e1.value === 2) {
-    textNext.value = 'Sigueinte'
-  }
-}
-const pre = (d) => {
-  e1.value++
-  if (e1.value === 3) {
-    textNext.value = 'Enviar'
-  } else if (e1.value === 4) {
-    tipoBoton.value = 'submit'
-    en(d)
-    tipo.value = true
-  }
-}
-const buscarSilla = async () => {
-  dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id)
+// const ant = () => {
+//   e1.value--
+//   if (e1.value === 1) {
+//     textNext.value = 'Sigueinte'
+//   } else if (e1.value === 2) {
+//     textNext.value = 'Sigueinte'
+//   }
+// }
 
-  if (dataSilla.value === undefined) {
-    dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id)
-  }
-  if (dataSilla.value === undefined) {
-    dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id)
-  }
+// const pre = (d) => {
+//   e1.value++
+//   if (e1.value === 3) {
+//     textNext.value = 'Enviar'
+//   } else if (e1.value === 4) {
+//     tipoBoton.value = 'submit'
+//     en(d)
+//     tipo.value = true
+//   }
+// }
 
-  ima1.value = dataSilla.value.imagenes[0]
-  ima2.value = dataSilla.value.imagenes[1]
-  ima3.value = dataSilla.value.imagenes[2]
-}
+// const buscarSilla = async () => {
+//   dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id)
 
-buscarSilla()
+//   if (dataSilla.value === undefined) {
+//     dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id)
+//   }
+//   if (dataSilla.value === undefined) {
+//     dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id)
+//   }
 
-const en = (dat) => {
-  const l = localStorage.getItem('cotizacion')
-  if (l == undefined) {
-    console.log('esta vacio')
-    router.push('/login')
-  } else {
-  }
-  // localStorage.setItem('cotizacion', dat.anchoDeAsiento)
-  // let l = localStorage.getItem('cotizacion')
-  // console.log(l)
-  // console.log('estos', dat)
-}
+//   ima1.value = dataSilla.value.imagenes[0]
+//   ima2.value = dataSilla.value.imagenes[1]
+//   ima3.value = dataSilla.value.imagenes[2]
+// }
+
+// buscarSilla()
+
+// const en = (dat) => {
+//   console.log(dat)
+// }
 </script>
 <template>
   <div class="mr-2 ml-2">
     <v-row>
       <v-col cols="12" md="6" class="hidden-sm-and-down">
         <v-card height="auto" elevation="0">
-          <img :src="ima1.src" v-if="e1 == 1" class="imag" />
-          <img :src="ima2.src" v-if="e1 == 2" class="imag" />
-          <img :src="ima3.src" v-if="e1 == 3" class="imag" />
+          <img :src="storeCotizacion.ima1.src" v-if="storeCotizacion.e1 == 1" class="imag" />
+          <img :src="storeCotizacion.ima2.src" v-if="storeCotizacion.e1 == 2" class="imag" />
+          <img :src="storeCotizacion.ima3.src" v-if="storeCotizacion.e1 == 3" class="imag" />
+          <img :src="storeCotizacion.ima3.src" v-if="storeCotizacion.e1 == 4" class="imag" />
         </v-card>
       </v-col>
 
       <v-col cols="12" md="6">
-        <v-stepper v-model="e1">
+        <v-stepper v-model="storeCotizacion.e1">
           <template v-slot:default="{ prev, next }">
             <v-stepper-header>
-              <template v-for="n in item" :key="n">
-                <v-stepper-item :complete="e1 > n.a" :step="n.a" :value="n.a"></v-stepper-item>
+              <template v-for="n in storeCotizacion.item" :key="n">
+                <v-stepper-item
+                  :complete="storeCotizacion.e1 > n.a"
+                  :step="n.a"
+                  :value="n.a"
+                ></v-stepper-item>
 
-                <v-divider v-if="n !== item" :key="n.a"></v-divider>
+                <v-divider v-if="n !== storeCotizacion.item" :key="n.a"></v-divider>
               </template>
             </v-stepper-header>
 
             <v-form @submit.prevent="">
               <v-stepper-window>
-                <v-stepper-window-item v-for="n in item" :key="n.a" :value="n.a">
+                <v-stepper-window-item v-for="n in storeCotizacion.item" :key="n.a" :value="n.a">
                   <v-card color="" height="auto" elevation="0">
                     <v-row>
                       <v-col cols="12" v-if="n.a === 1">
@@ -262,7 +207,11 @@ const en = (dat) => {
                         <p class="text-medium-emphasis">
                           <strong> Largo del asiento</strong>
                         </p>
-                        <v-text-field variant="outlined" v-model="dat.largoAsieno"></v-text-field>
+                        <v-text-field
+                          variant="outlined"
+                          v-model="dat.largoAsieno"
+                          type="Number"
+                        ></v-text-field>
                       </v-col>
                       <v-col cols="6" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
@@ -277,6 +226,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.largoTotalAsiento"
                         ></v-text-field>
                       </v-col>
@@ -313,6 +263,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.alturaAsientoTrasero"
                         ></v-text-field>
                       </v-col>
@@ -323,6 +274,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.alturaAsientoFrontal"
                         ></v-text-field>
                       </v-col>
@@ -333,6 +285,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.alturaRespaldo"
                         ></v-text-field>
                         <v-radio-group v-model="dat.tipoRespaldo" inline>
@@ -391,7 +344,11 @@ const en = (dat) => {
                         <p class="text-medium-emphasis">
                           <strong>Ancho de estribo </strong>
                         </p>
-                        <v-text-field variant="outlined" v-model="dat.anchoEstribo"></v-text-field>
+                        <v-text-field
+                          variant="outlined"
+                          type="Number"
+                          v-model="dat.anchoEstribo"
+                        ></v-text-field>
                         <v-radio-group v-model="dat.tipoAnchoEstribo" inline>
                           <v-radio label="Ajustable (std)" value="Ajustable (std)"></v-radio>
                           <v-radio label="Especial" value="Especial"></v-radio>
@@ -419,6 +376,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.largoTibiaPeroneDer"
                         ></v-text-field>
                       </v-col>
@@ -435,6 +393,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.disRespaldoACentroGravedad"
                         ></v-text-field>
                       </v-col>
@@ -445,6 +404,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.disCentroGravedadABujeDelantero"
                         ></v-text-field>
                       </v-col>
@@ -455,6 +415,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.disBujeDelanteroEstribo"
                         ></v-text-field>
                       </v-col>
@@ -465,6 +426,7 @@ const en = (dat) => {
                         </p>
                         <v-text-field
                           variant="outlined"
+                          type="Number"
                           v-model="dat.disBujesDelanteros"
                         ></v-text-field>
                       </v-col>
@@ -489,12 +451,12 @@ const en = (dat) => {
                           <v-radio label="2 Brazos" value="2 Brazos"></v-radio>
                         </v-radio-group>
                         <v-radio-group v-model="dat.medidaTijeras" inline>
-                          <v-radio label="3”" value="3"></v-radio>
-                          <v-radio label="4”" value="4"></v-radio>
-                          <v-radio label="4 ½”" value="4 ½"></v-radio>
+                          <v-radio label="3”" value="3”"></v-radio>
+                          <v-radio label="4”" value="4”"></v-radio>
+                          <v-radio label="4 ½”" value="4 ½”"></v-radio>
                           <v-radio label="5”" value="5"></v-radio>
-                          <v-radio label="6 ¼” (Sin luz)" value="6 ¼"></v-radio>
-                          <v-radio label="7“ (sin Luz)" value="7"></v-radio>
+                          <v-radio label="6 ¼” (Sin luz)" value="6 ¼” (Sin luz)"></v-radio>
+                          <v-radio label="7“ (sin Luz)" value="7” (sin Luz)"></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -503,9 +465,9 @@ const en = (dat) => {
                           <strong>Separación entre respaldo y la rueda</strong>
                         </p>
                         <v-radio-group v-model="dat.separacionRespaldoRueda" inline>
-                          <v-radio label="1”" value="1"></v-radio>
-                          <v-radio label="1 ½”" value="1 ½"></v-radio>
-                          <v-radio label="2”" value="2"></v-radio>
+                          <v-radio label="1”" value="1”"></v-radio>
+                          <v-radio label="1 ½”" value="1 ½”"></v-radio>
+                          <v-radio label="2”" value="2”"></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -514,10 +476,10 @@ const en = (dat) => {
                           <strong>Inclinación Rod. traseras.</strong>
                         </p>
                         <v-radio-group v-model="dat.inclinacionRodTraseras" inline>
-                          <v-radio label="3º (std)" value="3"></v-radio>
-                          <v-radio label="7º" value="7"></v-radio>
-                          <v-radio label="9º" value="9"></v-radio>
-                          <v-radio label="12º" value="12"></v-radio>
+                          <v-radio label="3º (std)" value="3º (std)"></v-radio>
+                          <v-radio label="7º" value="7º"></v-radio>
+                          <v-radio label="9º" value="9º"></v-radio>
+                          <v-radio label="12º" value="12º"></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -550,7 +512,11 @@ const en = (dat) => {
                         <p class="text-medium-emphasis">
                           <strong>Altura lateral</strong>
                         </p>
-                        <v-text-field variant="outlined" v-model="dat.alturaLaterar"></v-text-field>
+                        <v-text-field
+                          variant="outlined"
+                          type="Number"
+                          v-model="dat.alturaLaterar"
+                        ></v-text-field>
                         <v-radio-group v-model="dat.tipoAlturaLateral" inline>
                           <v-radio label="Fijos" value="Fijos"></v-radio>
                           <v-radio label="Atornillados" value="Atornillados"></v-radio>
@@ -573,13 +539,13 @@ const en = (dat) => {
                           <strong>Rodamiento Trasero:</strong>
                         </p>
                         <v-radio-group v-model="dat.rodamientoTrasero" inline>
-                          <v-radio label="20”" value="20"></v-radio>
-                          <v-radio label="22”" value="22"></v-radio>
-                          <v-radio label="24”" value="24"></v-radio>
-                          <v-radio label="25”" value="25"></v-radio>
-                          <v-radio label="26”" value="26"></v-radio>
-                          <v-radio label="27” (700c 23x622)" value="27"></v-radio>
-                          <v-radio label="Ejes de ½” N/C" value="Ejes de ½"></v-radio>
+                          <v-radio label="20”" value="20”"></v-radio>
+                          <v-radio label="22”" value="22”"></v-radio>
+                          <v-radio label="24”" value="24”"></v-radio>
+                          <v-radio label="25”" value="25”"></v-radio>
+                          <v-radio label="26”" value="26”"></v-radio>
+                          <v-radio label="27” (700c 23x622)" value="27” (700c 23x622)"></v-radio>
+                          <v-radio label="Ejes de ½” N/C" value="Ejes de ½” N/C"></v-radio>
                           <v-radio
                             label="Ejes de 5/8” (Set baleros y recibidores) $ 1,200.00"
                             value="Ejes de 5/8"
@@ -754,6 +720,7 @@ const en = (dat) => {
                             dat.tipoProtectorFrontalFD === 'Protecion P/Clip Strap $ 25.00 pza.'
                           "
                           variant="outlined"
+                          type="Number"
                           v-model="dat.numPiezasProtectorFrontalFD"
                         ></v-text-field>
                       </v-col>
@@ -897,16 +864,42 @@ const en = (dat) => {
                           ></v-text-field>
                         </div>
                       </v-col>
+
+                      <v-col cols="12" v-if="n.a === 4">
+                        <v-card
+                          color="green"
+                          height="250px"
+                          class="d-flex flex-column align-center justify-center"
+                        >
+                          <h5 class="my-4">
+                            {{ storeCotizacion.msg }}
+                          </h5>
+                          <svg-icon
+                            type="mdi"
+                            :path="mdiCheckCircle"
+                            size="70"
+                            class="d-block my-4"
+                          ></svg-icon>
+                        </v-card>
+                      </v-col>
                     </v-row>
                   </v-card>
                   <v-stepper-actions>
                     <template v-slot:next>
-                      <v-btn @click="pre(dat)" :type="tipoBoton" :disabled="tipo">{{
-                        textNext
-                      }}</v-btn>
+                      <v-btn
+                        @click="storeCotizacion.pre(dat)"
+                        :type="storeCotizacion.tipoBoton"
+                        :disabled="storeCotizacion.tipo"
+                        >{{ storeCotizacion.textNext }}</v-btn
+                      >
                     </template>
                     <template v-slot:prev>
-                      <v-btn @click="ant()" type="button" :disabled="e1 == 1">Anterior</v-btn>
+                      <v-btn
+                        @click="storeCotizacion.ant()"
+                        type="button"
+                        :disabled="storeCotizacion.e1 == 1"
+                        >Anterior</v-btn
+                      >
                     </template>
                   </v-stepper-actions>
                 </v-stepper-window-item>
