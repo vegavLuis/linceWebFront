@@ -1,31 +1,26 @@
 <script setup>
-import { ref } from 'vue'
-// import { useRoute } from 'vue-router'
-// import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
-// import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
-// import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
-// import { useAuthUserStore } from '../stores/authUser.js'
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
+import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
+import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
 import { useCotizacionStore } from '../stores/cotizacion.js'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCheckCircle } from '@mdi/js'
 
 const storeCotizacion = useCotizacionStore()
-// const storeUser = useAuthUserStore()
-// const dataSillasUsoDiario = useSillasUsoDiario()
-// const dataSillasInfantiles = useSillasInfantiles()
-// const dataSillasDeportivas = useSillasDeportivas()
-// const route = useRoute()
+const dataSillasUsoDiario = useSillasUsoDiario()
+const dataSillasInfantiles = useSillasInfantiles()
+const dataSillasDeportivas = useSillasDeportivas()
+const route = useRoute()
 
-// const id = route.params.id
-// const dataSilla = ref([])
-// const ima1 = ref('')
-// const ima2 = ref('')
-// const ima3 = ref('')
-// const e1 = ref(1)
-// const textNext = ref('Siguiente')
-// const tipoBoton = ref('button')
-// const tipo = ref(false)
-
+const id = route.params.id
+const dataSilla = ref([])
+const ima1 = ref('')
+const ima2 = ref('')
+const ima3 = ref('')
+const dialog = ref(false)
+const isTipoSilla = ref('')
 const dat = ref({
   tipoModelo: '',
   isTipo: '',
@@ -40,6 +35,9 @@ const dat = ref({
   alturaAsientoFrontal: '',
   alturaRespaldo: '',
   tipoRespaldo: '',
+  tipoCojin: '',
+  cmsCojin: '',
+  otraEspecificacionCojin: '',
   anguloRespaldo: '',
   isImpulsoresManuales: '',
   tipoImpulsoresManuales: '',
@@ -53,17 +51,38 @@ const dat = ref({
   disRespaldoACentroGravedad: '',
   disCentroGravedadABujeDelantero: '',
   disBujeDelanteroEstribo: '',
+  disBujeDelanteroDefensa: '',
   disBujesDelanteros: '',
   tipoRuedasDelanteras: '',
+  tipoEstiloDefensa: '',
   tijeras: '',
   medidaTijeras: '',
   separacionRespaldoRueda: '',
   inclinacionRodTraseras: '',
   antiVuelco: '',
+  quintaRuedaAntiVuelco: '',
+  sextaRueda: '',
   tipoEstiloAntiVuelco: '',
   alturaLaterar: '',
   tipoAlturaLateral: '',
   rodamientoTrasero: '',
+  isRodTraSTD: '',
+  tipoSentinel: '',
+  xCore: '',
+  tipoCorima: '',
+  tipoCobra: '',
+  tipoViper: '',
+  isRodTraSPINERGY: '',
+  colorSpinergy: '',
+  isRodTraCombinado: '',
+  tipoAereoImpulsor: '',
+  tipoAmarre: '',
+  isDobAmarre: '',
+  isTipoAmarre: '',
+  isTipoAmarreMetros: '',
+  tipoClipStrap: '',
+  medidaClipStrap: '',
+  numPzClipStrap: '',
   color: '',
   otroColor: '',
   segundoColor: '',
@@ -79,7 +98,8 @@ const dat = ref({
   isTermoPlasticoFD: '',
   istermoAlumnioFD: '',
   tipoProtectorFrontalFD: '',
-  numPiezasProtectorFrontalFD: '',
+  protectorDefensa: '',
+  proteccionpClipStrapPz: '',
   isKitParcehsFD: '',
   isKitLlavesFD: '',
   isBombaAirePedalFD: '',
@@ -102,74 +122,63 @@ const dat = ref({
   parachoqueAntivuelcoFrontalFD: '',
   argollasBandaFD: '',
   botonConCuerdaFD: '',
-  numeroPiezasBotonCuedaFD: ''
+  numeroPiezasBotonCuedaFD: '',
+  distanciaBotonCuerda: ''
 })
 
-// const item = ref([
-//   {
-//     a: 1
-//   },
-//   {
-//     a: 2
-//   },
-//   {
-//     a: 3
-//   },
-//   {
-//     a: 4
-//   }
-// ])
+onMounted(() => {
+  storeCotizacion.e1 = 1
+})
 
-// const ant = () => {
-//   e1.value--
-//   if (e1.value === 1) {
-//     textNext.value = 'Sigueinte'
-//   } else if (e1.value === 2) {
-//     textNext.value = 'Sigueinte'
-//   }
-// }
+const buscarSilla = async () => {
+  dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id)
+  isTipoSilla.value = 'usoDiario'
 
-// const pre = (d) => {
-//   e1.value++
-//   if (e1.value === 3) {
-//     textNext.value = 'Enviar'
-//   } else if (e1.value === 4) {
-//     tipoBoton.value = 'submit'
-//     en(d)
-//     tipo.value = true
-//   }
-// }
+  if (dataSilla.value === undefined) {
+    dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id)
+    isTipoSilla.value = 'sillasInfantiles'
+  }
+  if (dataSilla.value === undefined) {
+    dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id)
+    isTipoSilla.value = 'sillasDeportivas'
+  }
 
-// const buscarSilla = async () => {
-//   dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id)
+  ima1.value = dataSilla.value.imagenes[0]
+  ima2.value = dataSilla.value.imagenes[1]
+  ima3.value = dataSilla.value.imagenes[2]
 
-//   if (dataSilla.value === undefined) {
-//     dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id)
-//   }
-//   if (dataSilla.value === undefined) {
-//     dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id)
-//   }
+  dat.value.tipoModelo = dataSilla.value.nombre
+}
+const revisar = () => {
+  if (storeCotizacion.storeUser.user._id === undefined) {
+    dialog.value = true
+  }
+}
 
-//   ima1.value = dataSilla.value.imagenes[0]
-//   ima2.value = dataSilla.value.imagenes[1]
-//   ima3.value = dataSilla.value.imagenes[2]
-// }
-
-// buscarSilla()
-
-// const en = (dat) => {
-//   console.log(dat)
-// }
+buscarSilla()
+revisar()
 </script>
 <template>
   <div class="mr-2 ml-2">
+    {{ isTipoSilla }}
+    <v-dialog v-model="dialog" width="auto">
+      <v-card
+        max-width="400"
+        text="Inicia sesion para poder enviar una cotizacion"
+        title="Iniciar Sesion"
+      >
+        <template v-slot:actions>
+          <v-btn class="ms-auto" text="Ok" @click="dialog = false"></v-btn>
+        </template>
+      </v-card>
+    </v-dialog>
     <v-row>
       <v-col cols="12" md="6" class="hidden-sm-and-down">
         <v-card height="auto" elevation="0">
-          <img :src="storeCotizacion.ima1.src" v-if="storeCotizacion.e1 == 1" class="imag" />
-          <img :src="storeCotizacion.ima2.src" v-if="storeCotizacion.e1 == 2" class="imag" />
-          <img :src="storeCotizacion.ima3.src" v-if="storeCotizacion.e1 == 3" class="imag" />
-          <img :src="storeCotizacion.ima3.src" v-if="storeCotizacion.e1 == 4" class="imag" />
+          <img :src="ima1.src" v-if="storeCotizacion.e1 == 1" class="imag" />
+          <img :src="ima2.src" v-if="storeCotizacion.e1 == 2" class="imag" />
+          <img :src="ima3.src" v-if="storeCotizacion.e1 == 3" class="imag" />
+          <img :src="ima3.src" v-if="storeCotizacion.e1 == 4" class="imag" />
         </v-card>
       </v-col>
 
@@ -195,12 +204,31 @@ const dat = ref({
                     <v-row>
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
+                          <strong>Modelos con suspencion</strong>
+                        </p>
+                        <v-radio-group v-model="dat.isTipo" inline>
+                          <v-radio label="Completa" value="Completa"></v-radio>
+                          <v-radio label="Solo Cuadro" value="Solo Cuadro"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+                      <v-col cols="12" v-if="n.a === 1">
+                        <p class="text-medium-emphasis">
                           <strong>Ancho de asiento</strong>
                         </p>
-                        <v-radio-group v-model="dat.anchoDeAsiento" inline>
+                        <v-radio-group
+                          v-model="dat.anchoDeAsiento"
+                          inline
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                        >
                           <v-radio label="1-1/4” Tubo" value="1-1/4"></v-radio>
                           <v-radio label="1-1/2” Tubo" value="1-1/2"></v-radio>
                         </v-radio-group>
+                        <v-text-field
+                          v-else="isTipoSilla === 'sillasDeportivas'"
+                          variant="outlined"
+                          v-model="dat.anchoDeAsiento"
+                          type="Number"
+                        ></v-text-field>
                       </v-col>
 
                       <v-col cols="6" v-if="n.a === 1">
@@ -254,6 +282,11 @@ const dat = ref({
                         <v-radio-group v-model="dat.estiloFrontal" inline>
                           <v-radio label="“V”" value="V"></v-radio>
                           <v-radio label="“Y”" value="Y"></v-radio>
+                          <v-radio
+                            v-show="isTipoSilla === 'sillasDeportivas'"
+                            label="“LL”"
+                            value="LL"
+                          ></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -295,8 +328,26 @@ const dat = ref({
                           <v-radio label="Bandas" value="Bandas"></v-radio>
                           <v-radio label="Ergonomico" value="Ergonomico"></v-radio> -->
                           <v-radio label="Estandar $ N/C" value="Estandar $ N/C"></v-radio>
-                          <v-radio label="Bandas $ 250.00" value="250"></v-radio>
-                          <v-radio label="Ergonomico" value="Ergonomico"></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Bandas $ 250.00"
+                            value="Bandas $ 250.00"
+                          ></v-radio>
+                          <v-radio
+                            v-else="isTipoSilla.value === 'sillasDeportivas'"
+                            label="Bandas $ 20.00 usd"
+                            value="Bandas $ 20.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Ergonomico"
+                            value="Ergonomico"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Ergonomico $ 55.00 usd"
+                            value="Ergonomico"
+                          ></v-radio>
                           <v-radio label="ROHO $ 12,000.00" value="12000"></v-radio>
                           <v-radio label="Corto" value="Corto"></v-radio>
                           <v-radio label="Alto" value="Alto"></v-radio>
@@ -304,6 +355,31 @@ const dat = ref({
                           <v-radio label="Mediano" value="Mediano"></v-radio>
                           <v-radio label="Largo" value="Largo"></v-radio>
                         </v-radio-group>
+                      </v-col>
+
+                      <v-col v-if="n.a === 1 && isTipoSilla === 'sillasDeportivas'">
+                        <p class="text-medium-emphasis">
+                          <strong>Cojin</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoCojin" inline>
+                          <v-radio label="Suave" value="Suave"></v-radio>
+                          <v-radio label="Firme" value="Firme"></v-radio>
+                        </v-radio-group>
+                        <p class="text-medium-emphasis">
+                          <strong>Cms.</strong>
+                        </p>
+                        <v-text-field
+                          variant="outlined"
+                          type="Number"
+                          v-model="dat.cmsCojin"
+                        ></v-text-field>
+                        <p class="text-medium-emphasis">
+                          <strong>Otra especificacion</strong>
+                        </p>
+                        <v-text-field
+                          variant="outlined"
+                          v-model="dat.otraEspecificacionCojin"
+                        ></v-text-field>
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 1">
@@ -350,14 +426,59 @@ const dat = ref({
                           v-model="dat.anchoEstribo"
                         ></v-text-field>
                         <v-radio-group v-model="dat.tipoAnchoEstribo" inline>
-                          <v-radio label="Ajustable (std)" value="Ajustable (std)"></v-radio>
-                          <v-radio label="Especial" value="Especial"></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Ajustable (std)"
+                            value="Ajustable (std)"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="STD Ajustable N/C"
+                            value="STD Ajustable N/C"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="Fijo $ 30.00 usd"
+                            value="Fijo $ 30.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Especial"
+                            value="Especial"
+                          ></v-radio>
                         </v-radio-group>
                         <v-radio-group v-model="dat.tipoEstribo" inline>
                           <v-radio label="Aluminio N/C" value="Aluminio"></v-radio>
-                          <v-radio label="Titanio $ 1,050.00" value="1050"></v-radio>
-                          <v-radio label="C/Placa Alum. $ 150.00" value="150"></v-radio>
-                          <v-radio label="Carbono $ 500.00" value=""></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Titanio $ 1,050.00"
+                            value="1050"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="Titanio $ 55.00 usd"
+                            value="Titanio $ 55.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="C/Placa Alum. $ 150.00"
+                            value="150"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="C/Placa Aluminio $ 5.00 usd"
+                            value="C/Placa Aluminio $ 5.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Carbono $ 500.00"
+                            value=""
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="Carbono $ 35.00 usd"
+                            value="Carbono $ 35.00 usd"
+                          ></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -409,7 +530,14 @@ const dat = ref({
                         ></v-text-field>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 1">
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 1 &&
+                          isTipoSilla === 'usoDiario' &&
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <p class="text-medium-emphasis">
                           <strong>Distancia de buje delantero al estribo</strong>
                         </p>
@@ -417,6 +545,17 @@ const dat = ref({
                           variant="outlined"
                           type="Number"
                           v-model="dat.disBujeDelanteroEstribo"
+                        ></v-text-field>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 1 && isTipoSilla === 'sillasDeportivas'">
+                        <p class="text-medium-emphasis">
+                          <strong>Distancia de buje delantero a defensa</strong>
+                        </p>
+                        <v-text-field
+                          variant="outlined"
+                          type="Number"
+                          v-model="dat.disBujeDelanteroDefensa"
                         ></v-text-field>
                       </v-col>
 
@@ -431,7 +570,14 @@ const dat = ref({
                         ></v-text-field>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 1">
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 1 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <p class="text-medium-emphasis">
                           <strong>Ruedas delanteras</strong>
                         </p>
@@ -439,6 +585,27 @@ const dat = ref({
                           <v-radio label="Plasticas" value="Plasticas"></v-radio>
                           <v-radio label="Aluminio" value="Aluminio"></v-radio>
                           <v-radio label="Luz" value="Luz"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 1 && isTipoSilla === 'sillasDeportivas'">
+                        <p class="text-medium-emphasis">
+                          <strong>Ruedas delanteras</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoRuedasDelanteras" inline>
+                          <v-radio label="2”" value="2”"></v-radio>
+                          <v-radio label="3”" value="3”"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 1 && isTipoSilla === 'sillasDeportivas'">
+                        <p class="text-medium-emphasis">
+                          <strong>Estilo defensa</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoEstiloDefensa" inline>
+                          <v-radio label="Redonda" value="Redonda"></v-radio>
+                          <v-radio label="Recta" value="Recta"></v-radio>
+                          <v-radio label="Octagonal" value="Octagonal"></v-radio>
                         </v-radio-group>
                       </v-col>
 
@@ -476,14 +643,33 @@ const dat = ref({
                           <strong>Inclinación Rod. traseras.</strong>
                         </p>
                         <v-radio-group v-model="dat.inclinacionRodTraseras" inline>
-                          <v-radio label="3º (std)" value="3º (std)"></v-radio>
-                          <v-radio label="7º" value="7º"></v-radio>
-                          <v-radio label="9º" value="9º"></v-radio>
-                          <v-radio label="12º" value="12º"></v-radio>
+                          <div
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          >
+                            <v-radio label="3º (std)" value="3º (std)"></v-radio>
+                            <v-radio label="7º" value="7º"></v-radio>
+                            <v-radio label="9º" value="9º"></v-radio>
+                            <v-radio label="12º" value="12º"></v-radio>
+                          </div>
+                          <div v-if="isTipoSilla === 'sillasDeportivas'">
+                            <v-radio label="13º" value="13º"></v-radio>
+                            <v-radio label="15º" value="15º"></v-radio>
+                            <v-radio label="16º" value="16º"></v-radio>
+                            <v-radio label="17º" value="17º"></v-radio>
+                            <v-radio label="18º" value="18º"></v-radio>
+                            <v-radio label="20º" value="20º"></v-radio>
+                          </div>
                         </v-radio-group>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 2">
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 2 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <v-radio-group v-model="dat.antiVuelco" inline>
                           <v-radio
                             label="Anti-vuelco una rueda $ 1,500.00"
@@ -508,6 +694,28 @@ const dat = ref({
                         </v-radio-group>
                       </v-col>
 
+                      <v-col cols="12" v-if="n.a === 2 && isTipoSilla === 'sillasDeportivas'">
+                        <p class="text-medium-emphasis">
+                          <strong>5ta Rueda antivuelco</strong>
+                        </p>
+                        <v-radio-group v-model="dat.quintaRuedaAntiVuelco" inline>
+                          <v-radio label="Fija N/C" value="Fija N/C"></v-radio>
+                          <v-radio
+                            label="Removible $ 95.00 usd"
+                            value="Removible $ 95.00 usd"
+                          ></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2 && isTipoSilla === 'sillasDeportivas'">
+                        <p class="text-medium-emphasis">
+                          <strong>6ta Rueda </strong>
+                        </p>
+                        <v-radio-group v-model="dat.quintaRuedaAntiVuelco" inline>
+                          <v-radio label="Solo fija" value="Solo fija"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
                       <v-col cols="12" v-if="n.a === 2">
                         <p class="text-medium-emphasis">
                           <strong>Altura lateral</strong>
@@ -518,19 +726,33 @@ const dat = ref({
                           v-model="dat.alturaLaterar"
                         ></v-text-field>
                         <v-radio-group v-model="dat.tipoAlturaLateral" inline>
-                          <v-radio label="Fijos" value="Fijos"></v-radio>
-                          <v-radio label="Atornillados" value="Atornillados"></v-radio>
-                          <v-radio label="Aluminio" value="Aluminio"></v-radio>
-                          <v-radio
-                            label="F. de Carbono $ 1,500.00"
-                            value="F. de Carbono $ 1,500.00"
-                          ></v-radio>
-                          <v-radio label="Solo lamina" value="Solo lamina"></v-radio>
-                          <v-radio label="Deslisable" value="Deslisable"></v-radio>
-                          <v-radio
-                            label="Fijo C/filo tubo $ 245.00"
-                            value="Fijo C/filo tubo $ 245.00"
-                          ></v-radio>
+                          <div
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          >
+                            <v-radio label="Fijos" value="Fijos"></v-radio>
+                            <v-radio label="Atornillados" value="Atornillados"></v-radio>
+                            <v-radio label="Aluminio" value="Aluminio"></v-radio>
+                            <v-radio
+                              label="F. de Carbono $ 1,500.00"
+                              value="F. de Carbono $ 1,500.00"
+                            ></v-radio>
+                            <v-radio label="Solo lamina" value="Solo lamina"></v-radio>
+                            <v-radio label="Deslisable" value="Deslisable"></v-radio>
+                            <v-radio
+                              label="Fijo C/filo tubo $ 245.00"
+                              value="Fijo C/filo tubo $ 245.00"
+                            ></v-radio>
+                          </div>
+                          <div v-if="isTipoSilla === 'sillasDeportivas'">
+                            <v-radio
+                              label="Fijo Alum. C/filo tubo"
+                              value="Fijo Alum. C/filo tubo"
+                            ></v-radio>
+                            <v-radio label="Solo lamina" value="Solo lamina"></v-radio>
+                            <v-radio label="Atornillado" value="Atornillado"></v-radio>
+                            <v-radio label="Aluminio" value="Aluminio"></v-radio>
+                            <v-radio label="Fibra de Carbono" value="Fibra de Carbono"></v-radio>
+                          </div>
                         </v-radio-group>
                       </v-col>
 
@@ -539,18 +761,350 @@ const dat = ref({
                           <strong>Rodamiento Trasero:</strong>
                         </p>
                         <v-radio-group v-model="dat.rodamientoTrasero" inline>
-                          <v-radio label="20”" value="20”"></v-radio>
-                          <v-radio label="22”" value="22”"></v-radio>
-                          <v-radio label="24”" value="24”"></v-radio>
-                          <v-radio label="25”" value="25”"></v-radio>
-                          <v-radio label="26”" value="26”"></v-radio>
-                          <v-radio label="27” (700c 23x622)" value="27” (700c 23x622)"></v-radio>
-                          <v-radio label="Ejes de ½” N/C" value="Ejes de ½” N/C"></v-radio>
+                          <div
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          >
+                            <v-radio label="20”" value="20”"></v-radio>
+                            <v-radio label="22”" value="22”"></v-radio>
+                            <v-radio label="24”" value="24”"></v-radio>
+                            <v-radio label="25”" value="25”"></v-radio>
+                            <v-radio label="26”" value="26”"></v-radio>
+                            <v-radio label="27” (700c 23x622)" value="27” (700c 23x622)"></v-radio>
+                            <v-radio label="Ejes de ½” N/C" value="Ejes de ½” N/C"></v-radio>
+                            <v-radio
+                              label="Ejes de 5/8” (Set baleros y recibidores) $ 1,200.00"
+                              value="Ejes de 5/8"
+                            ></v-radio>
+                          </div>
+                          <div>
+                            <v-radio label="24”" value="24”"></v-radio>
+                            <v-radio label="25”" value="25”"></v-radio>
+                            <v-radio label="26”" value="26”"></v-radio>
+                            <v-radio label="700c" value="700c"></v-radio>
+                            <v-radio label="Ejes de ½” N/C" value="Ejes de ½” N/C"></v-radio>
+                            <v-radio
+                              label="Ejes de 5/8” (Set baleros y recibidores) $ 60.00 usd"
+                              value="Ejes de 5/8” (Set baleros y recibidores) $ 60.00 usd"
+                            ></v-radio>
+                          </div>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2">
+                        <p class="text-medium-emphasis">
+                          <strong>STD</strong>
+                        </p>
+                        <v-radio-group v-model="dat.isRodTraSTD" inline>
+                          <v-radio label="Rayos Inox. Recto" value="Rayos Inox. Recto"></v-radio>
+                          <v-radio label="Cruzado" value="Cruzado"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 2 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>SENTINEL</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoSentinel">
                           <v-radio
-                            label="Ejes de 5/8” (Set baleros y recibidores) $ 1,200.00"
-                            value="Ejes de 5/8"
+                            label="12 rayos inox. $ 6000.00"
+                            value="12 rayos inox. $ 6000.00"
                           ></v-radio>
                         </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 2 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>X-Core $ 18,000.00</strong>
+                        </p>
+                        <v-radio-group v-model="dat.xCore" inline>
+                          <v-radio label="Negra" value="Negra"></v-radio>
+                          <v-radio label="Amarilla" value="Amarilla"></v-radio>
+                          <v-radio label="Roja" value="Roja"></v-radio>
+                          <v-radio label="Roja" value="Roja"></v-radio>
+                          <v-radio label="Azul" value="Azul"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 2 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>CORIMA Carbono 4 brazos $ 32,000.00</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoCorima">
+                          <v-radio label="SOLO 24”" value="SOLO 24”"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 2 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>COBRA $ 10,500.00</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoCobra">
+                          <v-radio label="SOLO 24”" value="SOLO 24”"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 2 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>VIPER $ 12,500.00</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoViper">
+                          <v-radio label="SOLO 24”" value="SOLO 24”"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2">
+                        <p class="text-medium-emphasis">
+                          <strong>SPINERGY</strong>
+                        </p>
+                        <v-radio-group v-model="dat.isRodTraSPINERGY" inline>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="XLX (std. Para uso cotidiano)"
+                            value="XLX (std. Para uso cotidiano)"
+                          ></v-radio>
+                          <v-radio label="SLX (RECTO)" value="SLX (RECTO)"></v-radio>
+                          <v-radio label="XSLX (CRUZADO)" value="XSLX (CRUZADO)"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2">
+                        <p class="text-medium-emphasis">
+                          <strong>Color Spinergy</strong>
+                        </p>
+                        <v-radio-group v-model="dat.colorSpinergy" inline>
+                          <v-radio label="Blanco" value="Blanco"></v-radio>
+                          <v-radio
+                            label="Negro $ 1050.00 usd"
+                            value="Negro $ 1050.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Negro $ 19,500.00"
+                            value="Negro $ 19,500.00"
+                          ></v-radio>
+                          <v-radio
+                            label="Combinado $ 60.00 usd"
+                            value="Combinado $ 60.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Combinado $ 1,200.00"
+                            value="Combinado $ 1,200.00"
+                          ></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2">
+                        <p class="text-medium-emphasis">
+                          <strong>Aereo impulsor</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoAereoImpulsor" inline>
+                          <v-radio label="Cerrado" value="Cerrado"></v-radio>
+                          <v-radio label="Abierto" value="Abierto"></v-radio>
+                          <v-radio
+                            v-if="
+                              n.a === 2 ||
+                              isTipoSilla === 'usoDiario' ||
+                              isTipoSilla === 'sillasInfantiles'
+                            "
+                            label="Plastificado $ 950.00"
+                            value="Plastificado $ 950.00"
+                          ></v-radio>
+                          <v-radio
+                            v-if="
+                              n.a === 2 ||
+                              isTipoSilla === 'usoDiario' ||
+                              isTipoSilla === 'sillasInfantiles'
+                            "
+                            label="Tipo Timon $ 1,300.00"
+                            value="Tipo Timon $ 1,300.00"
+                          ></v-radio>
+                          <v-radio
+                            v-if="
+                              n.a === 2 ||
+                              isTipoSilla === 'usoDiario' ||
+                              isTipoSilla === 'sillasInfantiles'
+                            "
+                            label="Cubre Aro de vinil $ 800.00 24”"
+                            value="Cubre Aro de vinil $ 800.00 24”"
+                          ></v-radio>
+                          <v-radio
+                            v-if="
+                              n.a === 2 ||
+                              isTipoSilla === 'usoDiario' ||
+                              isTipoSilla === 'sillasInfantiles'
+                            "
+                            label="Cubre Aro de vinil $ 800.00 25”"
+                            value="Cubre Aro de vinil $ 800.00 25”"
+                          ></v-radio>
+                          <v-radio label="6-Cejas" value="6-Cejas"></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="12-Cejas $ 30.00 usd"
+                            value="12-Cejas $ 30.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="12-cejas $ 600.00"
+                            value="12-cejas $ 600.00"
+                          ></v-radio>
+                          <v-radio label="S/cortar cejas N/C" value="S/cortar cejas N/C"></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="Corte de cejas $ 6.00 usd"
+                            value="Corte de cejas $ 6.00 usd"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Corte de cejas$ 120.00"
+                            value="Corte de cejas$ 120.00"
+                          ></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2">
+                        <p class="text-medium-emphasis">
+                          <strong>Amarres</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoAmarre" inline>
+                          <v-radio label="Pantorrilla N/C" value="Pantorrilla N/C"></v-radio>
+                          <v-radio label="Ingle" value="Ingle"></v-radio>
+                          <v-radio label="Ingle" value="Ingle"></v-radio>
+                          <v-radio label="Femur" value="Femur"></v-radio>
+                          <v-radio label="Pies" value="Pies"></v-radio>
+                          <v-radio label="Tronco" value="Tronco"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2">
+                        <v-radio-group v-model="dat.isDobAmarre" inline>
+                          <v-radio label="Sencilla" value="Sencilla"></v-radio>
+                          <v-radio label="Doble" value="Doble"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 2">
+                        <v-radio-group v-model="dat.isTipoAmarre" inline>
+                          <v-radio label="Velcro STD" value="Velcro STD"></v-radio>
+                          <v-radio label="C/Hebilla" value="C/Hebilla"></v-radio>
+                        </v-radio-group>
+                        <p class="text-medium-emphasis">
+                          <strong>Metros</strong>
+                        </p>
+                        <v-text-field
+                          variant="outlined"
+                          type="Number"
+                          v-model="dat.isTipoAmarreMetros"
+                        ></v-text-field>
+                      </v-col>
+
+                      <v-col cols="12">
+                        <p class="text-medium-emphasis">
+                          <strong>Clip Strap</strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoClipStrap" inline>
+                          <v-radio label="Sencillo" value="Sencillo"></v-radio>
+                          <v-radio label="Doble" value="Doble"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="
+                          dat.tipoClipStrap === 'Sencillo' && isTipoSilla === 'sillasDeportivas'
+                        "
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>Medida</strong>
+                        </p>
+                        <v-radio-group v-model="dat.medidaClipStrap">
+                          <v-radio label="6” $ 40.00usd" value="6” $ 40.00usd"></v-radio>
+                          <v-radio label="8” $ 40.00usd" value="8” $ 40.00usd"></v-radio>
+                          <v-radio label="10” $ 45.00usd" value="10” $ 45.00usd"></v-radio>
+                          <v-radio label="12” $ 45.00usd" value="12” $ 45.00usd"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="dat.tipoClipStrap === 'Doble' && isTipoSilla === 'sillasDeportivas'"
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>Medida</strong>
+                        </p>
+                        <v-radio-group v-model="dat.medidaClipStrap">
+                          <v-radio label="6” $ 75.00usd" value="6” $ 75.00usd"></v-radio>
+                          <v-radio label="8” $ 75.00usd" value="8” $ 75.00usd"></v-radio>
+                          <v-radio label="10” $ 45.00usd" value="10” $ 45.00usd"></v-radio>
+                          <v-radio label="12” $ 85.00usd" value="12” $ 85.00usd"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="
+                          (dat.tipoClipStrap === 'Secilla' && isTipoSilla === 'usoDiario') ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>Medida</strong>
+                        </p>
+                        <v-radio-group v-model="dat.medidaClipStrap">
+                          <v-radio label="6” $ 775.00" value="6” $ 775.00"></v-radio>
+                          <v-radio label="8” $ 775.00" value="8” $ 775.00"></v-radio>
+                          <v-radio label="10” $ 850.00" value="10” $ 850.00"></v-radio>
+                          <v-radio label="12” $ 850.00" value="12” $ 850.00"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="12"
+                        v-if="dat.tipoClipStrap === 'Sencillo' || dat.tipoClipStrap === 'Doble'"
+                      >
+                        <p class="text-medium-emphasis">
+                          <strong>Numero de piezas</strong>
+                        </p>
+                        <v-text-field
+                          variant="outlined"
+                          v-model="dat.numPzClipStrap"
+                          type="Number"
+                        ></v-text-field>
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 2">
@@ -584,15 +1138,27 @@ const dat = ref({
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 2">
-                        <p class="text-medium-emphasis">
+                        <p
+                          class="text-medium-emphasis"
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                        >
                           <strong>2do color $ 1,000.00</strong>
+                        </p>
+                        <p class="text-medium-emphasis" v-if="isTipoSilla === 'sillasDeportivas'">
+                          <strong>2do color $ 50.00 usd</strong>
                         </p>
                         <v-text-field variant="outlined" v-model="dat.segundoColor"></v-text-field>
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 2">
-                        <p class="text-medium-emphasis">
+                        <p
+                          class="text-medium-emphasis"
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                        >
                           <strong>3er color $ 2,000.00</strong>
+                        </p>
+                        <p class="text-medium-emphasis" v-if="isTipoSilla === 'sillasDeportivas'">
+                          <strong>3er color $ 100.00 usd</strong>
                         </p>
                         <v-text-field variant="outlined" v-model="dat.tercerColor"></v-text-field>
                       </v-col>
@@ -608,13 +1174,25 @@ const dat = ref({
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 2">
-                        <p class="text-medium-emphasis">
+                        <p
+                          class="text-medium-emphasis"
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                        >
                           <strong>Otro tono $ 800.00</strong>
+                        </p>
+                        <p class="text-medium-emphasis" v-if="isTipoSilla === 'sillasDeportivas'">
+                          <strong>Otro tono $ 40.00 usd </strong>
                         </p>
                         <v-text-field variant="outlined" v-model="dat.otroTono"></v-text-field>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 2">
+                      <v-col
+                        cols="12"
+                        v-if="
+                          (n.a === 2 && isTipoSilla === 'usoDiario') ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <p class="text-medium-emphasis">
                           <strong>Frenos</strong>
                         </p>
@@ -629,7 +1207,13 @@ const dat = ref({
                         </v-radio-group>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 2">
+                      <v-col
+                        cols="12"
+                        v-if="
+                          (n.a === 2 && isTipoSilla === 'usoDiario') ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <p class="text-medium-emphasis">
                           <strong>Coderas</strong>
                         </p>
@@ -644,7 +1228,14 @@ const dat = ref({
                         </v-radio-group>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 3">
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 3 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <p class="text-medium-emphasis">
                           <strong>Cangureras: </strong>
                         </p>
@@ -664,7 +1255,14 @@ const dat = ref({
                         </v-radio-group>
                       </v-col>
 
-                      <v-col cols="6" v-if="n.a === 3">
+                      <v-col
+                        cols="6"
+                        v-if="
+                          n.a === 3 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <v-radio-group v-model="dat.isPortaVasosFD" inline>
                           <p class="text-medium-emphasis d-flex align-center">
                             <strong>Porta vasos $ 200.00</strong>
@@ -673,7 +1271,23 @@ const dat = ref({
                         </v-radio-group>
                       </v-col>
 
-                      <v-col cols="6" v-if="n.a === 3">
+                      <v-col cols="6" v-if="n.a === 3 && isTipoSilla === 'sillasDeportivas'">
+                        <v-radio-group v-model="dat.isPortaVasosFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Porta vasos $ 10.00 usd</strong>
+                          </p>
+                          <v-radio value="Porta vasos $ 10.00 usd"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col
+                        cols="6"
+                        v-if="
+                          n.a === 3 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <v-radio-group v-model="dat.isTermoPlasticoFD" inline>
                           <p class="text-medium-emphasis d-flex align-center">
                             <strong>Porta vasos $ 200.00</strong>
@@ -682,7 +1296,14 @@ const dat = ref({
                         </v-radio-group>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 3">
+                      <v-col
+                        cols="12"
+                        v-if="
+                          n.a === 3 ||
+                          isTipoSilla === 'usoDiario' ||
+                          isTipoSilla === 'sillasInfantiles'
+                        "
+                      >
                         <v-radio-group v-model="dat.istermoAlumnioFD" inline>
                           <p class="text-medium-emphasis d-flex align-center">
                             <strong>Termo Alum. $ 000.00</strong>
@@ -691,21 +1312,37 @@ const dat = ref({
                         </v-radio-group>
                       </v-col>
 
-                      <v-col cols="12" v-if="n.a === 3">
+                      <v-col cols="12" v-if="n.a === 3 && isTipoSilla === 'sillasDeportivas'">
+                        <v-radio-group v-model="dat.istermoAlumnioFD" inline>
+                          <p class="text-medium-emphasis d-flex align-center">
+                            <strong>Termo $ 5.00 usd</strong>
+                          </p>
+                          <v-radio value="Termo $ 5.00 usd"></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <!-- <v-col cols="12" v-if="n.a === 3">
                         <p class="text-medium-emphasis">
                           <strong>Protectores frontales </strong>
                         </p>
                         <v-radio-group v-model="dat.tipoProtectorFrontalFD" inline>
-                          <v-radio label="Tela $ 140.00" value="Tela $ 140.00"></v-radio>
-                          <v-radio label="Piel $ 210.00" value="Piel $ 210.00"></v-radio>
-                          <v-radio
-                            label="Proccion defensa Aulada $ 190.00"
-                            value="Proccion defensa Aulada $ 190.00"
-                          ></v-radio>
-                          <v-radio
-                            label="Protecion P/Clip Strap $ 25.00 pza."
-                            value="Protecion P/Clip Strap $ 25.00 pza."
-                          ></v-radio>
+                          <div
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          >
+                            <v-radio label="Tela $ 140.00" value="Tela $ 140.00"></v-radio>
+                            <v-radio label="Piel $ 210.00" value="Piel $ 210.00"></v-radio>
+                            <v-radio
+                              label="Proccion defensa Aulada $ 190.00"
+                              value="Proccion defensa Aulada $ 190.00"
+                            ></v-radio>
+                            <v-radio
+                              label="Protecion P/Clip Strap $ 25.00 pza."
+                              value="Protecion P/Clip Strap $ 25.00 pza."
+                            ></v-radio>
+                          </div>
+                          <div>
+                            <v-radio label="label" value="value"></v-radio>
+                          </div>
                         </v-radio-group>
                         <label
                           class="text-medium-emphasis"
@@ -723,38 +1360,127 @@ const dat = ref({
                           type="Number"
                           v-model="dat.numPiezasProtectorFrontalFD"
                         ></v-text-field>
+                      </v-col> -->
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p class="text-medium-emphasis">
+                          <strong>Protectores frontales </strong>
+                        </p>
+                        <v-radio-group v-model="dat.tipoProtectorFrontalFD" inline>
+                          <div
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          >
+                            <v-radio label="Tela $ 140.00" value="Tela $ 140.00"></v-radio>
+                            <v-radio label="Piel $ 210.00" value="Piel $ 210.00"></v-radio>
+                            <v-radio label="Piel $ 210.00" value="Piel $ 210.00"></v-radio>
+                          </div>
+                          <div v-if="isTipoSilla === 'sillasDeportivas'">
+                            <v-radio label="Tela $ 7.00usd" value="Tela $ 7.00usd"></v-radio>
+                            <v-radio label="Piel $ 6.00usd" value="Piel $ 6.00usd"></v-radio>
+                          </div>
+                        </v-radio-group>
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 3">
-                        <v-radio-group v-model="dat.isKitParcehsFD" inline>
+                        <p class="text-medium-emphasis">
+                          <strong>Proccion defensa</strong>
+                        </p>
+                        <v-radio-group v-model="dat.protectorDefensa" inline>
+                          <v-radio
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                            label="Aulada $ 190.00"
+                            value="Aulada $ 190.00"
+                          ></v-radio>
+                          <v-radio
+                            v-if="isTipoSilla === 'sillasDeportivas'"
+                            label="Aulada $ 5.00 usd"
+                            value="Aulada $ 5.00 usd"
+                          ></v-radio>
+                        </v-radio-group>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <p
+                          class="text-medium-emphasis"
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                        >
+                          <strong>Proccion defensa $ 25.00 pza.</strong>
+                        </p>
+                        <p class="text-medium-emphasis" v-if="isTipoSilla === 'sillasDeportivas'">
+                          <strong>Protecion P/Clip Strap $ 2.00 usd pza.</strong>
+                        </p>
+                        <p class="text-medium-emphasis">
+                          <strong>Numero de piezas</strong>
+                        </p>
+                        <v-text-field
+                          variant="outlined"
+                          type="Number"
+                          v-model="dat.proteccionpClipStrapPz"
+                        ></v-text-field>
+                      </v-col>
+
+                      <v-col cols="12" v-if="n.a === 3">
+                        <v-radio-group
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          v-model="dat.isKitParcehsFD"
+                          inline
+                        >
                           <p class="text-medium-emphasis d-flex align-center">
                             <strong>Kit de parches $ 000.00</strong>
                           </p>
                           <v-radio value="Kit de parches $ 000.00"></v-radio>
                         </v-radio-group>
-                        <v-radio-group v-model="dat.isKitLlavesFD" inline>
+                        <v-radio-group
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          v-model="dat.isKitLlavesFD"
+                          inline
+                        >
                           <p class="text-medium-emphasis d-flex align-center">
                             <strong>Kit de llaves $ 000.00</strong>
                           </p>
                           <v-radio value="Kit de llaves $ 000.00"></v-radio>
                         </v-radio-group>
                         <v-radio-group v-model="dat.isBombaAirePedalFD" inline>
-                          <p class="text-medium-emphasis d-flex align-center">
-                            <strong>Bomba de aire de pedal $ 490.00</strong>
-                          </p>
-                          <v-radio value="Bomba de aire de pedal $ 490.00"></v-radio>
+                          <div
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          >
+                            <p class="text-medium-emphasis d-flex align-center">
+                              <strong>Bomba de aire de pedal $ 490.00</strong>
+                            </p>
+                            <v-radio value="Bomba de aire de pedal $ 490.00"></v-radio>
+                          </div>
+                          <div v-if="isTipoSilla === 'sillasDeportivas'">
+                            <p class="text-medium-emphasis d-flex align-center">
+                              <strong>Bomba de aire de pedal $ 30.00 usd</strong>
+                            </p>
+                            <v-radio value="Bomba de aire de pedal $ 30.00 usd"></v-radio>
+                          </div>
                         </v-radio-group>
-                        <v-radio-group v-model="dat.isBombaParaCarroFD" inline>
+                        <v-radio-group
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          v-model="dat.isBombaParaCarroFD"
+                          inline
+                        >
                           <p class="text-medium-emphasis d-flex align-center">
                             <strong>Bomba para carro $ 000.00</strong>
                           </p>
                           <v-radio value="Bomba para carro $ 000.00"></v-radio>
                         </v-radio-group>
                         <v-radio-group v-model="dat.isBolsaTransportadoraRuedasFD" inline>
-                          <p class="text-medium-emphasis d-flex align-center">
-                            <strong>Bolsa transportadora ruedas $ 1,650.00</strong>
-                          </p>
-                          <v-radio value="Bolsa transportadora ruedas $ 1,650.00"></v-radio>
+                          <div
+                            v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          >
+                            <p class="text-medium-emphasis d-flex align-center">
+                              <strong>Bolsa transportadora ruedas $ 1,650.00</strong>
+                            </p>
+                            <v-radio value="Bolsa transportadora ruedas $ 1,650.00"></v-radio>
+                          </div>
+                          <div v-if="isTipoSilla === 'sillasDeportivas'">
+                            <p class="text-medium-emphasis d-flex align-center">
+                              <strong>Bolsa transportadora ruedas $ 110.00 usd</strong>
+                            </p>
+                            <v-radio value="Bolsa transportadora ruedas $ 110.00 usd"></v-radio>
+                          </div>
                         </v-radio-group>
                       </v-col>
 
@@ -833,20 +1559,42 @@ const dat = ref({
                         <p class="text-medium-emphasis">
                           <strong>Extras Soldables </strong>
                         </p>
-                        <v-radio-group v-model="dat.parachoqueAntivuelcoFrontalFD" inline>
-                          <p class="text-medium-emphasis d-flex align-center">
-                            <strong>Kit de parches $ 000.00</strong>
-                          </p>
-                          <v-radio value="Parachoque (antivuelco frontal) $ 250.00"></v-radio>
-                        </v-radio-group>
-                        <v-radio-group v-model="dat.argollasBandaFD" inline>
-                          <p class="text-medium-emphasis d-flex align-center">
-                            <strong>Argollas Banda $ 200.00 (Pzas 2)</strong>
-                          </p>
-                          <v-radio value="Parachoque (antivuelco frontal) $ 250.00"></v-radio>
-                        </v-radio-group>
-                        <p class="text-medium-emphasis">
+                        <div
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                        >
+                          <v-radio-group v-model="dat.parachoqueAntivuelcoFrontalFD" inline>
+                            <p class="text-medium-emphasis d-flex align-center">
+                              <strong>Kit de parches $ 000.00</strong>
+                            </p>
+                            <v-radio value="Parachoque (antivuelco frontal) $ 250.00"></v-radio>
+                          </v-radio-group>
+                        </div>
+                        <div
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                        >
+                          <v-radio-group v-model="dat.argollasBandaFD" inline>
+                            <p class="text-medium-emphasis d-flex align-center">
+                              <strong>Argollas Banda $ 200.00 (Pzas 2)</strong>
+                            </p>
+                            <v-radio value="Parachoque (antivuelco frontal) $ 250.00"></v-radio>
+                          </v-radio-group>
+                        </div>
+                        <div v-if="isTipoSilla === 'sillasDeportivas'">
+                          <v-radio-group v-model="dat.argollasBandaFD" inline>
+                            <p class="text-medium-emphasis d-flex align-center">
+                              <strong>Argollas Banda $ 100.00 usd (Pzas 2)</strong>
+                            </p>
+                            <v-radio value="Argollas Banda $ 100.00 usd (Pzas 2)"></v-radio>
+                          </v-radio-group>
+                        </div>
+                        <p
+                          v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
+                          class="text-medium-emphasis"
+                        >
                           <strong>Boton C/cuerda $ 100.00 Pza </strong>
+                        </p>
+                        <p v-if="isTipoSilla === 'sillasDeportivas'" class="text-medium-emphasis">
+                          <strong>Boton C/cuerda $ 5.00 usd Pza</strong>
                         </p>
                         <v-radio-group v-model="dat.botonConCuerdaFD" inline>
                           <v-radio label="Si" value="Si"></v-radio>
@@ -863,6 +1611,14 @@ const dat = ref({
                             v-model="dat.numeroPiezasBotonCuedaFD"
                           ></v-text-field>
                         </div>
+                        <p class="text-medium-emphasis" v-if="dat.botonConCuerdaFD == 'Si'">
+                          <strong>Distancias</strong>
+                        </p>
+                        <v-text-field
+                          type="String"
+                          variant="outlined"
+                          v-model="dat.distanciaBotonCuerda"
+                        ></v-text-field>
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 4">

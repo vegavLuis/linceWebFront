@@ -1,10 +1,11 @@
 <script setup>
+import { ref } from 'vue'
 import { useAuthStore } from '@/stores/auth.js'
 const store = useAuthStore()
-const item = {
+const item = ref({
   email: '',
   password: ''
-}
+})
 </script>
 <template>
   <div class="form">

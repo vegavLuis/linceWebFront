@@ -1,18 +1,19 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
-import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
-import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
-import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
+import { useRoute, useRouter } from 'vue-router'
+// import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
+// import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
+// import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
 import { useAuthUserStore } from '../stores/authUser.js'
 import CotizacionApi from '../api/CotizacionApi.js'
 
 export const useCotizacionStore = defineStore('cotizacion', () => {
   const storeUser = useAuthUserStore()
-  const dataSillasUsoDiario = useSillasUsoDiario()
-  const dataSillasInfantiles = useSillasInfantiles()
-  const dataSillasDeportivas = useSillasDeportivas()
+  //   const dataSillasUsoDiario = useSillasUsoDiario()
+  //   const dataSillasInfantiles = useSillasInfantiles()
+  //   const dataSillasDeportivas = useSillasDeportivas()
   const route = useRoute()
+  const router = useRouter()
 
   const id = route.params.id
   const dataSilla = ref([])
@@ -129,36 +130,44 @@ export const useCotizacionStore = defineStore('cotizacion', () => {
     }
   }
 
-  const pre = (d) => {
+  const pre = async (d) => {
     e1.value++
     if (e1.value === 3) {
       textNext.value = 'Enviar'
+      if (storeUser.user._id === undefined) {
+        e1.value = 1
+        router.push('/login')
+        return
+      }
     } else if (e1.value === 4) {
       tipoBoton.value = 'submit'
-      en(d)
+      await en(d)
       tipo.value = true
     }
   }
 
-  const buscarSilla = async () => {
-    dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id)
+  //   const buscarSilla = async () => {
+  //     dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id)
 
-    if (dataSilla.value === undefined) {
-      dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id)
-    }
-    if (dataSilla.value === undefined) {
-      dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id)
-    }
+  //     if (dataSilla.value === undefined) {
+  //       dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id)
+  //     }
+  //     if (dataSilla.value === undefined) {
+  //       dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id)
+  //     }
 
-    ima1.value = dataSilla.value.imagenes[0]
-    ima2.value = dataSilla.value.imagenes[1]
-    ima3.value = dataSilla.value.imagenes[2]
-  }
+  //     ima1.value = dataSilla.value.imagenes[0]
+  //     ima2.value = dataSilla.value.imagenes[1]
+  //     ima3.value = dataSilla.value.imagenes[2]
+  //   }
 
-  buscarSilla()
+  //   buscarSilla()
+
+  const r = () => {}
 
   const en = async (dat) => {
     dat.idUsuario = storeUser.user._id
+    console.log(dat)
     await CotizacionApi.createCotizacion(dat)
       .then(({ data }) => {
         msg.value = data.msg
@@ -171,6 +180,7 @@ export const useCotizacionStore = defineStore('cotizacion', () => {
 
   return {
     id,
+    storeUser,
     dataSilla,
     ima1,
     ima2,
