@@ -160,7 +160,6 @@ revisar()
 </script>
 <template>
   <div class="mr-2 ml-2">
-    {{ isTipoSilla }}
     <v-dialog v-model="dialog" width="auto">
       <v-card
         max-width="400"

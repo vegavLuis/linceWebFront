@@ -167,11 +167,9 @@ export const useCotizacionStore = defineStore('cotizacion', () => {
 
   const en = async (dat) => {
     dat.idUsuario = storeUser.user._id
-    console.log(dat)
     await CotizacionApi.createCotizacion(dat)
       .then(({ data }) => {
         msg.value = data.msg
-        console.log(msg.value)
       })
       .catch((err) => {
         console.log(err)
