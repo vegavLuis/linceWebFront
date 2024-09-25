@@ -1,11 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useAuthStore } from '@/stores/auth.js'
+import CrearCuenta from './CrearCuenta.vue'
 const store = useAuthStore()
 const item = ref({
   email: '',
   password: ''
 })
+const dialog = ref(false)
+onMounted(() => [])
 </script>
 <template>
   <div class="form">
@@ -27,20 +30,27 @@ const item = ref({
               <v-text-field
                 variant="outlined"
                 label="Contraseña"
+                type="password"
                 required
                 class="mb-6"
                 v-model="item.password"
               ></v-text-field>
             </v-col>
           </v-row>
-          <p class="text-center mt-6">
+          <p class="text-center mt-6 d-flex justify-center">
             No tienes cuenta?
-            <span> <router-link to=""> Contacta con el administrador</router-link></span>
+            <span class="ml-2">
+              <router-link to="/crear-cuenta"> Crear cuenta </router-link>
+            </span>
           </p>
           <v-btn block class="mt-6" type="submit">Ingresar</v-btn>
         </v-container>
       </v-form>
     </v-card>
+
+    <v-dialog v-model="dialog" :overlay="true" max-width="50%" transition="dialog-transition">
+      <v-card><CrearCuenta /></v-card>
+    </v-dialog>
   </div>
 </template>
 <style scoped>

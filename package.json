@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@jamescoyle/vue-icon": "^0.1.2",
+    "@kyvg/vue3-notification": "^3.3.0",
     "@mdi/js": "^7.4.47",
     "axios": "^1.6.5",
     "pdf-vue3-vite": "^1.0.13",

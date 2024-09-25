@@ -113,6 +113,12 @@ const router = createRouter({
       component: () => import(/* webpackChunkName: "sillas-infantiles" */ '../views/Login.vue')
     },
     {
+      path: '/crear-cuenta',
+      name: 'crearCuenta',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/CrearCuenta.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: '*',
       component: () => import(/* webpackChunkName: "error" */ '@/views/Error.vue')

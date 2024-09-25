@@ -42,6 +42,7 @@ onMounted(() => {
     </v-card>
   </v-expand-transition>
   <VLayout>
+    <notifications />
     <BarraNavegacion />
     <v-main>
       <RouterView />
