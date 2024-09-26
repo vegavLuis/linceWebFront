@@ -2,7 +2,11 @@ import api from '../lib/axios'
 
 export default {
   login(data) {
-    return api.post('auth/login', data)
+    return api.post('auth/login', data, {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
   },
   auth() {
     const token = localStorage.getItem('AUTH_TOKEN')
