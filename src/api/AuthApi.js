@@ -12,6 +12,7 @@ export default {
     const token = localStorage.getItem('AUTH_TOKEN')
     return api.get('auth/user', {
       headers: {
+        'Access-Control-Allow-Origin': '*',
         Authorization: `Baerer ${token}`
       }
     })
