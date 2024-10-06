@@ -1032,79 +1032,81 @@ revisar()
                         ></v-text-field>
                       </v-col>
 
-                      <v-col cols="12">
-                        <p class="text-medium-emphasis">
-                          <strong>Clip Strap</strong>
-                        </p>
-                        <v-radio-group v-model="dat.tipoClipStrap" inline>
-                          <v-radio label="Sencillo" value="Sencillo"></v-radio>
-                          <v-radio label="Doble" value="Doble"></v-radio>
-                        </v-radio-group>
-                      </v-col>
+                      <div v-if="n.a === 2">
+                        <v-col cols="12">
+                          <p class="text-medium-emphasis">
+                            <strong>Clip Strap</strong>
+                          </p>
+                          <v-radio-group v-model="dat.tipoClipStrap" inline>
+                            <v-radio label="Sencillo" value="Sencillo"></v-radio>
+                            <v-radio label="Doble" value="Doble"></v-radio>
+                          </v-radio-group>
+                        </v-col>
 
-                      <v-col
-                        cols="12"
-                        v-if="
-                          dat.tipoClipStrap === 'Sencillo' && isTipoSilla === 'sillasDeportivas'
-                        "
-                      >
-                        <p class="text-medium-emphasis">
-                          <strong>Medida</strong>
-                        </p>
-                        <v-radio-group v-model="dat.medidaClipStrap">
-                          <v-radio label="6” $ 40.00usd" value="6” $ 40.00usd"></v-radio>
-                          <v-radio label="8” $ 40.00usd" value="8” $ 40.00usd"></v-radio>
-                          <v-radio label="10” $ 45.00usd" value="10” $ 45.00usd"></v-radio>
-                          <v-radio label="12” $ 45.00usd" value="12” $ 45.00usd"></v-radio>
-                        </v-radio-group>
-                      </v-col>
+                        <v-col
+                          cols="12"
+                          v-if="
+                            dat.tipoClipStrap === 'Sencillo' && isTipoSilla === 'sillasDeportivas'
+                          "
+                        >
+                          <p class="text-medium-emphasis">
+                            <strong>Medida</strong>
+                          </p>
+                          <v-radio-group v-model="dat.medidaClipStrap">
+                            <v-radio label="6” $ 40.00usd" value="6” $ 40.00usd"></v-radio>
+                            <v-radio label="8” $ 40.00usd" value="8” $ 40.00usd"></v-radio>
+                            <v-radio label="10” $ 45.00usd" value="10” $ 45.00usd"></v-radio>
+                            <v-radio label="12” $ 45.00usd" value="12” $ 45.00usd"></v-radio>
+                          </v-radio-group>
+                        </v-col>
 
-                      <v-col
-                        cols="12"
-                        v-if="dat.tipoClipStrap === 'Doble' && isTipoSilla === 'sillasDeportivas'"
-                      >
-                        <p class="text-medium-emphasis">
-                          <strong>Medida</strong>
-                        </p>
-                        <v-radio-group v-model="dat.medidaClipStrap">
-                          <v-radio label="6” $ 75.00usd" value="6” $ 75.00usd"></v-radio>
-                          <v-radio label="8” $ 75.00usd" value="8” $ 75.00usd"></v-radio>
-                          <v-radio label="10” $ 45.00usd" value="10” $ 45.00usd"></v-radio>
-                          <v-radio label="12” $ 85.00usd" value="12” $ 85.00usd"></v-radio>
-                        </v-radio-group>
-                      </v-col>
+                        <v-col
+                          cols="12"
+                          v-if="dat.tipoClipStrap === 'Doble' && isTipoSilla === 'sillasDeportivas'"
+                        >
+                          <p class="text-medium-emphasis">
+                            <strong>Medida</strong>
+                          </p>
+                          <v-radio-group v-model="dat.medidaClipStrap">
+                            <v-radio label="6” $ 75.00usd" value="6” $ 75.00usd"></v-radio>
+                            <v-radio label="8” $ 75.00usd" value="8” $ 75.00usd"></v-radio>
+                            <v-radio label="10” $ 45.00usd" value="10” $ 45.00usd"></v-radio>
+                            <v-radio label="12” $ 85.00usd" value="12” $ 85.00usd"></v-radio>
+                          </v-radio-group>
+                        </v-col>
 
-                      <v-col
-                        cols="12"
-                        v-if="
-                          (dat.tipoClipStrap === 'Secilla' && isTipoSilla === 'usoDiario') ||
-                          isTipoSilla === 'sillasInfantiles'
-                        "
-                      >
-                        <p class="text-medium-emphasis">
-                          <strong>Medida</strong>
-                        </p>
-                        <v-radio-group v-model="dat.medidaClipStrap">
-                          <v-radio label="6” $ 775.00" value="6” $ 775.00"></v-radio>
-                          <v-radio label="8” $ 775.00" value="8” $ 775.00"></v-radio>
-                          <v-radio label="10” $ 850.00" value="10” $ 850.00"></v-radio>
-                          <v-radio label="12” $ 850.00" value="12” $ 850.00"></v-radio>
-                        </v-radio-group>
-                      </v-col>
+                        <v-col
+                          cols="12"
+                          v-if="
+                            (dat.tipoClipStrap === 'Secilla' && isTipoSilla === 'usoDiario') ||
+                            isTipoSilla === 'sillasInfantiles'
+                          "
+                        >
+                          <p class="text-medium-emphasis">
+                            <strong>Medida</strong>
+                          </p>
+                          <v-radio-group v-model="dat.medidaClipStrap">
+                            <v-radio label="6” $ 775.00" value="6” $ 775.00"></v-radio>
+                            <v-radio label="8” $ 775.00" value="8” $ 775.00"></v-radio>
+                            <v-radio label="10” $ 850.00" value="10” $ 850.00"></v-radio>
+                            <v-radio label="12” $ 850.00" value="12” $ 850.00"></v-radio>
+                          </v-radio-group>
+                        </v-col>
 
-                      <v-col
-                        cols="12"
-                        v-if="dat.tipoClipStrap === 'Sencillo' || dat.tipoClipStrap === 'Doble'"
-                      >
-                        <p class="text-medium-emphasis">
-                          <strong>Numero de piezas</strong>
-                        </p>
-                        <v-text-field
-                          variant="outlined"
-                          v-model="dat.numPzClipStrap"
-                          type="Number"
-                        ></v-text-field>
-                      </v-col>
+                        <v-col
+                          cols="12"
+                          v-if="dat.tipoClipStrap === 'Sencillo' || dat.tipoClipStrap === 'Doble'"
+                        >
+                          <p class="text-medium-emphasis">
+                            <strong>Numero de piezas</strong>
+                          </p>
+                          <v-text-field
+                            variant="outlined"
+                            v-model="dat.numPzClipStrap"
+                            type="Number"
+                          ></v-text-field>
+                        </v-col>
+                      </div>
 
                       <v-col cols="12" v-if="n.a === 2">
                         <p class="text-medium-emphasis">

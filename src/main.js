@@ -18,6 +18,8 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import { md3 } from 'vuetify/blueprints'
 
+import { socket } from './socket'
+
 const vuetify = createVuetify({
   blueprint: md3,
   components,
@@ -37,4 +39,5 @@ app.use(createPinia())
 app.use(router)
 app.use(vuetify)
 app.use(Notifications)
+app.use(socket)
 app.mount('#app')

@@ -15,16 +15,16 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://89.116.191.144',
+        target: 'http://localhost:3000',
         changeOrigin: true,
-        secure: false
-      },
-      '/socket.io': {
-        target: 'http://89.116.191.144',
-        changeOrigin: true,
-        ws: true,
         secure: false
       }
+      // '/socket.io': {
+      //   target: 'http://89.116.191.144',
+      //   changeOrigin: true,
+      //   ws: true,
+      //   secure: false
+      // }
     }
   }
 })
