@@ -6,6 +6,7 @@ import { useRoute, useRouter } from 'vue-router'
 // import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
 import { useAuthUserStore } from '../stores/authUser.js'
 import CotizacionApi from '../api/CotizacionApi.js'
+import { socket } from '../socket.js'
 
 export const useCotizacionStore = defineStore('cotizacion', () => {
   const storeUser = useAuthUserStore()
@@ -170,6 +171,7 @@ export const useCotizacionStore = defineStore('cotizacion', () => {
     await CotizacionApi.createCotizacion(dat)
       .then(({ data }) => {
         msg.value = data.msg
+        socket.emit('nueva-cotizacion', { texto: 'Nueva cotizacion' })
       })
       .catch((err) => {
         console.log(err)

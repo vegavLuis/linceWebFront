@@ -533,8 +533,7 @@ revisar()
                         cols="12"
                         v-if="
                           n.a === 1 &&
-                          isTipoSilla === 'usoDiario' &&
-                          isTipoSilla === 'sillasInfantiles'
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -572,9 +571,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 1 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 1 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -664,9 +662,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 2 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <v-radio-group v-model="dat.antiVuelco" inline>
@@ -802,9 +799,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 2 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -821,9 +817,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 2 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -841,9 +836,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 2 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -857,9 +851,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 2 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -873,9 +866,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 2 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -937,36 +929,32 @@ revisar()
                           <v-radio label="Abierto" value="Abierto"></v-radio>
                           <v-radio
                             v-if="
-                              n.a === 2 ||
-                              isTipoSilla === 'usoDiario' ||
-                              isTipoSilla === 'sillasInfantiles'
+                              n.a === 2 &&
+                              (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                             "
                             label="Plastificado $ 950.00"
                             value="Plastificado $ 950.00"
                           ></v-radio>
                           <v-radio
                             v-if="
-                              n.a === 2 ||
-                              isTipoSilla === 'usoDiario' ||
-                              isTipoSilla === 'sillasInfantiles'
+                              n.a === 2 &&
+                              (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                             "
                             label="Tipo Timon $ 1,300.00"
                             value="Tipo Timon $ 1,300.00"
                           ></v-radio>
                           <v-radio
                             v-if="
-                              n.a === 2 ||
-                              isTipoSilla === 'usoDiario' ||
-                              isTipoSilla === 'sillasInfantiles'
+                              n.a === 2 &&
+                              (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                             "
                             label="Cubre Aro de vinil $ 800.00 24”"
                             value="Cubre Aro de vinil $ 800.00 24”"
                           ></v-radio>
                           <v-radio
                             v-if="
-                              n.a === 2 ||
-                              isTipoSilla === 'usoDiario' ||
-                              isTipoSilla === 'sillasInfantiles'
+                              n.a === 2 &&
+                              (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                             "
                             label="Cubre Aro de vinil $ 800.00 25”"
                             value="Cubre Aro de vinil $ 800.00 25”"
@@ -1190,8 +1178,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          (n.a === 2 && isTipoSilla === 'usoDiario') ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -1211,8 +1199,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          (n.a === 2 && isTipoSilla === 'usoDiario') ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 2 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -1232,9 +1220,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 3 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 3 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <p class="text-medium-emphasis">
@@ -1259,9 +1246,8 @@ revisar()
                       <v-col
                         cols="6"
                         v-if="
-                          n.a === 3 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 3 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <v-radio-group v-model="dat.isPortaVasosFD" inline>
@@ -1284,9 +1270,8 @@ revisar()
                       <v-col
                         cols="6"
                         v-if="
-                          n.a === 3 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 3 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <v-radio-group v-model="dat.isTermoPlasticoFD" inline>
@@ -1300,9 +1285,8 @@ revisar()
                       <v-col
                         cols="12"
                         v-if="
-                          n.a === 3 ||
-                          isTipoSilla === 'usoDiario' ||
-                          isTipoSilla === 'sillasInfantiles'
+                          n.a === 3 &&
+                          (isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles')
                         "
                       >
                         <v-radio-group v-model="dat.istermoAlumnioFD" inline>
