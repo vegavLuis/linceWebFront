@@ -11,5 +11,8 @@ export default {
         Authorization: `Baerer ${token}`
       }
     })
+  },
+  verificarCuenta(token) {
+    return api.get(`auth/verify/${token}`)
   }
 }

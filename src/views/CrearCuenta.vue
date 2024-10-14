@@ -1,8 +1,10 @@
 <script setup>
-import { useCrearCuentaStore } from '../stores/crearCuenta.js'
 import { ref } from 'vue'
+import { useCrearCuentaStore } from '../stores/crearCuenta.js'
+import { useRouter } from 'vue-router'
 
 const storeCuenta = useCrearCuentaStore()
+const router = useRouter()
 
 const items = ref({
   nombre: '',
@@ -26,7 +28,7 @@ const items = ref({
   tallaPantalon: '',
   otrInformacion: ''
 })
-const rules = ref({
+const originalRules = {
   required: (value) => !!value || 'Este campo es obligatorio.',
   min: (v) => v.length >= 8 || 'Min 8 caracteres',
   email: (value) => {
@@ -34,15 +36,57 @@ const rules = ref({
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return pattern.test(value) || 'Correo no valido.'
   }
-})
+}
 
+const rules = ref({ ...originalRules })
+
+const limpiar = () => {
+  items.value = {
+    nombre: '',
+    apellidoPaterno: '',
+    apellidoMaterno: '',
+    telefono: '',
+    email: '',
+    password: '',
+    isUsuario: '',
+    edad: '',
+    peso: '',
+    estatura: '',
+    calle: '',
+    colonia: '',
+    numeroExteriror: '',
+    numeroInterior: '',
+    municipioDelegacion: '',
+    estado: '',
+    codigoPostal: '',
+    discapacidad: '',
+    tallaPantalon: '',
+    otrInformacion: ''
+  }
+  rules.value = { ...originalRules }
+}
+
+const handleSubmit = async (items) => {
+  // Asegúrate de que enviar devuelva un objeto con una propiedad `success`
+  const result = await storeCuenta.enviar(items)
+  if (result.success) {
+    limpiar()
+    router.push({
+      name: 'vistaMensaje',
+      query: {
+        mensaje:
+          'Para completar tu registro, necesitamos que valides tu dirección de correo electrónico.'
+      }
+    })
+  }
+}
 const show1 = ref(false)
 </script>
 <template>
   <div class="d-flex justify-center">
     <v-card max-width="50%" class="py-8 px-8" elevation="4">
       <h4 class="my-4 font-weight-bold">Registrate</h4>
-      <v-form @submit.prevent="storeCuenta.enviar(items)">
+      <v-form @submit.prevent="handleSubmit(items)">
         <v-row>
           <v-col cols="12">
             <v-text-field

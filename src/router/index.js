@@ -119,6 +119,20 @@ const router = createRouter({
         import(/* webpackChunkName: "sillas-infantiles" */ '../views/CrearCuenta.vue')
     },
     {
+      path: '/vista-mensaje',
+      name: 'vistaMensaje',
+      component: () =>
+        import(
+          /* webpackChunkName: "sillas-infantiles" */ '../components/VistaMensajeValidarToken.vue'
+        )
+    },
+    {
+      path: '/confirmar-cuenta/:token',
+      name: 'confirmarCuenta',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../components/VistaConfirmarCuenta.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: '*',
       component: () => import(/* webpackChunkName: "error" */ '@/views/Error.vue')
