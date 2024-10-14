@@ -133,6 +133,18 @@ const router = createRouter({
         import(/* webpackChunkName: "sillas-infantiles" */ '../components/VistaConfirmarCuenta.vue')
     },
     {
+      path: '/olvide-password',
+      name: 'olvidePassword',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/OlvidePassword.vue')
+    },
+    {
+      path: '/olvide-password/:token',
+      name: 'newPassword',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/NewPassword.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: '*',
       component: () => import(/* webpackChunkName: "error" */ '@/views/Error.vue')

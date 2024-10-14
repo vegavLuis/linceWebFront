@@ -42,6 +42,8 @@ onMounted(() => [])
             <span class="ml-2">
               <router-link to="/crear-cuenta"> Crear cuenta </router-link>
             </span>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <router-link to="/olvide-password">Olvide mi contraseña</router-link>
           </p>
           <v-btn block class="mt-6" type="submit">Ingresar</v-btn>
         </v-container>
