@@ -16,13 +16,11 @@ const cambiarVista = (item) => {
   mostrar.value = true
   // Object.assign(dato, item)
   dato.value.push(item)
-  // console.log(dato.value, 'primero')
 }
 
 const regresarVista = () => {
   mostrar.value = false
   dato.value = []
-  // console.log(dato, 'segundo')
 }
 </script>
 <template>

@@ -12,7 +12,6 @@ const mostrar = ref()
 const dato = ref([])
 
 const cambiarVista = (item) => {
-  // console.log('listo', item)
   dato.value.push(item)
   mostrar.value = true
 }
@@ -20,7 +19,6 @@ const cambiarVista = (item) => {
 const regresarVista = () => {
   mostrar.value = false
   dato.value = []
-  // console.log(dato, 'segundo')
 }
 </script>
 

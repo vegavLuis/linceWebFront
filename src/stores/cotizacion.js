@@ -173,9 +173,7 @@ export const useCotizacionStore = defineStore('cotizacion', () => {
         msg.value = data.msg
         socket.emit('nueva-cotizacion', { texto: 'Nueva cotizacion' })
       })
-      .catch((err) => {
-        console.log(err)
-      })
+      .catch((err) => {})
   }
 
   return {

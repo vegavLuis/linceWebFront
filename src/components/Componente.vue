@@ -9,7 +9,6 @@ const data = ref([])
 
 onMounted(() => {
   data.value = usePrimerApartadoHome()
-  // console.log(data.value.datos)
 })
 </script>
 

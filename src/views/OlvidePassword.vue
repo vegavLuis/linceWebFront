@@ -23,7 +23,6 @@ function limpiar() {
 const enviar = async ({ email }) => {
   try {
     const { data } = await AuthApi.forgotPassword({ email })
-    console.log(data.msg)
     notify({
       title: 'Enviado',
       text: data.msg,

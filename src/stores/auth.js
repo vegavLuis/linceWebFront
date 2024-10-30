@@ -24,7 +24,6 @@ export const useAuthStore = defineStore('auth', () => {
         type: 'success'
       })
     } catch (error) {
-      // console.log(error.response.data.msg)
       notify({
         title: 'Error',
         text: error.response.data.msg,

@@ -34,7 +34,6 @@ onMounted(async () => {
 const enviar = async ({ password }) => {
   try {
     const { data } = await AuthApi.updatePassword(token, { password })
-    console.log(data.msg)
     notify({
       text: data.msg,
       type: 'success'

@@ -19,9 +19,7 @@ export const useAuthUserStore = defineStore('authUser', () => {
       })
       nombreCompleto.value = data.nombre + ' ' + data.apellidoPaterno + ' ' + data.apellidoMaterno
       mostrar.value = true
-    } catch (error) {
-      console.log(error)
-    }
+    } catch (error) {}
   }
 
   onMounted(() => {

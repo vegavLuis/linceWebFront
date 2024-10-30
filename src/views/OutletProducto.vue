@@ -42,9 +42,7 @@ onMounted(async () => {
       email.value = data.idUsuario.email
       telefono.value = data.idUsuario.telefono
     })
-    .catch((err) => {
-      console.log(err)
-    })
+    .catch((err) => {})
 })
 </script>
 <template>

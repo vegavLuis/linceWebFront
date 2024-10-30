@@ -24,9 +24,7 @@ export const useCrearCuentaStore = defineStore('crearCuenta', () => {
             type: 'success'
           })
         })
-        .catch((err) => {
-          console.log(err)
-        })
+        .catch((err) => {})
       return { success: true }
     }
   }

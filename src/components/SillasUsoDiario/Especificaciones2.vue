@@ -7,7 +7,6 @@ defineProps({
     required: true
   }
 })
-console.log(dato)
 </script>
 <template>
   <v-card color="transparent" elevation="0">
