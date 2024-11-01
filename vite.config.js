@@ -32,15 +32,15 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
-    },
-    server: {
-      proxy: {
-        '/api': {
-          target: env.VITE_URL, // Usa env directamente sin JSON.stringify
-          changeOrigin: true,
-          secure: false
-        }
-      }
     }
+    // server: {
+    //   proxy: {
+    //     '/api': {
+    //       target: env.VITE_URL, // Usa env directamente sin JSON.stringify
+    //       changeOrigin: true,
+    //       secure: false
+    //     }
+    //   }
+    // }
   }
 })
