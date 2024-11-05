@@ -7,6 +7,7 @@ import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
 import { useCotizacionStore } from '../stores/cotizacion.js'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCheckCircle } from '@mdi/js'
+import medidas from '../assets/tomaMedidas.png'
 
 const storeCotizacion = useCotizacionStore()
 const dataSillasUsoDiario = useSillasUsoDiario()
@@ -172,12 +173,17 @@ revisar()
       </v-card>
     </v-dialog>
     <v-row>
-      <v-col cols="12" md="6" class="hidden-sm-and-down">
+      <!-- <v-col cols="12" md="6" class="hidden-sm-and-down">
         <v-card height="auto" elevation="0">
           <img :src="ima1.src" v-if="storeCotizacion.e1 == 1" class="imag" />
           <img :src="ima2.src" v-if="storeCotizacion.e1 == 2" class="imag" />
           <img :src="ima3.src" v-if="storeCotizacion.e1 == 3" class="imag" />
           <img :src="ima3.src" v-if="storeCotizacion.e1 == 4" class="imag" />
+        </v-card>
+      </v-col> -->
+      <v-col cols="12" md="6" class="hidden-sm-and-down">
+        <v-card height="auto" elevation="0" class="divsticky">
+          <img :src="medidas" class="imag" />
         </v-card>
       </v-col>
 
@@ -1657,8 +1663,14 @@ revisar()
 .imag {
   width: 100%;
   height: 100%;
+  position: sticky;
   object-fit: contain;
   object-position: center center;
+}
+.divsticky {
+  position: sticky;
+  top: 0;
+  padding-top: 50px;
 }
 .con {
   height: 100%;
