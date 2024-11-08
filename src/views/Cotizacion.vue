@@ -223,7 +223,7 @@ revisar()
                       </v-col>
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Ancho de asiento</strong>
+                          <strong>1) Ancho de asiento</strong>
                         </p>
                         <v-radio-group
                           v-model="dat.anchoDeAsiento"
@@ -243,7 +243,7 @@ revisar()
 
                       <v-col cols="6" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong> Largo del asiento</strong>
+                          <strong>2) Largo del asiento</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -260,7 +260,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Largo total del asiento</strong>
+                          <strong>2a) Largo total del asiento</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -271,7 +271,7 @@ revisar()
 
                       <v-col cols="6" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Estrechamiento asiento</strong>
+                          <strong>2b) Estrechamiento asiento</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -287,7 +287,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Estilo frontal</strong>
+                          <strong>3) Estilo frontal</strong>
                         </p>
                         <v-radio-group v-model="dat.estiloFrontal" inline>
                           <v-radio label="“V”" value="V"></v-radio>
@@ -302,7 +302,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Altura de asiento parte trasera</strong>
+                          <strong>4) Altura de asiento parte trasera</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -313,7 +313,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Altura de asiento parte frontal</strong>
+                          <strong>5) Altura de asiento parte frontal</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -324,7 +324,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Altura de respaldo</strong>
+                          <strong>6) Altura de respaldo</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -394,7 +394,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Angulo del respaldo</strong>
+                          <strong>7) Angulo del respaldo</strong>
                         </p>
                         <v-radio-group v-model="dat.anguloRespaldo" inline>
                           <v-radio label="0º" value="0"></v-radio>
@@ -428,7 +428,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Ancho de estribo </strong>
+                          <strong>8) Ancho de estribo </strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -494,7 +494,7 @@ revisar()
 
                       <v-col cols="4" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Largo de tibia y perone Izq.</strong>
+                          <strong>9) Largo de tibia y perone Izq.</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -520,7 +520,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Distancia de respaldo a centro de gravedad</strong>
+                          <strong>10) Distancia de respaldo a centro de gravedad</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -531,7 +531,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Distancia de centro de grav. A buje delantero</strong>
+                          <strong>11) Distancia de centro de grav. A buje delantero</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -548,7 +548,7 @@ revisar()
                         "
                       >
                         <p class="text-medium-emphasis">
-                          <strong>Distancia de buje delantero al estribo</strong>
+                          <strong>12) Distancia de buje delantero al estribo</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -559,7 +559,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1 && isTipoSilla === 'sillasDeportivas'">
                         <p class="text-medium-emphasis">
-                          <strong>Distancia de buje delantero a defensa</strong>
+                          <strong>12) Distancia de buje delantero a defensa</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -570,7 +570,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Distancia entre bujes delanteros</strong>
+                          <strong>13) Distancia entre bujes delanteros</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -587,7 +587,7 @@ revisar()
                         "
                       >
                         <p class="text-medium-emphasis">
-                          <strong>Ruedas delanteras</strong>
+                          <strong>14) Ruedas delanteras</strong>
                         </p>
                         <v-radio-group v-model="dat.tipoRuedasDelanteras" inline>
                           <v-radio label="Plasticas" value="Plasticas"></v-radio>
@@ -598,7 +598,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1 && isTipoSilla === 'sillasDeportivas'">
                         <p class="text-medium-emphasis">
-                          <strong>Ruedas delanteras</strong>
+                          <strong>14) Ruedas delanteras</strong>
                         </p>
                         <v-radio-group v-model="dat.tipoRuedasDelanteras" inline>
                           <v-radio label="2”" value="2”"></v-radio>
@@ -608,7 +608,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1 && isTipoSilla === 'sillasDeportivas'">
                         <p class="text-medium-emphasis">
-                          <strong>Estilo defensa</strong>
+                          <strong>15) Estilo defensa</strong>
                         </p>
                         <v-radio-group v-model="dat.tipoEstiloDefensa" inline>
                           <v-radio label="Redonda" value="Redonda"></v-radio>
@@ -619,7 +619,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Tijeras</strong>
+                          <strong>15) Tijeras</strong>
                         </p>
                         <v-radio-group v-model="dat.tipoRuedasDelanteras" inline>
                           <v-radio label="1 Brazo" value="1 Brazo"></v-radio>
@@ -637,7 +637,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Separación entre respaldo y la rueda</strong>
+                          <strong>16) Separación entre respaldo y la rueda</strong>
                         </p>
                         <v-radio-group v-model="dat.separacionRespaldoRueda" inline>
                           <v-radio label="1”" value="1”"></v-radio>
@@ -648,7 +648,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>Inclinación Rod. traseras.</strong>
+                          <strong>17) Inclinación Rod. traseras.</strong>
                         </p>
                         <v-radio-group v-model="dat.inclinacionRodTraseras" inline>
                           <div
