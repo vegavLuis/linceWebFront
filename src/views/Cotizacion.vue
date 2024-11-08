@@ -8,6 +8,7 @@ import { useCotizacionStore } from '../stores/cotizacion.js'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCheckCircle } from '@mdi/js'
 import medidas from '../assets/tomaMedidas.png'
+import linceMX3 from '../assets/linceMX3.png'
 
 const storeCotizacion = useCotizacionStore()
 const dataSillasUsoDiario = useSillasUsoDiario()
@@ -183,7 +184,11 @@ revisar()
       </v-col> -->
       <v-col cols="12" md="6" class="hidden-sm-and-down">
         <v-card height="auto" elevation="0" class="divsticky">
-          <img :src="medidas" class="imag" />
+          <img
+            :src="linceMX3"
+            class="imag"
+            v-if="storeCotizacion.id == 'Lince MX3 Silla de Pista'"
+          />
         </v-card>
       </v-col>
 
