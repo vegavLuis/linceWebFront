@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
 import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
@@ -128,6 +128,10 @@ const dat = ref({
   distanciaBotonCuerda: ''
 })
 
+const imgLinceMX3 = computed(() => {
+  return storeCotizacion.id == 'Lince MX3 Silla de Pista'
+})
+
 onMounted(() => {
   storeCotizacion.e1 = 1
 })
@@ -184,11 +188,7 @@ revisar()
       </v-col> -->
       <v-col cols="12" md="6" class="hidden-sm-and-down">
         <v-card height="auto" elevation="0" class="divsticky">
-          <img
-            :src="linceMX3"
-            class="imag"
-            v-if="storeCotizacion.id == 'Lince MX3 Silla de Pista'"
-          />
+          <img :src="linceMX3" class="imag" v-if="imgLinceMX3" />
         </v-card>
       </v-col>
 
