@@ -9,6 +9,7 @@ import { useCotizacionStore } from '../stores/cotizacion.js'
 
 import linceMX3 from '../assets/linceMX3.png'
 import imagenSky from '../assets/imagenSky.png'
+import imagenX4 from '../assets/imagenX4.png'
 
 // Mdi Icons
 import SvgIcon from '@jamescoyle/vue-icon'
@@ -195,6 +196,7 @@ onBeforeMount(() => {
         <v-card height="auto" elevation="0" class="divsticky">
           <img :src="linceMX3" class="imag" v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'" />
           <img :src="imagenSky" class="imag" v-if="dataSilla.nombre == 'Lince Sky'" />
+          <img :src="imagenX4" class="imag" v-if="dataSilla.nombre == 'Lince X4'" />
         </v-card>
       </v-col>
 
@@ -249,6 +251,16 @@ onBeforeMount(() => {
                               <span v-bind="props"> </span>
                             </template>
                           </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
+                            tooltipText="Mida lo ancho del marco de orilla a orilla en incrementos de medias pulgadas (½)."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
 
                         <v-radio-group
@@ -285,6 +297,16 @@ onBeforeMount(() => {
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
                             tooltipText="Fondo de asiento. Mida lo largo de la vestidura del frente de su asiento hasta el poste de atrás, lo normal es de 15 pulgadas, pero se fabrican de 12 a 18 pulgadas."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
+                            tooltipText="Mida lo largo de la vestidura del frente de su asiento hasta el poste de atrás, lo normal es de 15 pulgadas, pero se fabrican de 12 a 18 pulgadas."
                           >
                             <template v-slot:activator="{ props }">
                               <span v-bind="props"> </span>
@@ -372,7 +394,17 @@ onBeforeMount(() => {
 
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
-                            tooltipText="4 y 5. Altura de asiento frontal y posterior. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior del asiento, esto es tanto para la parte frontal como trasera. La altura normal de enfrente variaría de 16 a 21 pulgadas. Para la persona que usa silla diariamente debería de tener entre 1 y 3 pulgadas de diferencia. Para lesiones altas es preferible bajar la altura de su asiento en la parte trasera y para lesiones bajas subir la altura del asiento. El asiento bajo mantiene mejor balance, seguridad y mejor posición."
+                            tooltipText="Altura de asiento frontal y posterior. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior del asiento, esto es tanto para la parte frontal como trasera. La altura normal de enfrente variaría de 16 a 21 pulgadas. Para la persona que usa silla diariamente debería de tener entre 1 y 3 pulgadas de diferencia. Para lesiones altas es preferible bajar la altura de su asiento en la parte trasera y para lesiones bajas subir la altura del asiento. El asiento bajo mantiene mejor balance, seguridad y mejor posición."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Sillas X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
+                            tooltipText="Altura de asiento frontal y posterior. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior del asiento, esto es tanto para la parte frontal como trasera. La altura normal de enfrente variaría de 16 a 21 pulgadas. Para la persona que usa silla diariamente debería de tener entre 1 y 3 pulgadas de diferencia. Para lesiones altas es preferible bajar la altura de su asiento en la parte trasera y para lesiones bajas subir la altura del asiento. El asiento bajo mantiene mejor balance, seguridad y mejor posición."
                           >
                             <template v-slot:activator="{ props }">
                               <span v-bind="props"> </span>
@@ -393,7 +425,7 @@ onBeforeMount(() => {
 
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
-                            tooltipText="4 y 5. Altura de asiento frontal y trasera. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior y posterior del cajon, esto es tanto para la parte frontal como trasera."
+                            tooltipText="Altura de asiento frontal y trasera. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior y posterior del cajon, esto es tanto para la parte frontal como trasera."
                           >
                             <template v-slot:activator="{ props }">
                               <span v-bind="props"> </span>
@@ -403,7 +435,17 @@ onBeforeMount(() => {
                           <!-- Silla Sky -->
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
-                            tooltipText="4 y 5. Altura de asiento frontal y posterior. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior del asiento, esto es tanto para la parte frontal como trasera. La altura normal de enfrente variaría de 16 a 21 pulgadas. Para la persona que usa silla diariamente debería de tener entre 1 y 3 pulgadas de diferencia. Para lesiones altas es preferible bajar la altura de su asiento en la parte trasera y para lesiones bajas subir la altura del asiento. El asiento bajo mantiene mejor balance, seguridad y mejor posición."
+                            tooltipText="Altura de asiento frontal y posterior. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior del asiento, esto es tanto para la parte frontal como trasera. La altura normal de enfrente variaría de 16 a 21 pulgadas. Para la persona que usa silla diariamente debería de tener entre 1 y 3 pulgadas de diferencia. Para lesiones altas es preferible bajar la altura de su asiento en la parte trasera y para lesiones bajas subir la altura del asiento. El asiento bajo mantiene mejor balance, seguridad y mejor posición."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Sill X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
+                            tooltipText="Altura de asiento frontal y posterior. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior del asiento, esto es tanto para la parte frontal como trasera. La altura normal de enfrente variaría de 16 a 21 pulgadas. Para la persona que usa silla diariamente debería de tener entre 1 y 3 pulgadas de diferencia. Para lesiones altas es preferible bajar la altura de su asiento en la parte trasera y para lesiones bajas subir la altura del asiento. El asiento bajo mantiene mejor balance, seguridad y mejor posición."
                           >
                             <template v-slot:activator="{ props }">
                               <span v-bind="props"> </span>
@@ -423,6 +465,16 @@ onBeforeMount(() => {
                           <strong>6) Altura de respaldo</strong>
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
+                            tooltipText="Esta medida varía de 8 a 14 pulgadas y puede ser fabricada a la altura exacta o puede ser ajustable: de 7 a 10, de 10 a 13, de 13 a 16 o de 16 a 18 pulgadas."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Sila X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
                             tooltipText="Esta medida varía de 8 a 14 pulgadas y puede ser fabricada a la altura exacta o puede ser ajustable: de 7 a 10, de 10 a 13, de 13 a 16 o de 16 a 18 pulgadas."
                           >
                             <template v-slot:activator="{ props }">
@@ -507,6 +559,16 @@ onBeforeMount(() => {
                               <span v-bind="props"> </span>
                             </template>
                           </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
+                            tooltipText="Indicar el ángulo de 0 a 9 grados de inclinación del respaldo."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
                         <v-radio-group v-model="dat.anguloRespaldo" inline>
                           <v-radio label="0º" value="0"></v-radio>
@@ -543,6 +605,16 @@ onBeforeMount(() => {
                           <strong>8) Ancho de estribo </strong>
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
+                            tooltipText="Esta es la única medida que se toma de la parte interior de las barras del descansa pies. De 6 pulgadas para amputados y el promedio de 10 pulgadas, puede llegar a 11 pulgadas. Todo depende del tamaño de la pierna y el ancho de los pies de la persona."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
                             tooltipText="Esta es la única medida que se toma de la parte interior de las barras del descansa pies. De 6 pulgadas para amputados y el promedio de 10 pulgadas, puede llegar a 11 pulgadas. Todo depende del tamaño de la pierna y el ancho de los pies de la persona."
                           >
                             <template v-slot:activator="{ props }">
@@ -666,6 +738,16 @@ onBeforeMount(() => {
                               <span v-bind="props"> </span>
                             </template>
                           </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
+                            tooltipText="Esta será tomada de afuera del marco hasta el centro del eje de la rueda trasera en una línea horizontal."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -679,6 +761,16 @@ onBeforeMount(() => {
                           <strong>11) Distancia de centro de grav. A buje delantero</strong>
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
+                            tooltipText="Esta debe de ser tomada del centro del eje de la rueda trasera al centro de la rueda frontal en una línea horizontal (De preferencia tomarla de donde asienta la rueda trasera a donde asienta la rueda frontal )"
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
                             tooltipText="Esta debe de ser tomada del centro del eje de la rueda trasera al centro de la rueda frontal en una línea horizontal (De preferencia tomarla de donde asienta la rueda trasera a donde asienta la rueda frontal )"
                           >
                             <template v-slot:activator="{ props }">
@@ -704,6 +796,16 @@ onBeforeMount(() => {
                           <strong>12) Distancia de buje delantero al estribo</strong>
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
+                            tooltipText="Esta será tomada de la parte del centro de la rueda frontal a la parte final del marco o estribo."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
                             tooltipText="Esta será tomada de la parte del centro de la rueda frontal a la parte final del marco o estribo."
                           >
                             <template v-slot:activator="{ props }">
@@ -818,6 +920,16 @@ onBeforeMount(() => {
                               <span v-bind="props"> </span>
                             </template>
                           </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
+                            tooltipText="Disponible de 3 a 9 grados. Se usa para describir la cantidad de ángulo de inclinación de las ruedas traseras (esto significa que la distancia de la parte de arriba de las ruedas es más cerrada y la parte de abajo más ancha) la inclinación le da más estabilidad a la silla y más velocidad en el giro con velocidad."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
 
                         <v-radio-group v-model="dat.inclinacionRodTraseras" inline>
@@ -869,6 +981,16 @@ onBeforeMount(() => {
                           <v-radio label="Estilo en “V”" value="Estilo en V"></v-radio>
                           <Toltip
                             v-if="dataSilla.nombre == 'Lince Sky'"
+                            tooltipText="Es para esos clientes que prefieren eliminar la inclinación a media pantorrilla, recomendamos el estilo en V para el frente de la silla."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
+
+                          <!-- Silla X4 -->
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince X4'"
                             tooltipText="Es para esos clientes que prefieren eliminar la inclinación a media pantorrilla, recomendamos el estilo en V para el frente de la silla."
                           >
                             <template v-slot:activator="{ props }">
