@@ -1,14 +1,21 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onBeforeMount, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+
 import { useSillasUsoDiario } from '../stores/usodiario/sillasUsodiario.js'
 import { useSillasInfantiles } from '../stores/sillasInfantiles.js'
 import { useSillasDeportivas } from '../stores/sillasDeportivas.js'
 import { useCotizacionStore } from '../stores/cotizacion.js'
-import SvgIcon from '@jamescoyle/vue-icon'
-import { mdiCheckCircle } from '@mdi/js'
+
 import medidas from '../assets/tomaMedidas.png'
 import linceMX3 from '../assets/linceMX3.png'
+
+// Mdi Icons
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiCheckCircle, mdiInformationVariantCircle } from '@mdi/js'
+
+import IconInformation from '../components/IconInformation.vue'
+import Toltip from '../components/Toltip.vue'
 
 const storeCotizacion = useCotizacionStore()
 const dataSillasUsoDiario = useSillasUsoDiario()
@@ -16,7 +23,7 @@ const dataSillasInfantiles = useSillasInfantiles()
 const dataSillasDeportivas = useSillasDeportivas()
 const route = useRoute()
 
-const id = route.params.id
+const id = ref(route.params.id)
 const dataSilla = ref([])
 const ima1 = ref('')
 const ima2 = ref('')
@@ -128,24 +135,17 @@ const dat = ref({
   distanciaBotonCuerda: ''
 })
 
-const imgLinceMX3 = computed(() => {
-  return storeCotizacion.id == 'Lince MX3 Silla de Pista'
-})
-
-onMounted(() => {
-  storeCotizacion.e1 = 1
-})
-
 const buscarSilla = async () => {
-  dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id)
+  dataSilla.value = dataSillasUsoDiario.data.find((element) => element.nombre == id.value)
   isTipoSilla.value = 'usoDiario'
 
   if (dataSilla.value === undefined) {
-    dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id)
+    dataSilla.value = dataSillasInfantiles.data.find((element) => element.nombre == id.value)
     isTipoSilla.value = 'sillasInfantiles'
   }
+
   if (dataSilla.value === undefined) {
-    dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id)
+    dataSilla.value = dataSillasDeportivas.data.find((element) => element.nombre == id.value)
     isTipoSilla.value = 'sillasDeportivas'
   }
 
@@ -161,8 +161,14 @@ const revisar = () => {
   }
 }
 
-buscarSilla()
-revisar()
+// Usar el ciclo de vida onBeforeMount o onMounted para actualizar storeCotizacion
+onBeforeMount(() => {
+  // Llamar a la función de búsqueda de la silla
+  buscarSilla()
+
+  // Revisar si el usuario está autenticado
+  revisar()
+})
 </script>
 <template>
   <div class="mr-2 ml-2">
@@ -188,7 +194,7 @@ revisar()
       </v-col> -->
       <v-col cols="12" md="6" class="hidden-sm-and-down">
         <v-card height="auto" elevation="0" class="divsticky">
-          <img :src="linceMX3" class="imag" v-if="imgLinceMX3" />
+          <img :src="linceMX3" class="imag" v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'" />
         </v-card>
       </v-col>
 
@@ -223,8 +229,17 @@ revisar()
                       </v-col>
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
-                          <strong>1) Ancho de asiento</strong>
+                          <strong> 1) Ancho de asiento </strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="Ancho de cuadro parte superior. Mida lo ancho del marco de orilla a orilla en la parte superior."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
+
                         <v-radio-group
                           v-model="dat.anchoDeAsiento"
                           inline
@@ -242,9 +257,20 @@ revisar()
                       </v-col>
 
                       <v-col cols="6" v-if="n.a === 1">
+                        <!-- Usamos el componente TooltipComponent -->
+
                         <p class="text-medium-emphasis">
                           <strong>2) Largo del asiento</strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="Ancho de cuadro parte inferior. Mida lo ancho del marco de orilla a orilla en la parte inferior."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
+
                         <v-text-field
                           variant="outlined"
                           v-model="dat.largoAsieno"
@@ -286,9 +312,19 @@ revisar()
                       </v-col>
 
                       <v-col cols="12" v-if="n.a === 1">
+                        <!-- Usamos el componente TooltipComponent -->
                         <p class="text-medium-emphasis">
-                          <strong>3) Estilo frontal</strong>
+                          <strong>3) Estilo frontalo </strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="Estilo frontal en V o Y."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
+
                         <v-radio-group v-model="dat.estiloFrontal" inline>
                           <v-radio label="“V”" value="V"></v-radio>
                           <v-radio label="“Y”" value="Y"></v-radio>
@@ -303,7 +339,16 @@ revisar()
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
                           <strong>4) Altura de asiento parte trasera</strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="Ancho de cuadro parte superior. Mida lo ancho del marco de orilla a orilla en la parte superior."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
+
                         <v-text-field
                           variant="outlined"
                           type="Number"
@@ -314,7 +359,16 @@ revisar()
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
                           <strong>5) Altura de asiento parte frontal</strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="4 y 5. Altura de asiento frontal y trasera. Para estas dos medidas se toma como base el suelo, se apoya la cinta métrica en el suelo en una línea vertical hasta la parte superior y posterior del cajon, esto es tanto para la parte frontal como trasera."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
+
                         <v-text-field
                           variant="outlined"
                           type="Number"
@@ -495,7 +549,16 @@ revisar()
                       <v-col cols="4" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
                           <strong>9) Largo de tibia y perone Izq.</strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="Largo detibia y peroné. Mida de atrás de la rodilla hasta lo último del píe, el descansa pies se ajusta tan fácilmente como girar un par de tornillos, para personas con acortamiento de pierna se puede."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
+
                         <v-text-field
                           variant="outlined"
                           v-model="dat.largoTibiaPeroneIzq"
@@ -504,6 +567,14 @@ revisar()
                       <v-col cosl="4" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
                           <strong>Largo de tibia y perone Der.</strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="Largo detibia y peroné. Mida de atrás de la rodilla hasta lo último del píe, el descansa pies se ajusta tan fácilmente como girar un par de tornillos, para personas con acortamiento de pierna se puede."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
                         <v-text-field
                           variant="outlined"
@@ -649,7 +720,16 @@ revisar()
                       <v-col cols="12" v-if="n.a === 1">
                         <p class="text-medium-emphasis">
                           <strong>17) Inclinación Rod. traseras.</strong>
+                          <Toltip
+                            v-if="dataSilla.nombre == 'Lince MX3 Silla de Pista'"
+                            tooltipText="Inclinación ruedas traseras. Disponible de 11 a 13 grados. Se usa para describir la cantidad de ángulo de inclinación de las ruedas traseras (esto significa que la distancia de la parte de arriba de las ruedas es más cerrada y la parte de abajo más ancha) la inclinación le da más estabilidad a la silla y más velocidad en el giro rápido."
+                          >
+                            <template v-slot:activator="{ props }">
+                              <span v-bind="props"> </span>
+                            </template>
+                          </Toltip>
                         </p>
+
                         <v-radio-group v-model="dat.inclinacionRodTraseras" inline>
                           <div
                             v-if="isTipoSilla === 'usoDiario' || isTipoSilla === 'sillasInfantiles'"
@@ -679,7 +759,7 @@ revisar()
                       >
                         <v-radio-group v-model="dat.antiVuelco" inline>
                           <v-radio
-                            label="Anti-vuelco una rueda $ 1,500.00"
+                            label="17) Anti-vuelco una rueda $ 1,500.00"
                             value="Anti-vuelco una rueda $ 1,500.00"
                           ></v-radio>
                           <v-radio label="Doble. $ 2150.00" value="Doble. $ 2150.00"></v-radio>
@@ -703,7 +783,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 2 && isTipoSilla === 'sillasDeportivas'">
                         <p class="text-medium-emphasis">
-                          <strong>5ta Rueda antivuelco</strong>
+                          <strong>18) 5ta Rueda antivuelco</strong>
                         </p>
                         <v-radio-group v-model="dat.quintaRuedaAntiVuelco" inline>
                           <v-radio label="Fija N/C" value="Fija N/C"></v-radio>
@@ -725,7 +805,7 @@ revisar()
 
                       <v-col cols="12" v-if="n.a === 2">
                         <p class="text-medium-emphasis">
-                          <strong>Altura lateral</strong>
+                          <strong>19) Altura lateral</strong>
                         </p>
                         <v-text-field
                           variant="outlined"
