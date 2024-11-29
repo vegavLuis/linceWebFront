@@ -110,9 +110,9 @@ onMounted(() => {
         label="Escribe tu mensaje"
         solo
         hide-details
-        :disabled="!isOutsideHours"
+        :disabled="isOutsideHours"
       ></v-text-field>
-      <v-btn color="primary" @click="sendMessage">Enviar</v-btn>
+      <v-btn color="primary" @click="sendMessage" :disabled="isOutsideHours">Enviar</v-btn>
     </v-card-actions>
   </v-card>
 </template>
