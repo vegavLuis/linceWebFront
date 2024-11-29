@@ -4,22 +4,16 @@ import { RouterView } from 'vue-router'
 import BarraNavegacion from './components/BarraNavegacion.vue'
 import Footer from './components/Footer.vue'
 import { useRedesSociales } from './stores/redesSociales'
-const expand = ref(false)
+import chatOnlyne from './components/chatOnlyne.vue'
+
 const datos = ref([])
+
 onMounted(() => {
   datos.value = useRedesSociales()
 })
 </script>
+
 <template>
-  <!-- <v-btn
-    position="fixed"
-    class="boton ma-4"
-    location="bottom right"
-    elevation="4"
-    icon="mdi-plus"
-    @click="expand = !expand"
-  >
-  </v-btn> -->
   <v-expand-transition position="fixed" location="bottom right" class="card-botones">
     <v-card
       v-show="expand"
@@ -29,25 +23,28 @@ onMounted(() => {
       color="transparent"
       elevation="0"
     >
-      <div v-for="item in datos.data">
+      <div v-for="item in datos.data" :key="item.name">
         <v-btn
           class="mb-4 mr-0"
           :icon="item.icon"
           :href="item.to"
           target="_blank"
           :color="item.color"
-        >
-        </v-btn>
+        />
       </div>
     </v-card>
   </v-expand-transition>
+
   <VLayout>
     <notifications />
     <BarraNavegacion />
     <v-main>
+      <!-- Aqui abajo va el chat -->
+      <chatOnlyne />
       <RouterView />
     </v-main>
   </VLayout>
+
   <VLayout>
     <Footer />
   </VLayout>
