@@ -13,9 +13,7 @@ export const useOutletStore = defineStore('outlet', () => {
       .then(({ data }) => {
         datos.value = data.data
       })
-      .catch((err) => {
-        console.log(err)
-      })
+      .catch((err) => {})
   }
   onMounted(() => {
     traerData()

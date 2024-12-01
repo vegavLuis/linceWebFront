@@ -27,7 +27,7 @@ onMounted(() => {
           class="boton-silla"
           :to="{ name: item.to, params: { id: item.params } }"
         >
-          <v-btn color="primary"> Ver mas </v-btn>
+          <v-btn color="#db1f2c"> Ver mas </v-btn>
         </router-link>
       </div>
     </Slide>

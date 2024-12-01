@@ -5,7 +5,6 @@ export default {
     return api.get('/outlet')
   },
   getOutletByIdProducto(id) {
-    // return console.log('este es el dato desde la api', id)
     return api.get('/outlet/producto/' + id)
   }
 }

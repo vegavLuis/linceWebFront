@@ -95,16 +95,54 @@ const router = createRouter({
       component: () =>
         import(/* webpackChunkName: "sillas-infantiles" */ '../views/Testimonios.vue')
     },
+    // {
+    //   path: '/promociones',
+    //   name: 'promociones',
+    //   component: () =>
+    //     import(/* webpackChunkName: "sillas-infantiles" */ '../views/Promociones.vue')
+    // },
     {
-      path: '/promociones',
-      name: 'promociones',
-      component: () =>
-        import(/* webpackChunkName: "sillas-infantiles" */ '../views/Promociones.vue')
+      path: '/cotizacion/:id',
+      name: 'cotizacion',
+      props: true,
+      component: () => import(/* webpackChunkName: "sillas-infantiles" */ '../views/Cotizacion.vue')
     },
     {
       path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "sillas-infantiles" */ '../views/Login.vue')
+    },
+    {
+      path: '/crear-cuenta',
+      name: 'crearCuenta',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/CrearCuenta.vue')
+    },
+    {
+      path: '/vista-mensaje',
+      name: 'vistaMensaje',
+      component: () =>
+        import(
+          /* webpackChunkName: "sillas-infantiles" */ '../components/VistaMensajeValidarToken.vue'
+        )
+    },
+    {
+      path: '/confirmar-cuenta/:token',
+      name: 'confirmarCuenta',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../components/VistaConfirmarCuenta.vue')
+    },
+    {
+      path: '/olvide-password',
+      name: 'olvidePassword',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/OlvidePassword.vue')
+    },
+    {
+      path: '/olvide-password/:token',
+      name: 'newPassword',
+      component: () =>
+        import(/* webpackChunkName: "sillas-infantiles" */ '../views/NewPassword.vue')
     },
     {
       path: '/:pathMatch(.*)*',

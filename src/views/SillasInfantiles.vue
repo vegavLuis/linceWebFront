@@ -17,13 +17,11 @@ const cambiarVista = (item) => {
   mostrar.value = true
   // Object.assign(dato, item)
   dato.value.push(item)
-  // console.log(dato.value, 'primero')
 }
 
 const regresarVista = () => {
   mostrar.value = false
   dato.value = []
-  // console.log(dato, 'segundo')
 }
 </script>
 <template>
@@ -45,10 +43,13 @@ const regresarVista = () => {
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <BotonCotizar />
+              <router-link :to="{ name: 'cotizacion', params: { id: item.nombre } }" class="mr-2">
+                <v-btn class="text-none" color="#212121" variant="text">Cotizar</v-btn>
+              </router-link>
+              <!-- <BotonCotizar /> -->
               <!-- <v-btn color="primary" variant="flat" @click="cambiarVista(item)"> Explorar </v-btn> -->
               <router-link :to="{ name: 'sillas-infantiles-id', params: { id: item.id } }">
-                <v-btn color="primary" variant="flat"> Explorar </v-btn>
+                <v-btn color="#db1f2c" variant="flat"> Explorar </v-btn>
               </router-link>
             </v-card-actions>
           </v-card>

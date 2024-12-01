@@ -32,7 +32,8 @@ p {
   background-color: transparent;
   border-radius: 5px;
   border: 2px solid;
-  background-color: #43a047;
+  /* background-color: #43a047; */
+  background-color: #db1f2c;
   color: white;
   font-size: 15px;
   width: 100px;
@@ -48,7 +49,8 @@ p {
   background-color: transparent;
   border-radius: 5px;
   border: 2px solid;
-  background-color: #43a047;
+  /* background-color: #43a047; */
+  background-color: #db1f2c;
   color: white;
   font-size: 15px;
   width: 100px;

@@ -1,9 +1,15 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useAppStore } from '../stores/app.js'
-import logo from '@/assets/logo.jpg'
+import { useAuthUserStore } from '@/stores/authUser.js'
+
 import BotonIniciarSesion from '@/components/BotonIniciarSesion.vue'
+import logo from '@/assets/logo.jpg'
+import BotonCerrarSesion from './BotonCerrarSesion.vue'
+
+const store = useAuthUserStore()
 const datosBarra = ref([])
+
 onMounted(() => {
   datosBarra.value = useAppStore()
 })
@@ -67,7 +73,11 @@ onMounted(() => {
         </div>
       </v-list-item>
     </v-list>
-    <BotonIniciarSesion class="hidden-sm-and-down" />
+    <p v-if="store.nombreCompleto !== ''" class="hidden-sm-and-down">
+      {{ store.nombreCompleto }}
+    </p>
+    <BotonIniciarSesion class="hidden-sm-and-down" v-if="store.nombreCompleto === ''" />
+    <BotonCerrarSesion v-if="store.nombreCompleto !== ''" class="hidden-sm-and-down" />
 
     <!-- BARRA PEQUEÑA -->
     <v-spacer></v-spacer>
@@ -116,7 +126,11 @@ onMounted(() => {
         </router-link>
       </v-list-item>
     </v-list>
-    <BotonIniciarSesion class="ma-4 d-flex justify-center" />
+    <p v-if="store.nombreCompleto !== ''" class="ma-4 d-flex justify-center">
+      {{ store.nombreCompleto }}
+    </p>
+    <BotonIniciarSesion class="ma-4 d-flex justify-center" v-if="store.nombreCompleto === ''" />
+    <BotonCerrarSesion class="ma-4 d-flex justify-center" />
   </v-navigation-drawer>
 </template>
 

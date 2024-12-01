@@ -1,6 +1,9 @@
 import { io } from 'socket.io-client'
 
-const URL = 'http://localhost:3000'
-// const URL = "http://191.101.232.150/";
+const URL = import.meta.env.VITE_SOCKET
+// const URL = 'http://localhost'
+// const po = 3000
+// const URL = `http://app.roe-mex.com.mx`
+// const URL = `http://localhost:3000`
 
 export const socket = io(URL)
